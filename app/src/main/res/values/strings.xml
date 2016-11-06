@@ -1,3 +1,5 @@
 <resources>
+    <!--  -->
     <string name="app_name">DecisionHelper</string>
+    <string name="pq_q1">"What is your weight?"</string>
 </resources>
