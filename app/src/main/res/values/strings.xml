@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DecisionHelper</string>
+    <string name="decision_helper_faq_button">Decision Helper FAQ</string>
+    <string name="personality_quiz_faq_button">Personality Quiz FAQ</string>
 </resources>
