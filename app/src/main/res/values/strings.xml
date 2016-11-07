@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DecisionHelper</string>
+    <string name="decision_helper_faq_button">Decision Helper FAQ</string>
+    <string name="personality_quiz_faq_button">Personality Quiz FAQ</string>
     <string name="welcome_header">Welcome to Decide with me!</string>
     <string name="welcome_detail_text">
         Some text could go here that says a little bit about how the app works and why they need to
