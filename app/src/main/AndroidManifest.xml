@@ -16,6 +16,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".Main2Activity"></activity>
+        <activity
+            android:name=".DecisionHelperActivity"
+            android:label="@string/decision_helper"></activity>
+        <activity
+            android:name=".PersonalityQuizActivity"
+            android:label="@string/personality_quiz"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings"></activity>
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/help"></activity>
     </application>
 
 </manifest>
