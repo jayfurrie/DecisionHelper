@@ -16,4 +16,21 @@
     <string name="personality_quiz">PQ</string>
     <string name="settings">S</string>
     <string name="help">H</string>
+    <!-- decision helper strings -->
+    <string name="dh_homepage">New Decision</string>
+    <string name="my_deci">My Decisions:</string>
+    <string name="A">Decision A</string>
+    <string name="B">Decision B</string>
+    <string name="Cc">Decision C</string>
+    <string name="D">Decision D</string>
+    <string name="E">Decision E</string>
+    <string name="F">Decision F</string>
+    <string name="X">Decision X</string>
+    <string name="Add_a">Add/edit attributes</string>
+    <string name="shared">Shared with me:</string>
+    <string name="rank">rank attributes</string>
+    <string name="add_choice">add/edit choices</string>
+    <string name="view_result">view results</string>
+    <string name="share..">share..</string>
+    <string name="back">back</string>
 </resources>
