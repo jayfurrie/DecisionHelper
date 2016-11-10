@@ -11,10 +11,10 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".DecisionHelperActivity"
             android:label="@string/decision_helper" />
@@ -28,7 +28,16 @@
             android:name=".HelpActivity"
             android:label="@string/help" />
         <activity
-            android:name=".SpinnerActivity"></activity>
+            android:name=".SpinnerActivity"
+            android:exported="true"
+            android:label="@string/add_choice"
+            android:parentActivityName="com.example.cs465.decisionhelper.MainActivity">
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.cs465.decisionhelper.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
