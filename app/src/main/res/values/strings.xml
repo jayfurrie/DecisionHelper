@@ -29,7 +29,8 @@
     <string name="Add_a">Add/edit attributes</string>
     <string name="shared">Shared with me:</string>
     <string name="rank">rank attributes</string>
-    <string name="add_choice">add/edit choices</string>
+    <string name="add_edit_choice">add/edit choices</string>
+    <string name="add_choice">+ new choice</string>
     <string name="view_result">view results</string>
     <string name="share..">share..</string>
     <string name="back">back</string>
@@ -56,4 +57,13 @@
     <string name="risk_seeking_response">You are a risk-seeker! You enjoy the thrill of a gamble when 
         considering multiple options. When making your decision, don\’t let the fear of the unknown stop you!</string>
     <string name="pq_startButton">START QUIZ NOW!</string>
+
+    <!-- Strings related to choice drop down-->
+    <string name="drop_down_prompt">Apply a possibility</string>
+    <string-array name="possibility_array">
+        <item>Salary 1</item>
+        <item>Salary 2</item>
+        <item>Salary 3</item>
+    </string-array>
+    <string name="dummy_choice">dummy choice</string>
 </resources>
