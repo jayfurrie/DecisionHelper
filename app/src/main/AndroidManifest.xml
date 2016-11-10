@@ -17,16 +17,18 @@
         </activity>
         <activity
             android:name=".DecisionHelperActivity"
-            android:label="@string/decision_helper"></activity>
+            android:label="@string/decision_helper" />
         <activity
             android:name=".PersonalityQuizActivity"
-            android:label="@string/personality_quiz"></activity>
+            android:label="@string/personality_quiz" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/settings"></activity>
+            android:label="@string/settings" />
         <activity
             android:name=".HelpActivity"
-            android:label="@string/help"></activity>
+            android:label="@string/help" />
+        <activity
+            android:name=".SpinnerActivity"></activity>
     </application>
 
 </manifest>
