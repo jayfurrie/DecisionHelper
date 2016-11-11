@@ -8,6 +8,9 @@ public class DecisionHelperActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tab1);
+        setContentView(R.layout.dh_homepage);
+
+
     }
+
 }
