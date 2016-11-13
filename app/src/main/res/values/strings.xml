@@ -34,6 +34,15 @@
     <string name="view_result">view results</string>
     <string name="share..">share..</string>
     <string name="back">back</string>
+    <string name="add_attribute">Add/Edit Attributes</string>
+    <string name="add_new_attribute">+ add new</string>
+    <string name="At1">attribute 1</string>
+    <string name="At2">attribute 1</string>
+    <string name="new_possi">+ New Possibility</string>
+    <string name="range_0">0</string>
+    <string name="range_100">100</string>
+    <string name="Po1">Possibility 1</string>
+    <string name="Po2">Possibility 2</string>
     <!-- personality quiz strings -->
     <string name="PQ_Q1">I am willing to take a chance at failure for the sake of innovation.</string>
      <string name="PQ_Q2">I would take a risk if there were something in it for me.</string> 
