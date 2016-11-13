@@ -9,29 +9,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/welcome_header"
+        android:textColor="?attr/colorPrimary"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="40sp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         />
 
     <Button
+        android:id = "@+id/dh_welcome_logInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_marginTop="16dp"
+        android:textColor="#F8F8FF"
+        android:background="#FFD700"
+        android:text="@string/dh_loginText"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:onClick="loginbuttonOnClick"/>
 
     <Button
+        android:id = "@+id/dh_welcome_signUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
-        android:layout_marginTop="16dp"
+        android:textColor="#F8F8FF"
+        android:background="?attr/colorPrimary"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:onClick="signupButtonOnClick"
+        />
 
     <TextView
         android:layout_width="match_parent"

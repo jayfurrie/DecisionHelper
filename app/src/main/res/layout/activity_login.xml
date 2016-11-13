@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/dh_login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/dh_prompt_usernameMsg"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="150dp"
+        android:ems="20" />
+
+    <EditText
+        android:id="@+id/dh_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginLeft="100dp"
+        android:text = "@string/dh_prompt_passwordMsg"
+        android:ems="20"
+        />
+
+    <Button
+        android:id="@+id/dh_login_button"
+        android:text="@string/dh_loginText"
+        android:textSize = "30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight = "50dp"
+        android:textColor="#F8F8FF"
+        android:background="#FFD700"
+        android:layout_weight="0.05"
+        android:onClick="dh_login_button_OnClick"/>
+</LinearLayout>

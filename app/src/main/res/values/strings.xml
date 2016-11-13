@@ -35,6 +35,11 @@
     <string name="dh_share">share..</string>
     <string name="dh_back">back</string>
     <string name="dh_titlebar">Decision Helper</string>
+    <string name="dh_loginText">Log In</string>
+    <string name="dh_registration_successMsg">Registered Account Successfully!</string>
+    <string name="dh_registration_successMsgEmail">Your email has been added to our list.</string>
+    <string name="dh_prompt_usernameMsg">Enter User Account</string>
+    <string name="dh_prompt_passwordMsg">Enter PassWord</string>
 
 
     <string name="add_attribute">Add/Edit Attributes</string>

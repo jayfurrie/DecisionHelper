@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:text = "Enter your email here"
+        android:textColor="?attr/colorPrimary"
+        android:textSize = "20dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="200dp"
+
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/dh_signup_emailentry" />
+
+    <Button
+        android:text="Sign Up "
+        android:textColor="#F8F8FF"
+        android:textSize = "35dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft = "50dp"
+        android:layout_marginRight= "50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:id="@+id/dh_signup_button"
+        android:onClick="signupConfirmationButtonOnClick"/>
+
+</LinearLayout>

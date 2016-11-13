@@ -39,7 +39,12 @@
                 android:value="com.example.cs465.decisionhelper.MainActivity" />
         </activity>
         <activity android:name=".pq_questions" />
-        <activity android:name=".pq_results"></activity>
+        <activity android:name=".pq_results" />
+        <activity android:name=".login" />
+        <activity android:name=".signUp" />
+        <activity android:name=".signUpConfirmation" />
+        <activity android:name=".dh_rankattributes" />
+        <activity android:name=".welcome"></activity>
     </application>
 
 </manifest>
