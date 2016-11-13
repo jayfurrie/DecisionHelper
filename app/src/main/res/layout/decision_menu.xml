@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:text="@string/X"
+        android:text="@string/dh_X"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,42 +15,42 @@
         android:layout_weight="0.15" />
 
     <Button
-        android:text="@string/Add_a"
+        android:text="@string/dh_add_edit_attributes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button9"
         android:layout_weight="0.10" />
 
     <Button
-        android:text="@string/rank"
+        android:text="@string/dh_rank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button10"
         android:layout_weight="0.09" />
 
     <Button
-        android:text="@string/add_choice"
+        android:text="@string/dh_new_choice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button11"
         android:layout_weight="0.09" />
 
     <Button
-        android:text="@string/view_result"
+        android:text="@string/dh_view_results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button12"
         android:layout_weight="0.09" />
 
     <Button
-        android:text="@string/share.."
+        android:text="@string/dh_share"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button13"
         android:layout_weight="0.09" />
 
     <Button
-        android:text="@string/back"
+        android:text="@string/dh_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button8" />

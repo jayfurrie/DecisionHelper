@@ -13,7 +13,7 @@
         android:background="@color/colorPrimary" />
 
     <Button
-        android:text="@string/add_choice"
+        android:text="@string/dh_new_choice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp" />

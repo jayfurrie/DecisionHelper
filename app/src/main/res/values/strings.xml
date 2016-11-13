@@ -1,22 +1,42 @@
 <resources>
     <string name="app_name">DecisionHelper</string>
-    <string name="decision_helper_faq_button">Decision Helper FAQ</string>
-    <string name="personality_quiz_faq_button">Personality Quiz FAQ</string>
     <string name="welcome_header">Welcome to Decide with me!</string>
     <string name="welcome_detail_text">
         Some text could go here that says a little bit about how the app works and why they need to
         make an account, etc!</string>
     <string name="login">login</string>
     <string name="sign_up">sign up</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="manage_sharing">Manage Sharing</string>
-    <string name="change_email">Change Email</string>
-    <string name="change_password">Change Password</string>
     <string name="decision_helper">DH</string>
     <string name="personality_quiz">PQ</string>
     <string name="settings">S</string>
     <string name="help">H</string>
+
+    <!-- help strings-->
+    <string name="h_titlebar">Help</string>
+    <string name="h_decision_helper_faq_button">Decision Helper FAQ</string>
+    <string name="h_personality_quiz_faq_button">Personality Quiz FAQ</string>
+
     <!-- decision helper strings -->
+    <string name="dh_newdecision">New Decision</string>
+    <string name="dh_mydecisions">My Decisions:</string>
+    <string name="dh_A">Decision A</string>
+    <string name="dh_B">Decision B</string>
+    <string name="dh_C">Decision C</string>
+    <string name="dh_D">Decision D</string>
+    <string name="dh_E">Decision E</string>
+    <string name="dh_F">Decision F</string>
+    <string name="dh_X">Decision X</string>
+    <string name="dh_add_edit_attributes">Add/edit attributes</string>
+    <string name="dh_shared">Shared with me:</string>
+    <string name="dh_rank">rank attributes</string>
+    <string name="dh_add_edit_choices">add/edit choices</string>
+    <string name="dh_new_choice">+ new choice</string>
+    <string name="dh_view_results">view results</string>
+    <string name="dh_share">share..</string>
+    <string name="dh_back">back</string>
+    <string name="dh_titlebar">Decision Helper</string>
+
+
     <string name="dh_homepage">New Decision</string>
     <string name="my_deci">My Decisions:</string>
     <string name="A">Decision A</string>
@@ -43,29 +63,42 @@
     <string name="range_100">100</string>
     <string name="Po1">Possibility 1</string>
     <string name="Po2">Possibility 2</string>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/makepersonalityquizUI
     <!-- personality quiz strings -->
-    <string name="PQ_Q1">I am willing to take a chance at failure for the sake of innovation.</string>
-     <string name="PQ_Q2">I would take a risk if there were something in it for me.</string> 
-    <string name="PQ_Q3">Before making a decision, I fail to anticipate the factors that could influence the outcome.</string>
-    <string name="PQ_Q4">I don\’t typically check important projects carefully for mistakes before submitting them.</string>
-    <string name="PQ_Q5">I don\’t worry that something unexpected might ruin all my plans.</string> 
-    <string name="PQ_Q6">I realize that past actions were more dangerous than I thought at the time.</string>
-     <string name="PQ_Q7">I don\'t mind working on projects at work that could fail.</string> 
-    <string name="PQ_Q8">It bores me to know in advance what will happen at work.</string>
-     <string name="PQ_Q9">If I take a risk and fail, I can handle the consequences.</string> 
-    <string name="PQ_Q10">Chance has a lot to do with being successful.</string>
-    <string name="strongly_agree">Strongly Agree</string>
-    <string name="neutral">Neutral</string>
-     <string name="strongly_disagree">Strongly Disagree</string> 
-    <string name="risk_neutral_response">Your results indicate that you\’re neutral when it comes to
+    <string-array name="pq_questions_array">
+        <item>I am willing to take a chance at failure for the sake of innovation.</item>
+        <item>I would take a risk if there were something in it for me.</item>
+        <item>Before making a decision, I fail to anticipate the factors that could influence the outcome.</item>
+        <item>I don\’t typically check important projects carefully for mistakes before submitting them.</item>
+        <item>I don\’t worry that something unexpected might ruin all my plans</item>
+        <item>I realize that past actions were more dangerous than I thought at the time.</item>
+        <item>I don\'t mind working on projects at work that could fail.</item>
+        <item>It bores me to know in advance what will happen at work.</item>
+        <item>If I take a risk and fail, I can handle the consequences.</item>
+        <item>Chance has a lot to do with being successful.</item>
+    </string-array>
+    <string name="pq_strongly_agree">Strongly Agree</string>
+    <string name="pq_neutral">Neutral</string>
+     <string name="pq_strongly_disagree">Strongly Disagree</string> 
+    <string name="pq_risk_neutral_response">Your results indicate that you\’re neutral when it comes to
         risky decisions.  If you\’re unsure about something, maybe you should re-evaluate; but then again,
         if you feel like taking a risk,  go for it! </string>
-     <string name="risk_averse_response">Your behavior leans towards risk-averse, meaning you prefer a 
+     <string name="pq_risk_averse_response">Your behavior leans towards risk-averse, meaning you prefer a 
         sure outcome over a gamble. When making your decision, be sure to evaluate how risky each option 
         is and add risk as a factor! </string> 
-    <string name="risk_seeking_response">You are a risk-seeker! You enjoy the thrill of a gamble when 
+    <string name="pq_risk_seeking_response">You are a risk-seeker! You enjoy the thrill of a gamble when 
         considering multiple options. When making your decision, don\’t let the fear of the unknown stop you!</string>
     <string name="pq_startButton">START QUIZ NOW!</string>
+    <string name="pq_titlebar">Personality Quiz</string>
+    <string name="pq_question_numbers">"0/0"</string>
+    <string name="pq_question_text">Herpaderp durp? derpyderp?</string>
+    <string name="pq_previous_text">Previous</string>
+    <string name="pq_next_text">Next</string>
+    <string name="pq_start_text">Start</string>
 
     <!-- Strings related to choice drop down-->
     <string name="drop_down_prompt">Apply a possibility</string>
@@ -81,4 +114,12 @@
     <string name="tab2">tab2</string>
     <string name="tab3">tab3</string>
     <string name="tab4">tab4</string>
+
+    <!--Strings related to settings-->
+    <string name="s_titlebar">Settings</string>
+    <string name="s_editprofile">Edit Profile</string>
+    <string name="s_managesharing">Manage Sharing</string>
+    <string name="s_changeemail">Change Email</string>
+    <string name="s_changepassword">Change Password</string>
+
 </resources>

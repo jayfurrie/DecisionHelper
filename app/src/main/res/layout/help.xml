@@ -5,17 +5,21 @@
     android:layout_marginRight="16dp"
     android:layout_marginLeft="16dp">
 
+    <TextView
+        style="@style/TitleBarText"
+        android:text="@string/h_titlebar" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/decision_helper_faq_button"
+        android:text="@string/h_decision_helper_faq_button"
         android:textSize="20sp"
         android:layout_marginTop="64dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/personality_quiz_faq_button"
+        android:text="@string/h_personality_quiz_faq_button"
         android:textSize="20sp"
         android:layout_marginTop="64dp"/>
 
