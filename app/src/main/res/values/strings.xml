@@ -66,4 +66,10 @@
         <item>Salary 3</item>
     </string-array>
     <string name="dummy_choice">dummy choice</string>
+
+    <!--Strings related to tabs-->
+    <string name="tab1">tab1</string>
+    <string name="tab2">tab2</string>
+    <string name="tab3">tab3</string>
+    <string name="tab4">tab4</string>
 </resources>
