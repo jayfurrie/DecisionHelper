@@ -35,7 +35,7 @@
         android:layout_weight="0.06" />
 
     <Button
-        android:text="@string/back"
+        android:text="@string/dh_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button17"
