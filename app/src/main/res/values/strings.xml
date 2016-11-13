@@ -37,23 +37,6 @@
     <string name="dh_titlebar">Decision Helper</string>
 
 
-    <string name="dh_homepage">New Decision</string>
-    <string name="my_deci">My Decisions:</string>
-    <string name="A">Decision A</string>
-    <string name="B">Decision B</string>
-    <string name="Cc">Decision C</string>
-    <string name="D">Decision D</string>
-    <string name="E">Decision E</string>
-    <string name="F">Decision F</string>
-    <string name="X">Decision X</string>
-    <string name="Add_a">Add/edit attributes</string>
-    <string name="shared">Shared with me:</string>
-    <string name="rank">rank attributes</string>
-    <string name="add_edit_choice">add/edit choices</string>
-    <string name="add_choice">+ new choice</string>
-    <string name="view_result">view results</string>
-    <string name="share..">share..</string>
-    <string name="back">back</string>
     <string name="add_attribute">Add/Edit Attributes</string>
     <string name="add_new_attribute">+ add new</string>
     <string name="At1">attribute 1</string>
@@ -63,11 +46,7 @@
     <string name="range_100">100</string>
     <string name="Po1">Possibility 1</string>
     <string name="Po2">Possibility 2</string>
-<<<<<<< HEAD
-=======
 
-
->>>>>>> origin/makepersonalityquizUI
     <!-- personality quiz strings -->
     <string-array name="pq_questions_array">
         <item>I am willing to take a chance at failure for the sake of innovation.</item>
