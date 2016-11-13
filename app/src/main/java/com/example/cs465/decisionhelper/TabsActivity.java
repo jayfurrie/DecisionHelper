@@ -35,7 +35,7 @@ public class TabsActivity extends TabActivity {
         spec = tabHost.newTabSpec("pq"); // Create a new TabSpec using tab host
         spec.setIndicator("PQ"); // set the “PQ” as an indicator
         // Create an Intent to launch an Activity for the tab (to be reused)
-        intent = new Intent(this, PersonalityQuizActivity.class);
+        intent = new Intent(this, pq_start.class);
         spec.setContent(intent);
         tabHost.addTab(spec);
 

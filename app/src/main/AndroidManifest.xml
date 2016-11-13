@@ -11,15 +11,15 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DecisionHelperActivity"
             android:label="@string/decision_helper" />
         <activity
-            android:name=".PersonalityQuizActivity"
+            android:name=".pq_start"
             android:label="@string/personality_quiz" />
         <activity
             android:name=".SettingsActivity"
@@ -30,14 +30,16 @@
         <activity
             android:name=".SpinnerActivity"
             android:exported="true"
-            android:label="@string/add_choice"
-            android:parentActivityName="com.example.cs465.decisionhelper.MainActivity">
-        <!-- Parent activity meta-data to support 4.0 and lower -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.cs465.decisionhelper.MainActivity" />
-        </activity>
+            android:label="@string/dh_new_choice"
+            android:parentActivityName=".MainActivity">
 
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.cs465.decisionhelper.MainActivity" />
+        </activity>
+        <activity android:name=".pq_questions" />
+        <activity android:name=".pq_results"></activity>
     </application>
 
 </manifest>

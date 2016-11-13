@@ -4,64 +4,68 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <TextView
+        style="@style/TitleBarText"
+        android:text="@string/dh_titlebar" />
+
     <Button
-        android:text="@string/dh_homepage"
+        android:text="@string/dh_newdecision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:id="@+id/button" />
 
     <TextView
-        android:text="@string/my_deci"
+        android:text="@string/dh_mydecisions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:id="@+id/textView2" />
 
     <Button
-        android:text="@string/A"
+        android:text="@string/dh_A"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:id="@+id/button2" />
 
     <Button
-        android:text="@string/B"
+        android:text="@string/dh_B"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:id="@+id/button3" />
 
     <Button
-        android:text="@string/Cc"
+        android:text="@string/dh_C"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:id="@+id/button4" />
 
     <TextView
-        android:text="@string/shared"
+        android:text="@string/dh_shared"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:id="@+id/textView3" />
 
     <Button
-        android:text="@string/D"
+        android:text="@string/dh_D"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:id="@+id/button5" />
 
     <Button
-        android:text="@string/E"
+        android:text="@string/dh_E"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:id="@+id/button7" />
 
     <Button
-        android:text="@string/F"
+        android:text="@string/dh_F"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"

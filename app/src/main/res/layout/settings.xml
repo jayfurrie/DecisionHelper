@@ -5,28 +5,32 @@
     android:layout_marginRight="16dp"
     android:layout_marginLeft="16dp">
 
+    <TextView
+        style="@style/TitleBarText"
+        android:text="@string/s_titlebar" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/edit_profile"
+        android:text="@string/s_editprofile"
         android:layout_marginTop="16dp"
         android:textSize="20sp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/manage_sharing"
+        android:text="@string/s_managesharing"
         android:layout_marginTop="16dp"
         android:textSize="20sp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/change_email"
+        android:text="@string/s_changeemail"
         android:layout_marginTop="16dp"
         android:textSize="20sp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/change_password"
+        android:text="@string/s_changepassword"
         android:layout_marginTop="16dp"
         android:textSize="20sp"/>
 
