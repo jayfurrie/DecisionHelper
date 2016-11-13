@@ -63,24 +63,6 @@
     <string name="range_100">100</string>
     <string name="Po1">Possibility 1</string>
     <string name="Po2">Possibility 2</string>
-    <string name="dh_newdecision">New Decision</string>
-    <string name="dh_mydecisions">My Decisions:</string>
-    <string name="dh_A">Decision A</string>
-    <string name="dh_B">Decision B</string>
-    <string name="dh_C">Decision C</string>
-    <string name="dh_D">Decision D</string>
-    <string name="dh_E">Decision E</string>
-    <string name="dh_F">Decision F</string>
-    <string name="dh_X">Decision X</string>
-    <string name="dh_add_edit_attributes">Add/edit attributes</string>
-    <string name="dh_shared">Shared with me:</string>
-    <string name="dh_rank">rank attributes</string>
-    <string name="dh_add_edit_choices">add/edit choices</string>
-    <string name="dh_new_choice">+ new choice</string>
-    <string name="dh_view_results">view results</string>
-    <string name="dh_share">share..</string>
-    <string name="dh_back">back</string>
-    <string name="dh_titlebar">Decision Helper</string>
 
 
     <!-- personality quiz strings -->
