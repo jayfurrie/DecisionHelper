@@ -17,21 +17,21 @@
         android:text="@string/pq_titlebar" />
 
     <Button
-        android:text="@string/pq_startButton"
+        android:id="@+id/pq_hompage_btn_startquiz"
+        android:text="@string/pq_homepage_btn_startquiztext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:id="@+id/pq_startButton"
-        android:onClick="startQuiz"/>
+        android:onClick="pq_homepage_btn_startquizOnCLick"/>
 
     <ImageButton
+        android:id="@+id/pq_homepage_ibtn_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@android:drawable/presence_busy"
-        android:layout_above="@+id/pq_startButton"
-        android:layout_alignEnd="@id/pq_startButton"
-        android:id="@+id/imageButton"
-        android:contentDescription="@string/pq_start_text"/>
+        android:layout_above="@+id/pq_hompage_btn_startquiz"
+        android:layout_alignEnd="@id/pq_hompage_btn_startquiz"
+        android:contentDescription="help"/>
 
 
 </RelativeLayout>

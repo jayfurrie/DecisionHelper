@@ -5,23 +5,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class welcome extends AppCompatActivity {
+public class login_welcome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_login_welcome);
     }
 
-    public void loginbuttonOnClick(View view)
+    public void login_welcome_btn_loginOnClick(View view)
     {
-        Intent intent = new Intent(this, login.class);
+        Intent intent = new Intent(this, login_login.class);
         startActivity(intent);
     }
 
-    public void signupButtonOnClick(View view)
+    public void login_welcome_btn_signupOnClick(View view)
     {
-        Intent intent = new Intent(this, signUp.class);
+        Intent intent = new Intent(this, login_signup.class);
         startActivity(intent);
     }
 }

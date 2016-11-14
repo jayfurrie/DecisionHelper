@@ -6,9 +6,10 @@
     android:layout_marginLeft="16dp">
 
     <TextView
+        android:id="@+id/login_welcome_tv_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_header"
+        android:text="@string/login_welcome_tv_welcometext"
         android:textColor="?attr/colorPrimary"
         android:gravity="center"
         android:textStyle="bold"
@@ -17,30 +18,30 @@
         />
 
     <Button
-        android:id = "@+id/dh_welcome_logInButton"
+        android:id = "@+id/login_welcome_btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#F8F8FF"
         android:background="#FFD700"
-        android:text="@string/dh_loginText"
+        android:text="@string/login_welcome_btn_logintext"
         android:layout_marginTop="40dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:textSize="40sp"
-        android:onClick="loginbuttonOnClick"/>
+        android:onClick="login_welcome_btn_loginOnClick"/>
 
     <Button
-        android:id = "@+id/dh_welcome_signUpButton"
+        android:id = "@+id/login_welcome_btn_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up"
+        android:text="@string/login_welcome_btn_signuptext"
         android:textColor="#F8F8FF"
         android:background="?attr/colorPrimary"
         android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:textSize="40sp"
-        android:onClick="signupButtonOnClick"
+        android:onClick="login_welcome_btn_signupOnClick"
         />
 
     <TextView

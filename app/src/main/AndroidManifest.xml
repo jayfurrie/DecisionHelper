@@ -19,7 +19,7 @@
             android:name=".DecisionHelperActivity"
             android:label="@string/decision_helper" />
         <activity
-            android:name=".pq_start"
+            android:name=".pq_homepage"
             android:label="@string/personality_quiz" />
         <activity
             android:name=".SettingsActivity"
@@ -40,11 +40,11 @@
         </activity>
         <activity android:name=".pq_questions" />
         <activity android:name=".pq_results" />
-        <activity android:name=".login" />
-        <activity android:name=".signUp" />
-        <activity android:name=".signUpConfirmation" />
+        <activity android:name=".login_login" />
+        <activity android:name=".login_signup" />
+        <activity android:name=".login_signupconfirmation" />
         <activity android:name=".dh_rankattributes" />
-        <activity android:name=".welcome"></activity>
+        <activity android:name=".login_welcome"></activity>
     </application>
 
 </manifest>
