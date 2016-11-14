@@ -13,19 +13,20 @@
     tools:context="com.example.cs465.personality_quiz">
     -->
 
+    <!--DELETE THIS ACTIVITY REPLACED BY activity_pq_homepage -->
     <Button
-        android:text="@string/pq_startButton"
+        android:text="@string/pq_homepage_btn_startquiztext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:id="@+id/pq_startButton" />
+        android:id="@+id/pq_hompage_btn_startquiz" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@android:drawable/presence_busy"
-        android:layout_above="@+id/pq_startButton"
-        android:layout_alignRight="@id/pq_startButton"
+        android:layout_above="@+id/pq_hompage_btn_startquiz"
+        android:layout_alignRight="@id/pq_hompage_btn_startquiz"
         android:id="@+id/imageButton" />
 
 

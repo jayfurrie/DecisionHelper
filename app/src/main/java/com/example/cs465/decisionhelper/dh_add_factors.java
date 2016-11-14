@@ -19,7 +19,7 @@ public class dh_add_factors extends AppCompatActivity {
 
         final Context context = this;
 
-        button = (Button) findViewById(R.id.dh_add_factors_btn_dummy);
+        button = (Button) findViewById(R.id.dh_add_factors_btn_newfactor);
 
         button.setOnClickListener(new View.OnClickListener() {
 

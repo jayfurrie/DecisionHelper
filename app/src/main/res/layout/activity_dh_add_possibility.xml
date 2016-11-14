@@ -12,7 +12,7 @@
 
     <TextView
         android:id="@+id/dh_add_possibility_tv_titlebar"
-        android:text="@string/dh_add_possibility_titlebar"
+        android:text="@string/dh_add_possibility_tv_titlebartext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -20,8 +20,8 @@
         android:layout_weight="0.06" />
 
     <Button
-        android:id="@+id/dh_add_possibility_btn_newpostxt"
-        android:text="@string/dh_add_possibility_new"
+        android:id="@+id/dh_add_possibility_btn_newpos"
+        android:text="@string/dh_add_possibility_btn_newpostext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.06" />

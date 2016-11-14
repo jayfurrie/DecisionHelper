@@ -5,28 +5,28 @@
     android:weightSum="1">
 
     <EditText
-        android:id="@+id/dh_login_username"
+        android:id="@+id/login_login_et_username"
+        android:text="@string/login_login_et_usernametext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/dh_prompt_usernameMsg"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="150dp"
         android:ems="20" />
 
     <EditText
-        android:id="@+id/dh_login_password"
+        android:id="@+id/login_login_et_password"
+        android:text = "@string/login_login_et_passwordtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:layout_marginLeft="100dp"
-        android:text = "@string/dh_prompt_passwordMsg"
         android:ems="20"
         />
 
     <Button
-        android:id="@+id/dh_login_button"
-        android:text="@string/dh_loginText"
+        android:id="@+id/login_login_btn_login"
+        android:text="@string/login_login_btn_logintext"
         android:textSize = "30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,5 +35,5 @@
         android:textColor="#F8F8FF"
         android:background="#FFD700"
         android:layout_weight="0.05"
-        android:onClick="dh_login_button_OnClick"/>
+        android:onClick="login_login_btn_loginOnClick"/>
 </LinearLayout>

@@ -4,7 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="@string/dh_registration_successMsg"
+        android:id="@+id/login_signupconfirmation_tv_result1"
+        android:text="@string/login_signupconfirmation_tv_result_successtext1"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="180dp"
         android:textSize ="20dp"
@@ -14,7 +15,8 @@
         />
 
     <TextView
-        android:text="@string/dh_registration_successMsgEmail"
+        android:id="@+id/login_signupconfirmation_tv_result2"
+        android:text="@string/login_signupconfirmation_tv_result_successtext2"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="30dp"
         android:textColor = "?attr/colorPrimary"
@@ -24,7 +26,8 @@
         />
 
     <Button
-        android:text="Go back to app"
+        android:id="@+id/login_signupconfirmation_btn_back"
+        android:text="@string/login_signupconfirmation_btn_backtext"
         android:textColor="#F8F8FF"
         android:textSize = "25dp"
         android:layout_width="match_parent"
@@ -33,6 +36,5 @@
         android:layout_marginRight= "60dp"
         android:layout_marginTop="20dp"
         android:background="?attr/colorPrimary"
-        android:id="@+id/dh_button_registration_back"
-        android:onClick="dh_button_registration_backOnClick"/>
+        android:onClick="login_signupconfirmation_btn_backOnClick"/>
 </LinearLayout>

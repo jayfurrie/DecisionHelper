@@ -6,23 +6,24 @@
     android:layout_marginLeft="16dp">
 
     <TextView
-        android:id="@+id/h_main_tv_titlebar"
+        android:id="@+id/h_homepage_tv_titlebar"
+        android:text="@string/h_homepage_titlebartext"
         style="@style/TitleBarText"
-        android:text="@string/h_main_titlebar" />
+         />
 
     <Button
-        android:id="@+id/h_main_btn_DHfaq"
+        android:id="@+id/h_homepage_btn_DHfaq"
+        android:text="@string/h_homepage_btn_DHfaqtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/h_main_DH_faq"
         android:textSize="20sp"
         android:layout_marginTop="64dp"/>
 
     <Button
-        android:id="@+id/h_main_btn_PQfaq"
+        android:id="@+id/h_homepage_btn_PQfaq"
+        android:text="@string/h_homepage_btn_PQfaqtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/h_main_PQ_faq"
         android:textSize="20sp"
         android:layout_marginTop="64dp"/>
 

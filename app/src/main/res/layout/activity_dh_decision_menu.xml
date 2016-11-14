@@ -12,7 +12,7 @@
         android:background="@color/colorPrimary" />
 
     <TextView
-        android:text="@string/dh_dummy_decision"
+        android:text="decision menu"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,36 +20,36 @@
         android:layout_weight="0.15" />
 
     <Button
-        android:id="@+id/dh_decision_menu_btn_factors"
-        android:text="@string/dh_decision_menu_factors"
+        android:id="@+id/dh_decision_menu_btn_addrmfactors"
+        android:text="@string/dh_decision_menu_btn_addrmfactorstext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.10" />
 
     <Button
         android:id="@+id/dh_decision_menu_btn_rank"
-        android:text="@string/dh_decision_menu_rank"
+        android:text="@string/dh_decision_menu_btn_ranktext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09" />
 
     <Button
-        android:id="@+id/dh_decision_menu_btn_choices"
-        android:text="@string/dh_decision_menu_choice"
+        android:id="@+id/dh_decision_menu_btn_addrmchoices"
+        android:text="@string/dh_decision_menu_btn_addrmchoicestext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09" />
 
     <Button
         android:id="@+id/dh_decision_menu_btn_result"
-        android:text="@string/dh_decision_menu_result"
+        android:text="@string/dh_decision_menu_btn_resulttext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09" />
 
     <Button
         android:id="@+id/dh_decision_menu_btn_share"
-        android:text="@string/dh_decision_menu_share"
+        android:text="@string/dh_decision_menu_btn_sharetext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09" />

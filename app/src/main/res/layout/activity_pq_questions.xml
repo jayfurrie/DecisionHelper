@@ -16,18 +16,18 @@
         android:text="@string/pq_titlebar" />
 
     <TextView
-        android:id="@+id/pq_question_number_display"
+        android:id="@+id/pq_questions_tv_numberdisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/pq_question_numbers"/>
+        android:text="@string/pq_questions_tv_numberdisplaytext"/>
 
     <TextView
-        android:id="@+id/pq_question"
+        android:id="@+id/pq_questions_tv_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/pq_question_text"
+        android:text="@string/pq_questions_tv_questiontext"
         android:textSize="20sp"
         android:textStyle="italic"/>
 
@@ -40,20 +40,20 @@
         android:layout_gravity="bottom">
 
         <ImageButton
-            android:id="@+id/pq_previousButton"
+            android:id="@+id/pq_questions_ibtn_previous"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:onClick="previousButtonClicked"
+            android:onClick="pq_questions_ibtn_previousOnClick"
             android:src="@drawable/leftarrow"
             android:contentDescription="@string/pq_previous_text"/>
 
         <ImageButton
-            android:id="@+id/pq_nextButton"
+            android:id="@+id/pq_questions_ibtn_next"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:onClick="nextButtonClicked"
+            android:onClick="pq_questions_ibtn_nextOnClick"
             android:src="@drawable/rightarrow"
             android:contentDescription="@string/pq_next_text"/>
 

@@ -16,14 +16,14 @@
 
     <Button
         android:id="@+id/dh_homepage_btn_newdecision"
-        android:text="@string/dh_homepage_newdecision"
+        android:text="@string/dh_homepage_btn_newdecisiontext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/dh_homepage_tv_mydecisions"
-        android:text="@string/dh_homepage_mydecisions"
+        android:text="@string/dh_homepage_tv_mydecisionstext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp" />
@@ -48,7 +48,7 @@
 
     <TextView
         android:id="@+id/dh_homepage_tv_sharedwithme"
-        android:text="@string/dh_homepage_shared"
+        android:text="@string/dh_homepage_tv_sharedwithme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp" />

@@ -17,7 +17,7 @@
         android:orientation="horizontal">
 
     <TextView
-        android:text="@string/dh_dummy_choice"
+        android:text="@string/dh_factors_dropdown_btn_dummychoice1text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
