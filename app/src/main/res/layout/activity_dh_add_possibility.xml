@@ -4,39 +4,39 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dh_add_possibility_ab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary" />
+
     <TextView
-        android:text="@string/add_attribute"
+        android:id="@+id/dh_add_possibility_tv_titlebar"
+        android:text="@string/dh_add_possibility_titlebar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:id="@+id/textView5"
         android:textSize="18sp"
         android:layout_weight="0.06" />
 
     <Button
-        android:text="@string/new_possi"
+        android:id="@+id/dh_add_possibility_btn_newpostxt"
+        android:text="@string/dh_add_possibility_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button18"
         android:layout_weight="0.06" />
 
     <Button
-        android:text="@string/Po1"
+        android:text="@string/dh_dummy_possibility"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button19"
         android:layout_weight="0.06" />
 
     <Button
-        android:text="@string/Po2"
+        android:text="@string/dh_dummy_possibility"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button20"
         android:layout_weight="0.06" />
 
-    <Button
-        android:text="@string/dh_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button21" />
+
 </LinearLayout>

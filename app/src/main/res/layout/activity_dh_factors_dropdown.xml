@@ -6,23 +6,24 @@
     <!-- Add a toolbar and a textview overlay to create the
     custom title -->
     <android.support.v7.widget.Toolbar
-        android:id="@id/main_toolbar"
+        android:id="@+id/dh_factors_dropdown_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorPrimary" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
     <TextView
-        android:text="@string/dummy_choice"
+        android:text="@string/dh_dummy_choice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:id="@+id/textView2"
         android:layout_weight="1"/>
     <Spinner
-        android:id="@+id/possibility_spinner"
+        android:id="@+id/dh_factors_dropdown_spn_possibility"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
