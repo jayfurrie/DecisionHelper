@@ -4,20 +4,20 @@
     android:layout_height="match_parent">
 
     <EditText
+        android:id="@+id/login_signup_btn_login"
         android:layout_width="match_parent"
-        android:text = "Enter your email here"
+        android:text = "@string/login_signup_btn_logintext"
         android:textColor="?attr/colorPrimary"
-        android:textSize = "20dp"
+        android:textSize ="20dp"
         android:layout_marginLeft="95dp"
         android:layout_marginTop="200dp"
-
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/dh_signup_emailentry" />
+        android:ems="10" />
 
     <Button
-        android:text="Sign Up "
+        android:id="@+id/login_signup_btn_signup"
+        android:text="@string/login_signup_btn_signuptext"
         android:textColor="#F8F8FF"
         android:textSize = "35dp"
         android:layout_marginTop="40dp"
@@ -26,7 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:id="@+id/dh_signup_button"
-        android:onClick="signupConfirmationButtonOnClick"/>
+        android:onClick="login_signup_btn_signupOnClick"/>
 
 </LinearLayout>

@@ -12,7 +12,7 @@
 
     <TextView
         android:id="@+id/dh_add_factors_tv_titlebar"
-        android:text="@string/dh_add_factors_titlebar"
+        android:text="@string/dh_add_factors_tv_titlebartext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -20,20 +20,21 @@
         android:layout_weight="0.06" />
 
     <Button
-        android:id="@+id/dh_add_factors_btn_newfactortxt"
-        android:text="@string/dh_add_factors_new"
+        android:id="@+id/dh_add_factors_btn_newfactor"
+        android:text="@string/dh_add_factors__btn_newfactortext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.06" />
 
     <Button
-        android:id="@+id/dh_add_factors_btn_dummy"
+        android:id="@+id/dh_add_factors_btn_dummy1"
         android:text="@string/dh_dummy_factor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.06" />
 
     <Button
+        android:id="@+id/dh_add_factors_btn_dummy2"
         android:text="@string/dh_dummy_factor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
