@@ -5,52 +5,59 @@
         Some text could go here that says a little bit about how the app works and why they need to
         make an account, etc!</string>
     <string name="login">login</string>
+    <string name="help">help</string>
     <string name="sign_up">sign up</string>
     <string name="decision_helper">DH</string>
     <string name="personality_quiz">PQ</string>
     <string name="settings">S</string>
-    <string name="help">H</string>
 
     <!-- help strings-->
-    <string name="h_titlebar">Help</string>
-    <string name="h_decision_helper_faq_button">Decision Helper FAQ</string>
-    <string name="h_personality_quiz_faq_button">Personality Quiz FAQ</string>
+    <string name="h_main_titlebar">Help</string>
+    <string name="h_main_DH_faq">Decision Helper FAQ</string>
+    <string name="h_main_PQ_faq">Personality Quiz FAQ</string>
 
     <!-- decision helper strings -->
-    <string name="dh_newdecision">New Decision</string>
-    <string name="dh_mydecisions">My Decisions:</string>
-    <string name="dh_A">Decision A</string>
-    <string name="dh_B">Decision B</string>
-    <string name="dh_C">Decision C</string>
-    <string name="dh_D">Decision D</string>
-    <string name="dh_E">Decision E</string>
-    <string name="dh_F">Decision F</string>
-    <string name="dh_X">Decision X</string>
-    <string name="dh_add_edit_attributes">Add/edit attributes</string>
-    <string name="dh_shared">Shared with me:</string>
-    <string name="dh_rank">rank attributes</string>
-    <string name="dh_add_edit_choices">add/edit choices</string>
-    <string name="dh_new_choice">+ new choice</string>
-    <string name="dh_view_results">view results</string>
-    <string name="dh_share">share..</string>
-    <string name="dh_back">back</string>
-    <string name="dh_titlebar">Decision Helper</string>
+    <string name="dh_add_choices_new">+ new choice</string>
+    <string name="dh_add_choices_titlebar">My Choices</string>
+    <string name="dh_add_factors_titlebar">Add/edit Factors</string>
+    <string name="dh_add_factors_new">+ add new</string>
+    <string name="dh_add_possibility_titlebar">add/edit possibilities</string>
+    <string name="dh_add_possibility_new">+ New Possibility</string>
+    <string name="dh_decision_menu_factors">Add/edit Factors</string>
+    <string name="dh_decision_menu_rank">Rank Factors</string>
+    <string name="dh_decision_menu_choice">Add/edit Choices</string>
+    <string name="dh_decision_menu_result">View Result</string>
+    <string name="dh_decision_menu_share">Share</string>
+    <string name="dh_factors_dropdown_label">apply factors drop down</string>
+    <string name="dh_homepage_newdecision">New Decision</string>
+    <string name="dh_homepage_mydecisions">My Decisions:</string>
+    <string name="dh_homepage_shared">Shared with me:</string>
+    <string name="dh_homepage_titlebar">Decision Helper</string>
+    <string name="dh_rank_factors_rank">Rank Factors</string>
+    <string name="dh_weigh_possibility_range_0">0</string>
+    <string name="dh_weigh_possibility_range_100">100</string>
+
     <string name="dh_loginText">Log In</string>
     <string name="dh_registration_successMsg">Registered Account Successfully!</string>
     <string name="dh_registration_successMsgEmail">Your email has been added to our list.</string>
     <string name="dh_prompt_usernameMsg">Enter User Account</string>
     <string name="dh_prompt_passwordMsg">Enter PassWord</string>
 
+    <!-- dummy string placeholders -->
+    <string name="dh_dummy_decision">Dummy Decision</string>
+    <string name="dh_dummy_factor">Dummy Factor</string>
+    <string name="dh_dummy_possibility">Dummy Possibility</string>
 
-    <string name="add_attribute">Add/Edit Attributes</string>
-    <string name="add_new_attribute">+ add new</string>
-    <string name="At1">attribute 1</string>
-    <string name="At2">attribute 1</string>
-    <string name="new_possi">+ New Possibility</string>
-    <string name="range_0">0</string>
-    <string name="range_100">100</string>
-    <string name="Po1">Possibility 1</string>
-    <string name="Po2">Possibility 2</string>
+    <!-- Strings related to choice drop down (dummy) -->
+    <string name="drop_down_prompt">Apply a possibility</string>
+    <string-array name="possibility_array">
+        <item>Dummy 1</item>
+        <item>Dummy 2</item>
+        <item>Dummy 3</item>
+    </string-array>
+    <string name="dh_dummy_choice">Dummy Choice</string>
+
+
 
     <!-- personality quiz strings -->
     <string-array name="pq_questions_array">
@@ -84,26 +91,13 @@
     <string name="pq_next_text">Next</string>
     <string name="pq_start_text">Start</string>
 
-    <!-- Strings related to choice drop down-->
-    <string name="drop_down_prompt">Apply a possibility</string>
-    <string-array name="possibility_array">
-        <item>Salary 1</item>
-        <item>Salary 2</item>
-        <item>Salary 3</item>
-    </string-array>
-    <string name="dummy_choice">dummy choice</string>
 
-    <!--Strings related to tabs-->
-    <string name="tab1">tab1</string>
-    <string name="tab2">tab2</string>
-    <string name="tab3">tab3</string>
-    <string name="tab4">tab4</string>
 
     <!--Strings related to settings-->
-    <string name="s_titlebar">Settings</string>
-    <string name="s_editprofile">Edit Profile</string>
-    <string name="s_managesharing">Manage Sharing</string>
-    <string name="s_changeemail">Change Email</string>
-    <string name="s_changepassword">Change Password</string>
+    <string name="s_main_titlebar">Settings</string>
+    <string name="s_main_editprofile">Edit Profile</string>
+    <string name="s_main_managesharing">Manage Sharing</string>
+    <string name="s_main_changeemail">Change Email</string>
+    <string name="s_main_changepassword">Change Password</string>
 
 </resources>

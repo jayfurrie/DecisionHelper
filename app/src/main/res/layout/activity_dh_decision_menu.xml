@@ -5,54 +5,54 @@
     android:weightSum="1"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dh_homepage_ab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary" />
+
     <TextView
-        android:text="@string/dh_X"
+        android:text="@string/dh_dummy_decision"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
         android:textSize="18sp"
         android:layout_weight="0.15" />
 
     <Button
-        android:text="@string/dh_add_edit_attributes"
+        android:id="@+id/dh_decision_menu_btn_factors"
+        android:text="@string/dh_decision_menu_factors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button9"
         android:layout_weight="0.10" />
 
     <Button
-        android:text="@string/dh_rank"
+        android:id="@+id/dh_decision_menu_btn_rank"
+        android:text="@string/dh_decision_menu_rank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button10"
         android:layout_weight="0.09" />
 
     <Button
-        android:text="@string/dh_new_choice"
+        android:id="@+id/dh_decision_menu_btn_choices"
+        android:text="@string/dh_decision_menu_choice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button11"
         android:layout_weight="0.09" />
 
     <Button
-        android:text="@string/dh_view_results"
+        android:id="@+id/dh_decision_menu_btn_result"
+        android:text="@string/dh_decision_menu_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button12"
         android:layout_weight="0.09" />
 
     <Button
-        android:text="@string/dh_share"
+        android:id="@+id/dh_decision_menu_btn_share"
+        android:text="@string/dh_decision_menu_share"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button13"
         android:layout_weight="0.09" />
 
-    <Button
-        android:text="@string/dh_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button8" />
 
 </LinearLayout>

@@ -2,7 +2,6 @@ package com.example.cs465.decisionhelper;
 
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -12,14 +11,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class SpinnerActivity extends DecisionHelperActivity implements AdapterView.OnItemSelectedListener {
+public class dh_factors_dropdown extends dh_homepage implements AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dh_factors_dropdown);
+        setContentView(R.layout.activity_dh_factors_dropdown);
 
-        Spinner spinner = (Spinner) findViewById(R.id.possibility_spinner);
+        Spinner spinner = (Spinner) findViewById(R.id.dh_factors_dropdown_spn_possibility);
         // Spinner click listener
         spinner.setOnItemSelectedListener(this);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -30,16 +29,11 @@ public class SpinnerActivity extends DecisionHelperActivity implements AdapterVi
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.dh_factors_dropdown_ab);
         setSupportActionBar(toolbar);
-
-
         // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
 
-        // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);
     }
 
     @Override
