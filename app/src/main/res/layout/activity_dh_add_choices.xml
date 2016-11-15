@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Add a toolbar and a textview overlay to create the
+    custom title -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dh__addchoices_ab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/dh_addchoices_btn_newchoice"
+        android:text="@string/dh_addchoices_btn_newchoicetext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/dh_addchoices_btn_dummychoice1"
+        android:text="@string/dh_addchoices_btn_dummychoice1text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/dh_addchoices_btn_dummychoice2"
+        android:text="@string/dh_addchoices_btn_dummychoice1text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp" />
+
+</LinearLayout>

@@ -4,71 +4,71 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dh_homepage_ab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary" />
+
     <TextView
         style="@style/TitleBarText"
-        android:text="@string/dh_titlebar" />
+        android:text="@string/dh_homepage_titlebar" />
 
     <Button
-        android:text="@string/dh_newdecision"
+        android:id="@+id/dh_homepage_btn_newdecision"
+        android:text="@string/dh_homepage_btn_newdecisiontext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/button" />
+        android:textSize="20sp" />
 
     <TextView
-        android:text="@string/dh_mydecisions"
+        android:id="@+id/dh_homepage_tv_mydecisions"
+        android:text="@string/dh_homepage_tv_mydecisionstext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/textView2" />
+        android:textSize="20sp" />
 
     <Button
-        android:text="@string/dh_A"
+        android:text="@string/dh_dummy_decision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:id="@+id/button2" />
+        android:textSize="16sp"/>
 
     <Button
-        android:text="@string/dh_B"
+        android:text="@string/dh_dummy_decision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:id="@+id/button3" />
+        android:textSize="16sp"/>
 
     <Button
-        android:text="@string/dh_C"
+        android:text="@string/dh_dummy_decision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:id="@+id/button4" />
+        android:textSize="16sp"/>
 
     <TextView
-        android:text="@string/dh_shared"
+        android:id="@+id/dh_homepage_tv_sharedwithme"
+        android:text="@string/dh_homepage_tv_sharedwithme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/textView3" />
+        android:textSize="20sp" />
 
     <Button
-        android:text="@string/dh_D"
+        android:text="@string/dh_dummy_decision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:id="@+id/button5" />
+        android:textSize="16sp"/>
 
     <Button
-        android:text="@string/dh_E"
+        android:text="@string/dh_dummy_decision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:id="@+id/button7" />
+        android:textSize="16sp" />
 
     <Button
-        android:text="@string/dh_F"
+        android:text="@string/dh_dummy_decision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:id="@+id/button6" />
+        android:textSize="16sp" />
 
 </LinearLayout>

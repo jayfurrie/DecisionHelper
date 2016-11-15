@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- Add a toolbar and a textview overlay to create the
     custom title -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/main_toolbar"
+        android:id="@+id/dh_factors_dropdown_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorPrimary" />
 
-    <Button
-        android:text="@string/dh_new_choice"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp" />
+        android:orientation="horizontal">
 
-    <Button
-        android:text="@string/dummy_choice"
-        android:layout_width="match_parent"
+    <TextView
+        android:text="@string/dh_factors_dropdown_btn_dummychoice1text"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp" />
-
-    <Button
-        android:text="@string/dummy_choice"
-        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:layout_weight="1"/>
+    <Spinner
+        android:id="@+id/dh_factors_dropdown_spn_possibility"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp" />
-
+        android:layout_weight="1"/>
+    </LinearLayout>
 </LinearLayout>

@@ -8,18 +8,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".login_welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        
+        <!--<activity
             android:name=".DecisionHelperActivity"
             android:label="@string/decision_helper" />
         <activity
-            android:name=".pq_start"
+            android:name=".pq_homepage"
             android:label="@string/personality_quiz" />
         <activity
             android:name=".SettingsActivity"
@@ -31,20 +32,30 @@
             android:name=".SpinnerActivity"
             android:exported="true"
             android:label="@string/dh_new_choice"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity">-->
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cs465.decisionhelper.MainActivity" />
-        </activity>
+                android:value="com.example.cs465.decisionhelper.login_welcome" />
+
+        <activity android:name=".dh_add_choices" />
+        <activity android:name=".dh_add_factors" />
+        <activity android:name=".dh_add_possibility" />
+        <activity android:name=".dh_decision_menu" />
+        <activity android:name=".dh_factors_dropdown" />
+        <activity android:name=".dh_homepage" />
+        <activity android:name=".dh_rank_factors" />
+        <activity android:name=".dh_weigh_possibility" />
+        <activity android:name=".h_homepage" />
+        <activity android:name=".login_login" />
+        <activity android:name=".login_signup" />
+        <activity android:name=".login_signupconfirmation" />
+        <!-- <activity android:name=".pq_homepage" /> -->
         <activity android:name=".pq_questions" />
         <activity android:name=".pq_results" />
-        <activity android:name=".login" />
-        <activity android:name=".signUp" />
-        <activity android:name=".signUpConfirmation" />
-        <activity android:name=".dh_rankattributes" />
-        <activity android:name=".welcome"></activity>
+        <activity android:name=".s_homepage" />
+
     </application>
 
 </manifest>

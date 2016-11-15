@@ -24,13 +24,13 @@ public class pq_questions extends AppCompatActivity {
 
         res = getResources();
         question_array = res.getStringArray(R.array.pq_questions_array);
-        questionText = (TextView)findViewById(R.id.pq_question);
-        questionNumText = (TextView)findViewById(R.id.pq_question_number_display);
+        questionText = (TextView)findViewById(R.id.pq_questions_tv_question);
+        questionNumText = (TextView)findViewById(R.id.pq_questions_tv_numberdisplay);
         questionText.setText(question_array[currentQuestionNum-1]);
         questionNumText.setText(getQuestionNumberDisplay());
     }
     
-    public void previousButtonClicked(View view)
+    public void pq_questions_ibtn_previousOnClick(View view)
     {
         if (currentQuestionNum == 1)
         {
@@ -41,7 +41,7 @@ public class pq_questions extends AppCompatActivity {
         questionNumText.setText(getQuestionNumberDisplay());
     }
     
-    public void nextButtonClicked(View view)
+    public void pq_questions_ibtn_nextOnClick(View view)
     {
         if (currentQuestionNum == 10)
         {

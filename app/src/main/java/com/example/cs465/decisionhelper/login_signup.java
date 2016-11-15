@@ -5,18 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class login extends AppCompatActivity {
+public class login_signup extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_signup);
     }
 
-    public void dh_login_button_OnClick(View view)
+    public void login_signup_btn_signupOnClick(View view)
     {
-        Intent intent = new Intent(this, DecisionHelperActivity.class);
+        Intent intent = new Intent(this, login_signupconfirmation.class);
         startActivity(intent);
     }
-
 }

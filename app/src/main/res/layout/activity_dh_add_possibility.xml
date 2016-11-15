@@ -4,40 +4,39 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dh_add_possibility_ab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary" />
+
     <TextView
-        android:text="@string/add_attribute"
+        android:id="@+id/dh_add_possibility_tv_titlebar"
+        android:text="@string/dh_add_possibility_tv_titlebartext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
         android:gravity="center"
         android:textSize="18sp"
         android:layout_weight="0.06" />
 
     <Button
-        android:text="@string/add_new_attribute"
+        android:id="@+id/dh_add_possibility_btn_newpos"
+        android:text="@string/dh_add_possibility_btn_newpostext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button14"
         android:layout_weight="0.06" />
 
     <Button
-        android:text="@string/At1"
+        android:text="@string/dh_dummy_possibility"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button15"
         android:layout_weight="0.06" />
 
     <Button
-        android:text="@string/At2"
+        android:text="@string/dh_dummy_possibility"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button16"
         android:layout_weight="0.06" />
 
-    <Button
-        android:text="@string/dh_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button17"
-        android:layout_weight="0.01" />
+
 </LinearLayout>

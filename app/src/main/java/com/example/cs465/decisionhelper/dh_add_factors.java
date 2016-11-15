@@ -7,28 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import static com.example.cs465.decisionhelper.R.id.button;
-
-public class Attribute extends AppCompatActivity{
+public class dh_add_factors extends AppCompatActivity {
     Button button;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dh_add_attributes);
+        setContentView(R.layout.activity_dh_add_factors);
 
     }
     public void addListenerOnButton() {
 
         final Context context = this;
 
-        button = (Button) findViewById(R.id.button15);
+        button = (Button) findViewById(R.id.dh_add_factors_btn_newfactor);
 
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
-                Intent intent = new Intent(context, PossibilityActivity.class);
+                Intent intent = new Intent(context, dh_add_possibility.class);
                 startActivity(intent);
 
             }

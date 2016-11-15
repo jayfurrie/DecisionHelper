@@ -1,56 +1,70 @@
 <resources>
     <string name="app_name">DecisionHelper</string>
-    <string name="welcome_header">Welcome to Decide with me!</string>
+    <string name="login_welcome_tv_welcometext">Welcome to Decide with me!</string>
     <string name="welcome_detail_text">
         Some text could go here that says a little bit about how the app works and why they need to
         make an account, etc!</string>
     <string name="login">login</string>
-    <string name="sign_up">sign up</string>
+    <string name="help">help</string>
+    <string name="login_welcome_btn_signuptext">sign up</string>
     <string name="decision_helper">DH</string>
     <string name="personality_quiz">PQ</string>
     <string name="settings">S</string>
-    <string name="help">H</string>
 
     <!-- help strings-->
-    <string name="h_titlebar">Help</string>
-    <string name="h_decision_helper_faq_button">Decision Helper FAQ</string>
-    <string name="h_personality_quiz_faq_button">Personality Quiz FAQ</string>
+    <string name="h_homepage_titlebartext">Help</string>
+    <string name="h_homepage_btn_DHfaqtext">Decision Helper FAQ</string>
+    <string name="h_homepage_btn_PQfaqtext">Personality Quiz FAQ</string>
 
     <!-- decision helper strings -->
-    <string name="dh_newdecision">New Decision</string>
-    <string name="dh_mydecisions">My Decisions:</string>
-    <string name="dh_A">Decision A</string>
-    <string name="dh_B">Decision B</string>
-    <string name="dh_C">Decision C</string>
-    <string name="dh_D">Decision D</string>
-    <string name="dh_E">Decision E</string>
-    <string name="dh_F">Decision F</string>
-    <string name="dh_X">Decision X</string>
-    <string name="dh_add_edit_attributes">Add/edit attributes</string>
-    <string name="dh_shared">Shared with me:</string>
-    <string name="dh_rank">rank attributes</string>
-    <string name="dh_add_edit_choices">add/edit choices</string>
-    <string name="dh_new_choice">+ new choice</string>
-    <string name="dh_view_results">view results</string>
-    <string name="dh_share">share..</string>
-    <string name="dh_back">back</string>
-    <string name="dh_titlebar">Decision Helper</string>
-    <string name="dh_loginText">Log In</string>
-    <string name="dh_registration_successMsg">Registered Account Successfully!</string>
-    <string name="dh_registration_successMsgEmail">Your email has been added to our list.</string>
-    <string name="dh_prompt_usernameMsg">Enter User Account</string>
-    <string name="dh_prompt_passwordMsg">Enter PassWord</string>
+    <string name="dh_addchoices_btn_newchoicetext">+ new choice</string>
+    <string name="dh_add_choices_titlebar">My Choices</string>
+    <string name="dh_add_factors_tv_titlebartext">Add/edit Factors</string>
+    <string name="dh_add_factors__btn_newfactortext">+ add new</string>
+    <string name="dh_add_possibility_tv_titlebartext">add/edit possibilities</string>
+    <string name="dh_add_possibility_btn_newpostext">+ New Possibility</string>
+    <string name="dh_decision_menu_btn_addrmfactorstext">Add/edit Factors</string>
+    <string name="dh_decision_menu_btn_ranktext">Rank Factors</string>
+    <string name="dh_decision_menu_btn_addrmchoicestext">Add/edit Choices</string>
+    <string name="dh_decision_menu_btn_resulttext">View Result</string>
+    <string name="dh_decision_menu_btn_sharetext">Share</string>
+    <string name="dh_factors_dropdown_label">apply factors drop down</string>
+    <string name="dh_homepage_btn_newdecisiontext">New Decision</string>
+    <string name="dh_homepage_tv_mydecisionstext">My Decisions:</string>
+    <string name="dh_homepage_tv_sharedwithme">Shared with me:</string>
+    <string name="dh_homepage_titlebar">Decision Helper</string>
+    <string name="dh_rank_factors_tv_titlebartext">Rank Factors</string>
+    <string name="dh_weigh_possibility_range_0">0</string>
+    <string name="dh_weigh_possibility_range_100">100</string>
+    <string name="dh_new_choice">new choice</string>
+
+    <string name="login_welcome_btn_logintext">Log In</string>
+    <string name="login_signupconfirmation_tv_result_successtext1">Registered Account Successfully!</string>
+    <string name="login_signupconfirmation_tv_result_successtext2">Your email has been added to our list.</string>
+    <string name="login_login_et_usernametext">Enter User Account</string>
+    <string name="login_login_et_passwordtext">Enter PassWord</string>
+    <string name="login_login_btn_logintext">Log In</string>
+    <string name="login_signupconfirmation_btn_backtext">Go back to app</string>
+    <string name="login_signup_btn_logintext">Enter your email here</string>
+    <string name="login_signup_btn_signuptext">Sign Up</string>
+
+    <!-- dummy string placeholders -->
+    <string name="dh_dummy_decision">Dummy Decision</string>
+    <string name="dh_dummy_factor">Dummy Factor</string>
+    <string name="dh_dummy_possibility">Dummy Possibility</string>
+
+    <!-- Strings related to choice drop down (dummy) -->
+    <string name="drop_down_prompt">Apply a possibility</string>
+    <string-array name="possibility_array">
+        <item>Dummy 1</item>
+        <item>Dummy 2</item>
+        <item>Dummy 3</item>
+    </string-array>
+    <string name="dh_addchoices_btn_dummychoice1text">Dummy Choice</string>
+    <string name="dh_addchoices_btn_dummychoice2text">Dummy Choice</string>
+    <string name="dh_factors_dropdown_btn_dummychoice1text">Dummy Choice</string>
 
 
-    <string name="add_attribute">Add/Edit Attributes</string>
-    <string name="add_new_attribute">+ add new</string>
-    <string name="At1">attribute 1</string>
-    <string name="At2">attribute 1</string>
-    <string name="new_possi">+ New Possibility</string>
-    <string name="range_0">0</string>
-    <string name="range_100">100</string>
-    <string name="Po1">Possibility 1</string>
-    <string name="Po2">Possibility 2</string>
 
     <!-- personality quiz strings -->
     <string-array name="pq_questions_array">
@@ -76,34 +90,21 @@
         is and add risk as a factor! </string> 
     <string name="pq_risk_seeking_response">You are a risk-seeker! You enjoy the thrill of a gamble when 
         considering multiple options. When making your decision, don\’t let the fear of the unknown stop you!</string>
-    <string name="pq_startButton">START QUIZ NOW!</string>
+    <string name="pq_homepage_btn_startquiztext">START QUIZ NOW!</string>
     <string name="pq_titlebar">Personality Quiz</string>
-    <string name="pq_question_numbers">"0/0"</string>
-    <string name="pq_question_text">Herpaderp durp? derpyderp?</string>
+    <string name="pq_questions_tv_numberdisplaytext">"0/0"</string>
+    <string name="pq_questions_tv_questiontext">Herpaderp durp? derpyderp?</string>
     <string name="pq_previous_text">Previous</string>
     <string name="pq_next_text">Next</string>
     <string name="pq_start_text">Start</string>
 
-    <!-- Strings related to choice drop down-->
-    <string name="drop_down_prompt">Apply a possibility</string>
-    <string-array name="possibility_array">
-        <item>Salary 1</item>
-        <item>Salary 2</item>
-        <item>Salary 3</item>
-    </string-array>
-    <string name="dummy_choice">dummy choice</string>
 
-    <!--Strings related to tabs-->
-    <string name="tab1">tab1</string>
-    <string name="tab2">tab2</string>
-    <string name="tab3">tab3</string>
-    <string name="tab4">tab4</string>
 
     <!--Strings related to settings-->
-    <string name="s_titlebar">Settings</string>
-    <string name="s_editprofile">Edit Profile</string>
-    <string name="s_managesharing">Manage Sharing</string>
-    <string name="s_changeemail">Change Email</string>
-    <string name="s_changepassword">Change Password</string>
+    <string name="s_homepage_tv_titlebartext">Settings</string>
+    <string name="s_homepage_btn_editprofiletext">Edit Profile</string>
+    <string name="s_homepage_btn_managesharingtext">Manage Sharing</string>
+    <string name="s_homepage_btn_changeemailtext">Change Email</string>
+    <string name="s_homepage_changepasswordtext">Change Password</string>
 
 </resources>
