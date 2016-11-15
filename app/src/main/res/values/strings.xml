@@ -23,20 +23,36 @@
     <string name="dh_add_factors__btn_newfactortext">+ add new</string>
     <string name="dh_add_possibility_tv_titlebartext">add/edit possibilities</string>
     <string name="dh_add_possibility_btn_newpostext">+ New Possibility</string>
+    <string name="dh_button">Dummy Factor</string>
+    <string name="dh_decision">Dummy Decision</string>
     <string name="dh_decision_menu_btn_addrmfactorstext">Add/edit Factors</string>
     <string name="dh_decision_menu_btn_ranktext">Rank Factors</string>
     <string name="dh_decision_menu_btn_addrmchoicestext">Add/edit Choices</string>
     <string name="dh_decision_menu_btn_resulttext">View Result</string>
     <string name="dh_decision_menu_btn_sharetext">Share</string>
     <string name="dh_factors_dropdown_label">apply factors drop down</string>
+    <string name="dh_friends">DH Friends</string>
+    <string name="dh_friend_1">Friend 1</string>
+    <string name="dh_friend_2">Friend 2</string>
+    <string name="dh_friend_3">Friend 3</string>
     <string name="dh_homepage_btn_newdecisiontext">New Decision</string>
     <string name="dh_homepage_tv_mydecisionstext">My Decisions:</string>
     <string name="dh_homepage_tv_sharedwithme">Shared with me:</string>
     <string name="dh_homepage_titlebar">Decision Helper</string>
+    <string name="dh_invite">Invite Friends</string>
+    <string name="dh_invite_from_contacts">Invite From Contacts</string>
     <string name="dh_rank_factors_tv_titlebartext">Rank Factors</string>
     <string name="dh_weigh_possibility_range_0">0</string>
     <string name="dh_weigh_possibility_range_100">100</string>
     <string name="dh_new_choice">new choice</string>
+    <string name="dh_next">Next</string>
+    <string name="dh_select">Select what you like to share</string>
+    <string name="dh_select_all_factors">Select All Factors</string>
+    <string name="dh_select_who">Who would you like to share</string>
+    <string name="dh_send">Send</string>
+    <string name="dh_share_review">Share Review</string>
+    <string name="dh_share_review_to">To: Friend X, Friend Y.</string>
+    <string name="dh_share_review_what">What:</string>
 
     <string name="login_welcome_btn_logintext">Log In</string>
     <string name="login_signupconfirmation_tv_result_successtext1">Registered Account Successfully!</string>
@@ -63,7 +79,6 @@
     <string name="dh_addchoices_btn_dummychoice1text">Dummy Choice</string>
     <string name="dh_addchoices_btn_dummychoice2text">Dummy Choice</string>
     <string name="dh_factors_dropdown_btn_dummychoice1text">Dummy Choice</string>
-
 
 
     <!-- personality quiz strings -->
@@ -97,7 +112,6 @@
     <string name="pq_previous_text">Previous</string>
     <string name="pq_next_text">Next</string>
     <string name="pq_start_text">Start</string>
-
 
 
     <!--Strings related to settings-->
