@@ -7,13 +7,13 @@
     <!-- Add a toolbar and a textview overlay to create the
     custom title -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/dh__addchoices_ab"
+        android:id="@+id/dh_add_choices_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorPrimary" />
 
     <Button
-        android:id="@+id/dh_addchoices_btn_newchoice"
+        android:id="@+id/dh_add_choices_btn_newchoice"
         android:text="@string/dh_addchoices_btn_newchoicetext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

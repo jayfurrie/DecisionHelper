@@ -20,39 +20,44 @@
         android:layout_weight="0.15" />
 
     <Button
-        android:id="@+id/dh_decision_menu_btn_addrmfactors"
+        android:id="@+id/dh_decision_menu_btn_addfactors"
         android:text="@string/dh_decision_menu_btn_addrmfactorstext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.10" />
+        android:layout_weight="0.10"
+        android:onClick="dh_decision_menu_btn_addfactorsOnClick"/>
 
     <Button
         android:id="@+id/dh_decision_menu_btn_rank"
         android:text="@string/dh_decision_menu_btn_ranktext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.09" />
+        android:layout_weight="0.09"
+        android:onClick="dh_decision_menu_btn_rankOnClick"/>
 
     <Button
-        android:id="@+id/dh_decision_menu_btn_addrmchoices"
+        android:id="@+id/dh_decision_menu_btn_addchoices"
         android:text="@string/dh_decision_menu_btn_addrmchoicestext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.09" />
+        android:layout_weight="0.09"
+        android:onClick="dh_decision_menu_btn_addchoicesOnClick"/>
 
     <Button
         android:id="@+id/dh_decision_menu_btn_result"
         android:text="@string/dh_decision_menu_btn_resulttext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.09" />
+        android:layout_weight="0.09"/>
+        <!--android:onClick="dh_decision_menu_btn_resultOnClick"-->
 
     <Button
         android:id="@+id/dh_decision_menu_btn_share"
         android:text="@string/dh_decision_menu_btn_sharetext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.09" />
+        android:layout_weight="0.09"/>
+        <!--android:onClick="dh_decision_menu_btn_shareOnClick"-->
 
 
 </LinearLayout>
