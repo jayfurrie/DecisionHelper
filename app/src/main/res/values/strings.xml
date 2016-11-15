@@ -37,6 +37,10 @@
     <string name="dh_weigh_possibility_range_0">0</string>
     <string name="dh_weigh_possibility_range_100">100</string>
     <string name="dh_new_choice">new choice</string>
+    <string name="dh_addfactor_dialog_tv_new">Enter a new factor, or something that would affect your decision.</string>
+    <string name="dh_addfactor_dialog_et_hint">Salary, benefits, monthly cost&#8230;</string>
+    <string name="dh_addchoice_dialog_tv_new">What are you deciding between? Add one choice.</string>
+    <string name="dh_addchoice_dialog_et_hint">Job #1, Job #2&#8230;</string>
 
     <string name="login_welcome_btn_logintext">Log In</string>
     <string name="login_signupconfirmation_tv_result_successtext1">Registered Account Successfully!</string>
@@ -63,7 +67,6 @@
     <string name="dh_addchoices_btn_dummychoice1text">Dummy Choice</string>
     <string name="dh_addchoices_btn_dummychoice2text">Dummy Choice</string>
     <string name="dh_factors_dropdown_btn_dummychoice1text">Dummy Choice</string>
-
 
 
     <!-- personality quiz strings -->
@@ -97,7 +100,6 @@
     <string name="pq_previous_text">Previous</string>
     <string name="pq_next_text">Next</string>
     <string name="pq_start_text">Start</string>
-
 
 
     <!--Strings related to settings-->
