@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dh_share_invite_friends_ab"
+        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/dh_decision"
+            android:textColor="@color/colorWhite"
+            android:textSize = "26sp"
+            android:gravity = "center" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:text="@string/dh_invite_from_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="19sp"
+        android:id="@+id/textView4"
+        android:layout_weight="0.52" />
+
+    <RadioButton
+        android:text="@string/dh_friend_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton6"
+        android:layout_weight="0.15" />
+
+    <RadioButton
+        android:text="@string/dh_friend_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton7"
+        android:layout_weight="0.15" />
+
+    <RadioButton
+        android:text="@string/dh_friend_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton8"
+        android:layout_weight="0.18" />
+
+    <Button
+        android:text="@string/dh_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3" />
+</LinearLayout>
