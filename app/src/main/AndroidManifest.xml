@@ -55,7 +55,7 @@
         <activity android:name=".login_login" />
         <activity android:name=".login_signup" />
         <activity android:name=".login_signupconfirmation" />
-        <!-- <activity android:name=".pq_homepage" /> -->
+        <activity android:name=".pq_homepage" />
         <activity android:name=".pq_questions" />
         <activity android:name=".pq_results" />
         <activity android:name=".s_homepage" />
