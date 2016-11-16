@@ -10,28 +10,39 @@
         android:id="@+id/dh_add_choices_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/dh_add_choices_btn_newchoice"
         android:text="@string/dh_addchoices_btn_newchoicetext"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="@string/dh_add_choices_hint"
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/dh_addchoices_btn_dummychoice1"
-        android:text="@string/dh_addchoices_btn_dummychoice1text"
+        android:text="Entry level consultant at Accenture, D.C."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp" />
+        android:onClick="dh_addchoices_btn_choice1OnClick"/>
 
     <Button
         android:id="@+id/dh_addchoices_btn_dummychoice2"
-        android:text="@string/dh_addchoices_btn_dummychoice1text"
+        android:text="Healthcare consulting for Huron in Chicago"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp" />
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/dh_addchoices_btn_dummychoice3"
+        android:text="Your cousins tech startup in SF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/dh_addchoices_btn_back"

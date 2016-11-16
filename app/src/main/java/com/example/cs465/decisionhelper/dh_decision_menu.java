@@ -32,5 +32,21 @@ public class dh_decision_menu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void dh_decision_menu_btn_resultOnClick(View view)
+    {
+        Intent intent = new Intent(this, dh_result.class);
+        startActivity(intent);
+    }
 
+    public void dh_decision_menu_btn_shareOnClick(View view)
+    {
+        Intent intent = new Intent(this, dh_share_choose_factor.class);
+        startActivity(intent);
+    }
+
+    public void dh_decision_menu_btn_backOnClick(View view)
+    {
+        Intent intent = new Intent(this, dh_homepage.class);
+        startActivity(intent);
+    }
 }

@@ -13,9 +13,16 @@ public class dh_rank_factors extends AppCompatActivity {
         setContentView(R.layout.activity_dh_rank_factors);
     }
 
-    public void dh_rank_factors_btn_backOnClick(View view)
+    public void dh_rank_factors_btn_cancelOnClick(View view)
     {
         Intent intent = new Intent(this, dh_decision_menu.class);
         startActivity(intent);
+    }
+
+    public void dh_rank_factors_btn_OKOnClick(View view)
+    {
+        Intent intent = new Intent(this, dh_decision_menu.class);
+        startActivity(intent);
+        // TODO save the factor rankings from user input on the slider bars
     }
 }

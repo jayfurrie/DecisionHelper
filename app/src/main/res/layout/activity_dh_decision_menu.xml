@@ -12,7 +12,7 @@
         android:background="@color/colorPrimary" />
 
     <TextView
-        android:text="decision menu"
+        android:text="Decision Menu"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,16 +48,25 @@
         android:text="@string/dh_decision_menu_btn_resulttext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.09"/>
-        <!--android:onClick="dh_decision_menu_btn_resultOnClick"-->
+        android:layout_weight="0.09"
+        android:onClick="dh_decision_menu_btn_resultOnClick"/>
 
     <Button
         android:id="@+id/dh_decision_menu_btn_share"
         android:text="@string/dh_decision_menu_btn_sharetext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.09"/>
-        <!--android:onClick="dh_decision_menu_btn_shareOnClick"-->
+        android:layout_weight="0.09"
+        android:onClick="dh_decision_menu_btn_shareOnClick"/>
+
+    <Button
+        android:id="@+id/dh_decision_menu_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_back"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="dh_decision_menu_btn_backOnClick"/>
 
 
 </LinearLayout>
