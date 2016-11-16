@@ -15,8 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <!--<activity
+
+        <!--
+        <activity
             android:name=".DecisionHelperActivity"
             android:label="@string/decision_helper" />
         <activity
@@ -32,12 +33,14 @@
             android:name=".SpinnerActivity"
             android:exported="true"
             android:label="@string/dh_new_choice"
-            android:parentActivityName=".MainActivity">-->
+            android:parentActivityName=".MainActivity">
+        -->
 
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.cs465.decisionhelper.login_welcome" />
+
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.cs465.decisionhelper.login_welcome" />
 
         <activity android:name=".dh_add_choices" />
         <activity android:name=".dh_add_factors" />
@@ -55,7 +58,6 @@
         <activity android:name=".pq_questions" />
         <activity android:name=".pq_results" />
         <activity android:name=".s_homepage" />
-
     </application>
 
 </manifest>
