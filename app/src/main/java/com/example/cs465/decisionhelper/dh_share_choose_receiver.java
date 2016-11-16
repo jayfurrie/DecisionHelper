@@ -20,7 +20,7 @@ public class dh_share_choose_receiver extends AppCompatActivity {
 
         final Context context = this;
 
-        button = (Button) findViewById(R.id.button2);
+        button = (Button) findViewById(R.id.dh_share_choose_receiver_btn_invite);
 
         button.setOnClickListener(new OnClickListener() {
 
@@ -33,6 +33,17 @@ public class dh_share_choose_receiver extends AppCompatActivity {
             }
 
         });
+    }
 
+
+    public void dh_share_choose_receiver_btn_backOnClick(View view) {
+        Intent intent = new Intent(this, dh_decision_menu.class);
+        startActivity(intent);
+    }
+
+    public void dh_share_choose_receiver_btn_nextOnClick(View view) {
+        Intent intent = new Intent(this, dh_share_reviews.class);
+        startActivity(intent);
     }
 }
+

@@ -12,30 +12,29 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/dh_decision"
-            android:textColor="@color/colorWhite"
-            android:textSize = "26sp"
+            android:text="Share: Decide which job to take"
+            android:textColor="#ffffff"
+            android:textSize = "22sp"
             android:gravity = "center" />
 
     </android.support.v7.widget.Toolbar>
 
     <TextView
-        android:text="@string/dh_select_who"
+        android:id="@+id/dh_share_tv_selectwho"
+        android:text="@string/dh_share_select_who"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
         android:gravity="center"
         android:textSize="19sp"
         android:layout_weight="0.23" />
 
     <TextView
-        android:text="@string/dh_friends"
+        android:id="@+id/dh_share_tv_dhfriends"
+        android:text="@string/dh_share_myfriends"
         android:layout_width="match_parent"
         android:gravity="center"
         android:textSize="17sp"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_weight="0.16" />
+        android:layout_height="wrap_content" />
 
     <RadioButton
         android:text="@string/dh_friend_1"
@@ -48,11 +47,48 @@
         android:text="@string/dh_friend_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/radioButton5" />
+        android:id="@+id/radioButton5"
+        android:layout_marginBottom="100dp"/>
+
+    <TextView
+        android:id="@+id/dh_share_tv_friendsinvite"
+        android:text="@string/dh_share_nofriends"
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/dh_share_choose_receiver_btn_invite"
         android:text="@string/dh_invite"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:id="@+id/button2" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="dh_share_choose_receiver_btn_inviteOnClick"/>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="40dp">
+        <Button
+            android:id="@+id/dh_share_choose_receiver_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_back"
+            android:layout_gravity="center_horizontal"
+            android:onClick="dh_share_choose_receiver_btn_backOnClick"/>
+
+        <Button
+            android:id="@+id/dh_share_choose_receiver_btn_next"
+            android:text="@string/dh_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:onClick="dh_share_choose_receiver_btn_nextOnClick"/>
+    </LinearLayout>
 </LinearLayout>
