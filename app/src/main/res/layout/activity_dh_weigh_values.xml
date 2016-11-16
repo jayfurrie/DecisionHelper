@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dh_weigh_values_ab"
+        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+    <TextView
+        android:id="@+id/dh_weigh_values_tv_title"
+        android:text="Weigh Value"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_height="59dp" />
+
+    <TextView
+        android:id="@+id/dh_weigh_values_tv_salary1"
+        android:text="Salary 1: 100k"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_height="59dp"
+        android:layout_below="@id/dh_weigh_values_tv_title"/>
+
+    <TextView
+        android:id="@+id/dh_weigh_values_tv_min"
+        android:text="@string/dh_weigh_values_range_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dh_weigh_values_sb_Q1"
+        android:layout_marginStart="13dp"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/dh_weigh_values_tv_max"
+        android:text="@string/dh_weigh_values_range_100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dh_weigh_values_tv_min"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp" />
+
+    <SeekBar
+        android:id="@+id/dh_weigh_values_sb_Q1"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="500dp"
+        android:layout_height="50dp"
+        android:max="10"
+        android:progress="10"
+        android:layout_below="@+id/dh_weigh_values_tv_salary1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="196dp" />
+
+    <Button
+        android:id="@+id/dh_rank_values_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/dh_weigh_values_sb_Q1"
+        android:layout_centerHorizontal="true"
+        android:onClick="dh_rank_values_btn_backOnClick"/>
+</RelativeLayout>

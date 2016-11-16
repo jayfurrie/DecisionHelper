@@ -5,14 +5,14 @@
     android:weightSum="1">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_add_possibility_ab"
+        android:id="@+id/dh_add_values_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorPrimary" />
 
     <TextView
-        android:id="@+id/dh_add_possibility_tv_titlebar"
-        android:text="@string/dh_add_possibility_tv_titlebartext"
+        android:id="@+id/dh_add_values_tv_titlebar"
+        android:text="@string/dh_add_value_tv_titlebartext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -20,23 +20,37 @@
         android:layout_weight="0.06" />
 
     <Button
-        android:id="@+id/dh_add_possibility_btn_newpos"
-        android:text="@string/dh_add_possibility_btn_newpostext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06" />
+    android:id="@+id/dh_add_values_btn_newpos"
+    android:text="@string/dh_add_values_btn_newpostext"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.06" />
 
     <Button
-        android:text="@string/dh_dummy_possibility"
+        android:id="@+id/dh_add_values_btn_salary1"
+        android:text="Salary 1: 100k"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.06" />
+        android:layout_weight="0.06"
+        android:onClick="dh_add_values_btn_salary1OnClick"/>
 
     <Button
-        android:text="@string/dh_dummy_possibility"
+        android:id="@+id/dh_add_values_btn_salary2"
+        android:text="Salary 2: 85k"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.06" />
+        android:layout_weight="0.06"
+        android:onClick="dh_add_values_btn_salary2OnClick"/>
+
+    <Button
+        android:id="@+id/dh_add_values_btn_salary3"
+        android:text="Salary 3: 80k"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:onClick="dh_add_values_btn_salary3OnClick"/>
+
+
 
 
 </LinearLayout>
