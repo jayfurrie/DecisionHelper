@@ -12,21 +12,107 @@
         android:layout_height="40dp"
         android:background="@color/colorPrimary" />
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/dh_factors_dropdown_hint"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="Entry level consultant at Accenture, D.C."
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
 
     <TextView
-        android:text="@string/dh_factors_dropdown_btn_dummychoice1text"
+        android:text="Salary:"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        />
     <Spinner
-        android:id="@+id/dh_factors_dropdown_spn_possibility"
+        android:id="@+id/dh_factors_dropdown_spn_possibility1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:text="Location:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+            <Spinner
+                android:id="@+id/dh_factors_dropdown_spn_possibility2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:text="Benefits:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+            <Spinner
+                android:id="@+id/dh_factors_dropdown_spn_possibility3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="40dp">
+            <Button
+                android:id="@+id/dh_factors_dropdown_btn_OK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_OK"
+                android:layout_gravity="center_horizontal"
+                android:onClick="dh_factors_dropdown_btn_OKOnClick"/>
+
+            <Button
+                android:id="@+id/dh_factors_dropdown_btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_cancel"
+                android:layout_gravity="center_horizontal"
+                android:onClick="dh_factors_dropdown_btn_cancelOnClick"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

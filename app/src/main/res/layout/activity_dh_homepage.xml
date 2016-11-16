@@ -31,22 +31,13 @@
         android:textSize="20sp" />
 
     <Button
-        android:text="@string/dh_dummy_decision"
+        android:text="Decide which job to take"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:onClick="dh_homepage_btn_jobdecisionOnClick"/>
 
-    <Button
-        android:text="@string/dh_dummy_decision"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"/>
 
-    <Button
-        android:text="@string/dh_dummy_decision"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/dh_homepage_tv_sharedwithme"
@@ -55,22 +46,6 @@
         android:layout_height="wrap_content"
         android:textSize="20sp" />
 
-    <Button
-        android:text="@string/dh_dummy_decision"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"/>
 
-    <Button
-        android:text="@string/dh_dummy_decision"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp" />
-
-    <Button
-        android:text="@string/dh_dummy_decision"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp" />
 
 </LinearLayout>

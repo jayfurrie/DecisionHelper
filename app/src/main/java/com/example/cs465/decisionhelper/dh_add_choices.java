@@ -76,4 +76,10 @@ public class dh_add_choices extends AppCompatActivity {
         Intent intent = new Intent(this, dh_decision_menu.class);
         startActivity(intent);
     }
+
+    public void dh_addchoices_btn_choice1OnClick(View view)
+    {
+        Intent intent = new Intent(this, dh_factors_dropdown.class);
+        startActivity(intent);
+    }
 }

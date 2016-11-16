@@ -58,7 +58,7 @@
         android:id="@+id/dh_rank_values_btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="back"
+        android:text="@string/btn_back"
         android:layout_marginTop="60dp"
         android:layout_below="@+id/dh_weigh_values_sb_Q1"
         android:layout_centerHorizontal="true"

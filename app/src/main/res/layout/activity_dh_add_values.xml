@@ -20,7 +20,7 @@
         android:layout_weight="0.06" />
 
     <Button
-    android:id="@+id/dh_add_values_btn_newpos"
+    android:id="@+id/dh_add_values_btn_newval"
     android:text="@string/dh_add_values_btn_newpostext"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -50,7 +50,14 @@
         android:layout_weight="0.06"
         android:onClick="dh_add_values_btn_salary3OnClick"/>
 
-
+    <Button
+        android:id="@+id/dh_rank_values_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_back"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="dh_add_values_btn_backOnClick"/>
 
 
 </LinearLayout>
