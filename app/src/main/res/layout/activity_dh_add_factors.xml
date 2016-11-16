@@ -27,17 +27,36 @@
         android:layout_weight="0.06" />
 
     <Button
-        android:id="@+id/dh_add_factors_btn_dummy1"
-        android:text="@string/dh_dummy_factor"
+        android:id="@+id/dh_add_factors_btn_factor1"
+        android:text="salary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.06" />
+        android:layout_weight="0.06"
+        android:onClick="dh_add_values_btn_factor1OnClick"/>
 
     <Button
-        android:id="@+id/dh_add_factors_btn_dummy2"
-        android:text="@string/dh_dummy_factor"
+        android:id="@+id/dh_add_factors_btn_factor2"
+        android:text="location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.06" />
+        android:layout_weight="0.06"
+        android:onClick="dh_add_factors_btn_factor2OnClick"/>
+
+    <Button
+        android:id="@+id/dh_add_factors_btn_factor3"
+        android:text="benefits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:onClick="dh_add_factors_btn_factor3OnClick"/>
+
+    <Button
+        android:id="@+id/dh_add_factors_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="dh_add_factors_btn_backOnClick"/>
 
 </LinearLayout>

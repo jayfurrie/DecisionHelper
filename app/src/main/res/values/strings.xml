@@ -21,8 +21,8 @@
     <string name="dh_add_choices_titlebar">My Choices</string>
     <string name="dh_add_factors_tv_titlebartext">Add/edit Factors</string>
     <string name="dh_add_factors__btn_newfactortext">+ add new</string>
-    <string name="dh_add_possibility_tv_titlebartext">add/edit possibilities</string>
-    <string name="dh_add_possibility_btn_newpostext">+ New Possibility</string>
+    <string name="dh_add_value_tv_titlebartext">add/edit values</string>
+    <string name="dh_add_values_btn_newpostext">+ New Value</string>
     <string name="dh_decision_menu_btn_addrmfactorstext">Add/edit Factors</string>
     <string name="dh_decision_menu_btn_ranktext">Rank Factors</string>
     <string name="dh_decision_menu_btn_addrmchoicestext">Add/edit Choices</string>
@@ -34,8 +34,8 @@
     <string name="dh_homepage_tv_sharedwithme">Shared with me:</string>
     <string name="dh_homepage_titlebar">Decision Helper</string>
     <string name="dh_rank_factors_tv_titlebartext">Rank Factors</string>
-    <string name="dh_weigh_possibility_range_0">0</string>
-    <string name="dh_weigh_possibility_range_100">100</string>
+    <string name="dh_weigh_values_range_0">0</string>
+    <string name="dh_weigh_values_range_100">100</string>
     <string name="dh_new_choice">new choice</string>
 
     <string name="login_welcome_btn_logintext">Log In</string>
@@ -51,11 +51,11 @@
     <!-- dummy string placeholders -->
     <string name="dh_dummy_decision">Dummy Decision</string>
     <string name="dh_dummy_factor">Dummy Factor</string>
-    <string name="dh_dummy_possibility">Dummy Possibility</string>
+    <string name="dh_dummy_value">Dummy Value</string>
 
     <!-- Strings related to choice drop down (dummy) -->
     <string name="drop_down_prompt">Apply a possibility</string>
-    <string-array name="possibility_array">
+    <string-array name="value_array">
         <item>Dummy 1</item>
         <item>Dummy 2</item>
         <item>Dummy 3</item>
