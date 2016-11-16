@@ -45,12 +45,12 @@
 
         <activity android:name=".dh_add_choices" />
         <activity android:name=".dh_add_factors" />
-        <activity android:name=".dh_add_possibility" />
+        <activity android:name=".dh_add_values" />
         <activity android:name=".dh_decision_menu" />
         <activity android:name=".dh_factors_dropdown" />
         <activity android:name=".dh_homepage" />
         <activity android:name=".dh_rank_factors" />
-        <activity android:name=".dh_weigh_possibility" />
+        <activity android:name=".dh_weigh_values" />
         <activity android:name=".h_homepage" />
         <activity android:name=".login_login" />
         <activity android:name=".login_signup" />
