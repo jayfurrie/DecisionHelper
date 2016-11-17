@@ -154,4 +154,12 @@
     <string name="s_homepage_btn_changeemailtext">Change Email</string>
     <string name="s_homepage_changepasswordtext">Change Password</string>
 
+    <!--Strings related to hamburgers-->
+    <string-array name="hamburgers_array">
+        <item>Decision Helper</item>
+        <item>Personality Quiz</item>
+        <item>Settings</item>
+        <item>Help</item>
+    </string-array>
+
 </resources>
