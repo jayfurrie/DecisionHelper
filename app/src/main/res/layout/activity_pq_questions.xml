@@ -25,8 +25,9 @@
     <TextView
         android:id="@+id/pq_questions_tv_question"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_gravity="center"
+        android:textAlignment="center"
         android:text="@string/pq_questions_tv_questiontext"
         android:textSize="20sp"
         android:textStyle="italic"/>
@@ -36,7 +37,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="40dp"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:id="@+id/pq_radio_group">
         <RadioButton
             android:text=" "
             android:layout_width="wrap_content"
