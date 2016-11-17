@@ -13,15 +13,32 @@
 
     <TextView
         style="@style/TitleBarText"
-        android:text="@string/pq_titlebar" />
+        android:text="@string/pq_results_result" />
+
+
+    <TextView
+        android:id="@+id/pq_results_tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pq_risk_averse_response"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="50dp"/>
+
 
     <Button
         android:id="@+id/pq_results_btn_back"
-        android:text="Make Decisions!"
+        android:text="Back to: Make Decisions!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:onClick="pq_results_btn_backOnClick"/>
+
+
 
 
 </LinearLayout>

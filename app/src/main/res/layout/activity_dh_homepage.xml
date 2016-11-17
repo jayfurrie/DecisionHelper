@@ -38,12 +38,6 @@
         android:textSize="20sp" />
 
 
-        <TextView
-            android:id="@+id/dh_homepage_tv_mydecisions"
-            android:text="@string/dh_homepage_tv_mydecisionstext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp" />
 
         <Button
             android:text="Decide which job to take"
