@@ -40,7 +40,7 @@ public class dh_decision_menu extends AppCompatActivity {
 
     public void dh_decision_menu_btn_shareOnClick(View view)
     {
-        Intent intent = new Intent(this, dh_share_choose_factor.class);
+        Intent intent = new Intent(this, dh_share_choose_receiver.class);
         startActivity(intent);
     }
 

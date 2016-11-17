@@ -19,17 +19,24 @@
             android:layout_height="40dp"
             android:background="@color/colorPrimary" />
 
-        <TextView
-            style="@style/TitleBarText"
-            android:text="@string/dh_homepage_titlebar" />
 
-        <Button
-            android:id="@+id/dh_homepage_btn_newdecision"
-            android:text="@string/dh_homepage_btn_newdecisiontext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:onClick="dh_homepage_btn_newdecisionOnClick"/>
+    <Button
+        android:id="@+id/dh_homepage_btn_newdecision"
+        android:text="@string/dh_homepage_btn_newdecisiontext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:onClick="dh_homepage_btn_newdecisionOnClick"/>
+
+    <TextView
+        android:id="@+id/dh_homepage_tv_mydecisions"
+        android:text="@string/dh_homepage_tv_mydecisionstext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp" />
+
 
         <TextView
             android:id="@+id/dh_homepage_tv_mydecisions"
@@ -47,11 +54,13 @@
 
 
 
+
         <TextView
             android:id="@+id/dh_homepage_tv_sharedwithme"
             android:text="@string/dh_homepage_tv_sharedwithme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+			android:layout_marginTop="30dp"
             android:textSize="20sp" />
 
 
