@@ -34,7 +34,7 @@ public class Storage extends SQLiteOpenHelper {
     // Each Value is EITHER associated with a Factor (when it's first created)
     // OR associated with a Choice AND Factor(after it's assigned)
     // ex: $100,000, San Francisco, Large
-    public static final String VALUES_TABLE_NAME = "values";
+    public static final String VALUES_TABLE_NAME = "myvalues";
     public static final String VALUES_COLUMN_ID = "id";
     public static final String VALUES_COLUMN_NAME = "name";
 
@@ -82,12 +82,71 @@ public class Storage extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // TODO create all the tables using db.execSQL()
+        db.execSQL( "" +
+            "create table decisions" +
+                "(" +
+                    "id integer primary key," +
+                    "name varchar(255)," +
+                    "owner varchar(255)" +
+                ");" +
+
+            "create table choices (" +
+                "id integer primary key," +
+                "name varchar(255)," +
+                "decision_id integer" +
+            ");" +
+
+            "create table factors (" +
+                "id integer primary key," +
+                "name varchar(255)," +
+                "decision_id integer" +
+            ");" +
+
+            "create table myvalues (" +
+                "id integer primary key," +
+                "name varchar(255)" +
+            ");" +
+
+            "create table factor_to_value (" +
+                "id integer primary key," +
+                "factor_id integer," +
+                "value_id integer" +
+            ");" +
+
+            "create table choice_to_factor_to_value (" +
+                "id integer primary key," +
+                "choice_id integer," +
+                "factor_to_value_id integer" +
+            ");" +
+
+            "create table scores (" +
+                "id integer primary key," +
+                "owner varchar(255)," +
+                "score integer," +
+                "factor_id integer," +
+                "value_id integer" +
+            ");" +
+
+            "create table shared_with (" +
+                "id integer primary key," +
+                "user varchar(255)," +
+                "decision_id integer," +
+                "response_message varchar(1000)," +
+                "completed boolean" +
+            ");");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // TODO drop all tables IF EXISTS
-        // TODO onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS decisions;" +
+                "DROP TABLE IF EXISTS choices;" +
+                "DROP TABLE IF EXISTS factors;" +
+                "DROP TABLE IF EXISTS myvalues;" +
+                "DROP TABLE IF EXISTS factor_to_value;" +
+                "DROP TABLE IF EXISTS choice_to_factor_to_value;" +
+                "DROP TABLE IF EXISTS scores;" +
+                "DROP TABLE IF EXISTS shared_with;");
+        onCreate(db);
     }
 
     // TODO: write methods to write and read from db
