@@ -13,25 +13,15 @@ public class dh_share_invite_friend extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_share_invite_friend);
-        addListenerOnButton();
     }
-    public void addListenerOnButton() {
 
-        final Context context = this;
+    public void dh_share_invite_friend_btn_nextOnClick(View view) {
+        Intent intent = new Intent(this, dh_share_reviews.class);
+        startActivity(intent);
+    }
 
-        button = (Button) findViewById(R.id.button3);
-
-        button.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                Intent intent = new Intent(context, dh_share_reviews.class);
-                startActivity(intent);
-
-            }
-
-        });
-
+    public void dh_share_invite_friend_btn_backOnClick(View view) {
+        Intent intent = new Intent(this, dh_share_choose_receiver.class);
+        startActivity(intent);
     }
 }

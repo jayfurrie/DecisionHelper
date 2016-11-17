@@ -39,7 +39,6 @@
     <string name="dh_factors_dropdown_hint">For each factor, choose a value from the dropdown list to apply to your choice.</string>
     <string name="dh_factors_dropdown_label">apply factors drop down</string>
     <string name="dh_result_congrats">Congratualions! According to your preferences and our calculations, you should choose:</string>
-    <string name="dh_friends">DH Friends</string>
     <string name="dh_friend_1">Friend 1</string>
     <string name="dh_friend_2">Friend 2</string>
     <string name="dh_friend_3">Friend 3</string>
@@ -56,10 +55,12 @@
     <string name="dh_next">Next</string>
     <string name="dh_select">Select what you like to share</string>
     <string name="dh_select_all_factors">Select All Factors</string>
-    <string name="dh_select_who">Who would you like to share</string>
+    <string name="dh_share_select_who">Who would you like to share this decision with?</string>
+    <string name="dh_share_nofriends">Friends not listed? Invite them!</string>
+    <string name="dh_share_myfriends">My Decision Helper Friends:</string>
     <string name="dh_send">Send</string>
     <string name="dh_share_review">Share Review</string>
-    <string name="dh_share_review_to">To: Friend X, Friend Y.</string>
+    <string name="dh_share_review_to">To:</string>
     <string name="dh_share_review_what">What:</string>
     <string name="dh_addfactor_dialog_tv_new">Enter a new factor, or something that would affect your decision.</string>
     <string name="dh_addfactor_dialog_et_hint">Salary, benefits, monthly cost&#8230;</string>
@@ -152,5 +153,13 @@
     <string name="s_homepage_btn_managesharingtext">Manage Sharing</string>
     <string name="s_homepage_btn_changeemailtext">Change Email</string>
     <string name="s_homepage_changepasswordtext">Change Password</string>
+
+    <!--Strings related to hamburgers-->
+    <string-array name="hamburgers_array">
+        <item>Decision Helper</item>
+        <item>Personality Quiz</item>
+        <item>Settings</item>
+        <item>Help</item>
+    </string-array>
 
 </resources>
