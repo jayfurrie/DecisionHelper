@@ -15,5 +15,13 @@
         style="@style/TitleBarText"
         android:text="@string/pq_titlebar" />
 
+    <Button
+        android:id="@+id/pq_results_btn_back"
+        android:text="Make Decisions!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="pq_results_btn_backOnClick"/>
+
 
 </LinearLayout>
