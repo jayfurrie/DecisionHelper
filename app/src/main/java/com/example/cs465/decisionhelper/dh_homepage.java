@@ -19,6 +19,24 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class dh_homepage extends AppCompatActivity {
+    /*@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dh_homepage);
+    }
+
+    public void dh_homepage_btn_newdecisionOnClick(View view) {
+        Intent intent = new Intent(this, dh_decision_menu.class);
+        startActivity(intent);
+    }
+
+    public void dh_homepage_btn_jobdecisionOnClick(View view) {
+        Intent intent = new Intent(this, dh_decision_menu.class);
+        startActivity(intent);
+    }*/
+
+
+
     private static String TAG = dh_homepage.class.getSimpleName();
 
     ListView mDrawerList;
