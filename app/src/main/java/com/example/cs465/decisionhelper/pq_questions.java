@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -43,12 +44,13 @@ public class pq_questions extends AppCompatActivity {
     
     public void pq_questions_ibtn_nextOnClick(View view)
     {
-        if (currentQuestionNum == 10)
+        currentQuestionNum++;
+        if (currentQuestionNum == 11)
         {
             Intent intent = new Intent(this, pq_results.class);
             startActivity(intent);
+            return;
         }
-        currentQuestionNum++;
         questionText.setText(question_array[currentQuestionNum-1]);
         questionNumText.setText(getQuestionNumberDisplay());
     }
