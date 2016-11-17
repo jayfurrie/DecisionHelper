@@ -10,7 +10,17 @@
         android:id="@+id/dh_add_choices_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/dh_add_choices_tv_titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dh_add_choices_titlebar"
+            android:textColor="#ffffff"
+            android:textSize = "26sp"
+            android:gravity = "center" />
+    </android.support.v7.widget.Toolbar>
 
     <Button
         android:id="@+id/dh_add_choices_btn_newchoice"

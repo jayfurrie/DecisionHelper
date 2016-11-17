@@ -5,16 +5,17 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/dh_weigh_values_ab"
         android:background="?attr/colorPrimary"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_width="match_parent"/>
 
     <TextView
         android:id="@+id/dh_weigh_values_tv_title"
         android:text="Weigh Value"
         android:layout_width="match_parent"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:gravity="center"
-        android:layout_height="59dp" />
+        android:layout_height="40dp" />
 
     <TextView
         android:id="@+id/dh_weigh_values_tv_salary1"
