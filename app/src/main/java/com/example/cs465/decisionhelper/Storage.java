@@ -406,11 +406,6 @@ public class Storage extends SQLiteOpenHelper {
     /*
      *  CLASSES TO MAKE WORKING WITH DATA RECEIVED FROM SQL EASIER
      */
-    public  class  DatabaseObject {
-        public DatabaseObject(Cursor row) { }
-        private DatabaseObject() { }
-
-    }
 
     public class Decision {
         public int id;
