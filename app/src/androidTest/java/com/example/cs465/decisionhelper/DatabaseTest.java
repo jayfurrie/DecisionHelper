@@ -19,10 +19,12 @@ import org.hamcrest.CoreMatchers;
  */
 @RunWith(AndroidJUnit4.class)
 public class DatabaseTest {
-    private static final String test_owner = "test_account$123";
+    private static final String test_owner = "test_owner$123";
+    private static final String test_user = "test_user$123";
     private static final int test_decision_id = 0;
     private static final int test_factor_id = 0;
     private static final int test_value_id = 0;
+    private static final int test_choice_id = 0;
 
     @Test
     public void useAppContext() throws Exception {
@@ -169,6 +171,7 @@ public class DatabaseTest {
         int test_score = 10;
         long id = db.assignScoreToValue(test_owner, test_score, test_value_id);
         int score = db.getScoreForValue(test_owner, test_value_id);
+        db.removeAllScoresForOwner(test_owner);
 
         assertEquals(score, test_score);
     }
@@ -188,9 +191,73 @@ public class DatabaseTest {
         int test_score = 10;
         long id = db.assignScoreToFactor(test_owner, test_score, test_factor_id);
         int score = db.getScoreForFactor(test_owner, test_factor_id);
+        db.removeAllScoresForOwner(test_owner);
 
         assertEquals(score, test_score);
     }
+
+    @Test
+    public void testAssignAndRemoveValueToFactorForChoice() throws Exception {
+        Storage db = createdb();
+        db.removeFactorToValueForChoiceAndFactor(test_choice_id, test_factor_id);
+        db.removeAllValuesForFactor(test_factor_id);
+
+        long value_id = db.createValueForFactor("hello", test_factor_id);
+        long id = db.assignValueToFactorForChoice(test_choice_id, test_factor_id, (int)value_id);
+        int one = db.getAllFactorToValuesForChoice(test_choice_id).size();
+        db.removeFactorToValueForChoiceAndFactor(test_choice_id, test_factor_id);
+        db.removeAllValuesForFactor(test_factor_id);
+        int zero = db.getAllFactorToValuesForChoice(test_choice_id).size();
+
+        assert(id > 0);
+        assertEquals(one, 1);
+        assertEquals(zero, 0);
+    }
+
+    @Test
+    public void testGetValueToFactorForChoice() throws Exception {
+        Storage db = createdb();
+        String name = "value1";
+        long value_id = db.createValueForFactor(name, test_factor_id);
+        long id = db.assignValueToFactorForChoice(test_choice_id, test_factor_id, (int)value_id);
+        Storage.Value v = db.getValueForFactorAndChoice(test_choice_id, test_factor_id);
+        db.removeFactorToValueForChoiceAndFactor(test_choice_id, test_factor_id);
+        db.removeAllValuesForFactor(test_factor_id);
+
+        assertEquals(v.id, value_id);
+        assertEquals(v.name, name);
+    }
+
+    @Test
+    public void testShareAndUnshareDecisionWithUser() throws Exception {
+        Storage db = createdb();
+        long decision_id = db.createDecision("decision1", test_owner);
+        long shared_id = db.shareDecisionWithUser((int)decision_id, test_user);
+        int one = db.getAllDecisionsSharedWithUser(test_user).size();
+        db.unshareDecisionWithUser((int)decision_id, test_user);
+        db.removeAllDecisionsForOwner(test_owner);
+        int zero = db.getAllDecisionsSharedWithUser(test_user).size();
+
+        assert(shared_id > 0);
+        assertEquals(one, 1);
+        assertEquals(zero, 0);
+    }
+
+    @Test
+    public void testCompleteSharedDecision() throws Exception {
+        Storage db = createdb();
+        String message = "test message";
+        long decision_id = db.createDecision("decision1", test_owner);
+        long shared_id = db.shareDecisionWithUser((int)decision_id, test_user);
+        db.completeSharedDecision((int)decision_id, test_user, message);
+        String shared_message = db.getResponseMessageForSharedDecision((int)decision_id, test_user);
+        db.unshareDecisionWithUser((int)decision_id, test_user);
+        db.removeAllDecisionsForOwner(test_owner);
+
+        assertEquals(shared_message, message);
+    }
+
+
 
     private Storage createdb() {
         Context appContext = InstrumentationRegistry.getTargetContext();

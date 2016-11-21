@@ -9,6 +9,7 @@ import android.provider.ContactsContract;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Storage extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "DecisionHelper.db";
@@ -158,12 +159,12 @@ public class Storage extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // TODO: write methods to write and read from db
-
     public List<Decision> getAllDecisionsForOwner(String owner) {
-        List<Decision> decisions= new ArrayList<Decision>();
+        List<Decision> decisions = new ArrayList<Decision>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor results =  db.rawQuery( "select * from " + DECISIONS_TABLE_NAME, null );
+        Cursor results =  db.rawQuery( "select * from " + DECISIONS_TABLE_NAME + "" +
+                " where " + DECISIONS_COLUMN_OWNER + "=\"" + owner + "\"", null );
+
 
         results.moveToFirst();
 
@@ -180,9 +181,19 @@ public class Storage extends SQLiteOpenHelper {
                 " where " + DECISIONS_COLUMN_OWNER + "=\"" + owner + "\"");
     }
 
-    public List<Decision> getAllDecisionsSharedWithOwner(String owner) {
-        // TODO
-        ArrayList<Decision> decisions = new ArrayList<Decision>();
+    public List<Decision> getAllDecisionsSharedWithUser(String user) {
+        List<Decision> decisions = new ArrayList<Decision>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + SHARED_WITH_TABLE_NAME +
+                " where " + SHARED_WITH_COLUMN_USER + "=\"" + user + "\"", null );
+
+        results.moveToFirst();
+
+        while(results.isAfterLast() == false){
+            int decision_id = results.getInt(results.getColumnIndex(SHARED_WITH_COLUMN_DECISION_ID));
+            decisions.add(getDecisionByID(decision_id));
+            results.moveToNext();
+        }
         return decisions;
     }
 
@@ -379,22 +390,117 @@ public class Storage extends SQLiteOpenHelper {
         return results.getInt(results.getColumnIndex(SCORES_COLUMN_SCORE));
     }
 
-    public void assignValueToFactorForChoice(int choice_id, int factor_id, int value_id) {
-        // TODO
+    public long assignValueToFactorForChoice(int choice_id, int factor_id, int value_id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + FACTOR_TO_VALUE_TABLE_NAME +
+                " where " + FACTOR_TO_VALUE_COLUMN_FACTOR_ID + "=" + factor_id +
+                " and " + FACTOR_TO_VALUE_COLUMN_VALUE_ID + "=" + value_id, null );
+        results.moveToFirst();
+        int factor_to_value_id = results.getInt(results.getColumnIndex(FACTOR_TO_VALUE_COLUMN_ID));
+        db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(CHOICE_TO_FACTOR_TO_VALUE_COLUMN_FACTOR_TO_VALUE_ID, factor_to_value_id);
+        contentValues.put(CHOICE_TO_FACTOR_TO_VALUE_COLUMN_CHOICE_ID, choice_id);
+        return db.insert(CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME, null, contentValues);
+    }
+
+    public List<Integer> getAllFactorToValuesForChoice(int choice_id) {
+        ArrayList<Integer> factor_to_values = new ArrayList<Integer>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " +
+                FACTOR_TO_VALUE_TABLE_NAME + ", " + CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME +
+                " where " + FACTOR_TO_VALUE_TABLE_NAME + "." + FACTOR_TO_VALUE_COLUMN_ID + "=" +
+                CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME + "." + CHOICE_TO_FACTOR_TO_VALUE_COLUMN_FACTOR_TO_VALUE_ID +
+                " and " + CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME + "." + CHOICE_TO_FACTOR_TO_VALUE_COLUMN_CHOICE_ID +
+                "=" + choice_id, null );
+
+        results.moveToFirst();
+
+        while(results.isAfterLast() == false){
+            factor_to_values.add(results.getInt(results.getColumnIndex(CHOICE_TO_FACTOR_TO_VALUE_COLUMN_FACTOR_TO_VALUE_ID)));
+            results.moveToNext();
+        }
+
+        return factor_to_values;
+    }
+
+    public void removeFactorToValueForChoiceAndFactor(int choice_id, int factor_id) {
+        Cursor factor_to_value_cursor = getFactorToValueCursorForChoiceAndFactor(choice_id, factor_id);
+        if (factor_to_value_cursor.getCount() == 0) {
+            return;
+        }
+        int factor_to_value_id = factor_to_value_cursor.getInt(
+                factor_to_value_cursor.getColumnIndex(
+                        CHOICE_TO_FACTOR_TO_VALUE_COLUMN_FACTOR_TO_VALUE_ID
+                )
+        );
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME +
+                " where " + CHOICE_TO_FACTOR_TO_VALUE_COLUMN_CHOICE_ID + "=" + choice_id +
+                " and " + CHOICE_TO_FACTOR_TO_VALUE_COLUMN_FACTOR_TO_VALUE_ID + "=" + factor_to_value_id);
+    }
+
+    private Cursor getFactorToValueCursorForChoiceAndFactor(int choice_id, int factor_id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " +
+                FACTOR_TO_VALUE_TABLE_NAME + ", " + CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME +
+                " where " + FACTOR_TO_VALUE_TABLE_NAME + "." + FACTOR_TO_VALUE_COLUMN_ID + "=" +
+                CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME + "." + CHOICE_TO_FACTOR_TO_VALUE_COLUMN_FACTOR_TO_VALUE_ID +
+                " and " + CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME + "." + CHOICE_TO_FACTOR_TO_VALUE_COLUMN_CHOICE_ID +
+                "=" + choice_id +
+                " and " + FACTOR_TO_VALUE_TABLE_NAME + "." + FACTOR_TO_VALUE_COLUMN_FACTOR_ID + "=" + factor_id, null );
+        results.moveToFirst();
+        return results;
     }
 
     public Value getValueForFactorAndChoice(int choice_id, int factor_id) {
-        // TODO
-        Value value = new Value();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor factor_to_value_cursor = getFactorToValueCursorForChoiceAndFactor(choice_id, factor_id);
+        int value_id = factor_to_value_cursor.getInt(
+                factor_to_value_cursor.getColumnIndex(
+                        FACTOR_TO_VALUE_COLUMN_VALUE_ID
+                )
+        );
+        Cursor results = db.rawQuery("select * from " + VALUES_TABLE_NAME +
+                " where " + VALUES_COLUMN_ID + "=" + value_id, null);
+        results.moveToFirst();
+        Value value = new Value(results);
         return value;
     }
 
-    public void shareDecisionWithUser(int decision_id, String user) {
-        // TODO
+    public long shareDecisionWithUser(int decision_id, String user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SHARED_WITH_COLUMN_USER, user);
+        contentValues.put(SHARED_WITH_COLUMN_DECISION_ID, decision_id);
+        contentValues.put(SHARED_WITH_COLUMN_RESPONSE_MESSAGE, "");
+        contentValues.put(SHARED_WITH_COLUMN_COMPLETED, false);
+        return db.insert(SHARED_WITH_TABLE_NAME, null, contentValues);
+    }
+
+    public void unshareDecisionWithUser(int decision_id, String user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + SHARED_WITH_TABLE_NAME +
+                " where " + SHARED_WITH_COLUMN_DECISION_ID + "=\"" + decision_id + "\"" +
+                " and " + SHARED_WITH_COLUMN_USER + "=\"" + user + "\"");
     }
 
     public void completeSharedDecision(int decision_id, String user, String message) {
-        // TODO
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("update " + SHARED_WITH_TABLE_NAME +
+                " set " + SHARED_WITH_COLUMN_RESPONSE_MESSAGE + "=\"" + message + "\" , " +
+                SHARED_WITH_COLUMN_COMPLETED + "=" + 1 +
+                " where " + SHARED_WITH_COLUMN_DECISION_ID + "=\"" + decision_id + "\"" +
+                " and " + SHARED_WITH_COLUMN_USER + "=\"" + user + "\"");
+    }
+
+    public String getResponseMessageForSharedDecision(int decision_id, String user) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results = db.rawQuery("select * from " + SHARED_WITH_TABLE_NAME +
+                " where " + SHARED_WITH_COLUMN_DECISION_ID + "=\"" + decision_id + "\"" +
+                " and " + SHARED_WITH_COLUMN_USER + "=\"" + user + "\"", null);
+        results.moveToFirst();
+        return results.getString(results.getColumnIndex(SHARED_WITH_COLUMN_RESPONSE_MESSAGE));
     }
 
     public Choice getTopChoiceForDecision(int decision_id) {
