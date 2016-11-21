@@ -1,9 +1,11 @@
 package com.example.cs465.decisionhelper;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.ContactsContract;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +84,7 @@ public class Storage extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // TODO create all the tables using db.execSQL()
-        db.execSQL( "" +
+        String queries[] = ("" +
             "create table decisions" +
                 "(" +
                     "id integer primary key," +
@@ -133,130 +135,270 @@ public class Storage extends SQLiteOpenHelper {
                 "decision_id integer," +
                 "response_message varchar(1000)," +
                 "completed boolean" +
-            ");");
+            ");").split(";");
+
+        for(String query : queries){
+            db.execSQL(query);
+        }
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS decisions;" +
+        String[] queries = ("DROP TABLE IF EXISTS decisions;" +
                 "DROP TABLE IF EXISTS choices;" +
                 "DROP TABLE IF EXISTS factors;" +
                 "DROP TABLE IF EXISTS myvalues;" +
                 "DROP TABLE IF EXISTS factor_to_value;" +
                 "DROP TABLE IF EXISTS choice_to_factor_to_value;" +
                 "DROP TABLE IF EXISTS scores;" +
-                "DROP TABLE IF EXISTS shared_with;");
+                "DROP TABLE IF EXISTS shared_with;").split(";");
+        for(String query : queries){
+            db.execSQL(query);
+        }
         onCreate(db);
     }
 
     // TODO: write methods to write and read from db
-    // SQLiteDatabase db = this.getWritableDatabase();
-    // SQLiteDatabase db = this.getReadableDatabase();
-    // db.rawQuery
 
     public List<Decision> getAllDecisionsForOwner(String owner) {
-        ArrayList<Decision> decisions = new ArrayList<Decision>();
+        List<Decision> decisions= new ArrayList<Decision>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + DECISIONS_TABLE_NAME, null );
+
+        results.moveToFirst();
+
+        while(results.isAfterLast() == false){
+            decisions.add(new Decision(results));
+            results.moveToNext();
+        }
         return decisions;
     }
 
+    public void removeAllDecisionsForOwner(String owner) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + DECISIONS_TABLE_NAME +
+                " where " + DECISIONS_COLUMN_OWNER + "=\"" + owner + "\"");
+    }
+
     public List<Decision> getAllDecisionsSharedWithOwner(String owner) {
+        // TODO
         ArrayList<Decision> decisions = new ArrayList<Decision>();
         return decisions;
     }
 
     public Decision getDecisionByID(int id) {
-        Decision decision = new Decision();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + DECISIONS_TABLE_NAME +
+                " where " + DECISIONS_COLUMN_ID + "=" + id, null );
+        results.moveToFirst();
+        Decision decision = new Decision(results);
         return decision;
     }
 
-    public Decision createDecision(String name, String owner) {
-        Decision decision = new Decision();
-        return decision;
+    public long createDecision(String name, String owner) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DECISIONS_COLUMN_NAME, name);
+        contentValues.put(DECISIONS_COLUMN_OWNER, owner);
+        return db.insert(DECISIONS_TABLE_NAME, null, contentValues);
     }
 
-    public int getCurrentStep(int decision_id) {
+    public int getCurrentStepForDecision(int decision_id) {
+        // TODO
         return 4;
     }
 
     public List<Choice> getAllChoicesForDecision(int decision_id) {
         ArrayList<Choice> choices = new ArrayList<Choice>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + CHOICES_TABLE_NAME +
+                " where " + CHOICES_COLUMN_DECISION_ID + "=" + decision_id, null );
+
+        results.moveToFirst();
+
+        while(results.isAfterLast() == false){
+            choices.add(new Choice(results));
+            results.moveToNext();
+        }
         return choices;
     }
 
+    public void removeAllChoicesForDecision(int decision_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + CHOICES_TABLE_NAME +
+                " where " + CHOICES_COLUMN_DECISION_ID + "=\"" + decision_id + "\"");
+    }
+
     public Choice getChoiceByID(int id) {
-        Choice choice = new Choice();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + CHOICES_TABLE_NAME +
+                " where " + CHOICES_COLUMN_ID + "=" + id, null );
+        results.moveToFirst();
+        Choice choice = new Choice(results);
         return choice;
     }
 
-    public Choice createChoice(String name, int decision_id) {
-        Choice choice = new Choice();
-        return choice;
+    public long createChoice(String name, int decision_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(CHOICES_COLUMN_NAME, name);
+        contentValues.put(CHOICES_COLUMN_DECISION_ID, decision_id);
+        return db.insert(CHOICES_TABLE_NAME, null, contentValues);
     }
 
     public List<Factor> getAllFactorsForDecision(int decision_id) {
         ArrayList<Factor> factors = new ArrayList<Factor>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + FACTORS_TABLE_NAME +
+                " where " + FACTORS_COLUMN_DECISION_ID + "=" + decision_id, null );
+
+        results.moveToFirst();
+
+        while(results.isAfterLast() == false){
+            factors.add(new Factor(results));
+            results.moveToNext();
+        }
         return factors;
     }
 
+    public void removeAllFactorsForDecision(int decision_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + FACTORS_TABLE_NAME +
+                " where " + FACTORS_COLUMN_DECISION_ID + "=\"" + decision_id + "\"");
+    }
+
     public Factor getFactorByID(int id) {
-        Factor factor= new Factor();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + FACTORS_TABLE_NAME +
+                " where " + FACTORS_COLUMN_ID + "=" + id, null );
+        results.moveToFirst();
+        Factor factor = new Factor(results);
         return factor;
     }
 
-    public Factor createFactor(String name, int decision_id) {
-        Factor factor = new Factor();
-        return factor;
+    public long createFactor(String name, int decision_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(FACTORS_COLUMN_NAME, name);
+        contentValues.put(FACTORS_COLUMN_DECISION_ID, decision_id);
+        return db.insert(FACTORS_TABLE_NAME, null, contentValues);
     }
 
     public List<Value> getAllValuesForFactor(int factor_id) {
         ArrayList<Value> values = new ArrayList<Value>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " +
+                VALUES_TABLE_NAME + ", " + FACTOR_TO_VALUE_TABLE_NAME +
+                " where " + VALUES_TABLE_NAME + "." + VALUES_COLUMN_ID + "=" +
+                FACTOR_TO_VALUE_TABLE_NAME + "." + FACTOR_TO_VALUE_COLUMN_VALUE_ID +
+                " and " + FACTOR_TO_VALUE_TABLE_NAME + "." + FACTOR_TO_VALUE_COLUMN_FACTOR_ID + "=" + factor_id, null );
+
+        results.moveToFirst();
+
+        while(results.isAfterLast() == false){
+            values.add(new Value(results));
+            results.moveToNext();
+        }
+
         return values;
     }
 
+    public void removeAllValuesForFactor(int factor_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        List<Value> values = this.getAllValuesForFactor(factor_id);
+        for (Value v : values) {
+            db.execSQL("delete from " + VALUES_TABLE_NAME +
+                    " where " + VALUES_COLUMN_ID + "=\"" + v.id + "\"");
+            db.execSQL("delete from " + FACTOR_TO_VALUE_TABLE_NAME +
+                    " where " + FACTOR_TO_VALUE_COLUMN_VALUE_ID + "=\"" + v.id + "\"");
+        }
+    }
+
     public Value getValueByID(int id) {
-        Value value = new Value();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + VALUES_TABLE_NAME +
+                " where " + VALUES_COLUMN_ID + "=" + id, null );
+        results.moveToFirst();
+        Value value = new Value(results);
         return value;
     }
 
-    public Value createValueForFactor(String name, int factor_id) {
-        Value value = new Value();
-        return value;
+    public long createValueForFactor(String name, int factor_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(VALUES_COLUMN_NAME, name);
+        Long value_id = db.insert(VALUES_TABLE_NAME, null, contentValues);
+        if (value_id != -1) {
+            contentValues = new ContentValues();
+            contentValues.put(FACTOR_TO_VALUE_COLUMN_FACTOR_ID, factor_id);
+            contentValues.put(FACTOR_TO_VALUE_COLUMN_VALUE_ID, value_id);
+            db.insert(FACTOR_TO_VALUE_TABLE_NAME, null, contentValues);
+        }
+        return value_id;
     }
 
-    public void assignScoreToValue(String owner, int score, int value_id) {
+    public long assignScoreToValue(String owner, int score, int value_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SCORES_COLUMN_OWNER, owner);
+        contentValues.put(SCORES_COLUMN_SCORE, score);
+        contentValues.put(SCORES_COLUMN_VALUE_ID, value_id);
+        return db.insert(SCORES_TABLE_NAME, null, contentValues);
+    }
 
+    public void removeAllScoresForOwner(String owner) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + SCORES_TABLE_NAME +
+                " where " + SCORES_COLUMN_OWNER + "=\"" + owner + "\"");
     }
 
     public int getScoreForValue(String owner, int value_id) {
-        return 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + SCORES_TABLE_NAME +
+                " where " + SCORES_COLUMN_OWNER + "=\"" + owner + "\"" +
+                " and " + SCORES_COLUMN_VALUE_ID + "=" + value_id, null );
+        results.moveToFirst();
+        return results.getInt(results.getColumnIndex(SCORES_COLUMN_SCORE));
     }
 
-    public void assignScoreToFactor(String owner, int score, int factor_id) {
-
+    public long assignScoreToFactor(String owner, int score, int factor_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SCORES_COLUMN_OWNER, owner);
+        contentValues.put(SCORES_COLUMN_SCORE, score);
+        contentValues.put(SCORES_COLUMN_FACTOR_ID, factor_id);
+        return db.insert(SCORES_TABLE_NAME, null, contentValues);
     }
 
     public int getScoreForFactor(String owner, int factor_id) {
-        return 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + SCORES_TABLE_NAME +
+                " where " + SCORES_COLUMN_OWNER + "=\"" + owner + "\"" +
+                " and " + SCORES_COLUMN_FACTOR_ID + "=" + factor_id, null );
+        results.moveToFirst();
+        return results.getInt(results.getColumnIndex(SCORES_COLUMN_SCORE));
     }
 
     public void assignValueToFactorForChoice(int choice_id, int factor_id, int value_id) {
-
+        // TODO
     }
 
     public Value getValueForFactorAndChoice(int choice_id, int factor_id) {
+        // TODO
         Value value = new Value();
         return value;
     }
 
     public void shareDecisionWithUser(int decision_id, String user) {
-
+        // TODO
     }
 
     public void completeSharedDecision(int decision_id, String user, String message) {
-
+        // TODO
     }
 
     public Choice getTopChoiceForDecision(int decision_id) {
+        // TODO
         Choice choice = new Choice();
         return choice;
     }
@@ -264,6 +406,12 @@ public class Storage extends SQLiteOpenHelper {
     /*
      *  CLASSES TO MAKE WORKING WITH DATA RECEIVED FROM SQL EASIER
      */
+    public  class  DatabaseObject {
+        public DatabaseObject(Cursor row) { }
+        private DatabaseObject() { }
+
+    }
+
     public class Decision {
         public int id;
         public String name;
