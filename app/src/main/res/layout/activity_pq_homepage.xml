@@ -16,6 +16,18 @@
         style="@style/TitleBarText"
         android:text="@string/pq_titlebar" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pq_homepage_detail_text"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        />
+
     <Button
         android:id="@+id/pq_hompage_btn_startquiz"
         android:text="@string/pq_homepage_btn_startquiztext"

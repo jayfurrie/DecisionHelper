@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">DecisionHelper</string>
-    <string name="login_welcome_tv_welcometext">Welcome to Decide with me!</string>
+    <string name="login_welcome_tv_welcometext">Welcome to \n Decide With Me!</string>
     <string name="welcome_detail_text">
-        Some text could go here that says a little bit about how the app works and why they need to
-        make an account, etc!</string>
+        Make tough decisions the easy way, and share them with the people who matter most.</string>
     <string name="login">login</string>
     <string name="help">help</string>
     <string name="login_welcome_btn_signuptext">sign up</string>
@@ -29,13 +28,15 @@
     <string name="dh_add_possibility_btn_newpostext">+ New Possibility</string>
     <string name="dh_button">Dummy Factor</string>
     <string name="dh_decision">Dummy Decision</string>
-    <string name="dh_add_value_tv_titlebartext">add/edit values</string>
+    <string name="dh_add_value_titlebar">add/edit values</string>
+    <string name="dh_decision_menu_titlebar">Decision Menu</string>
     <string name="dh_add_values_btn_newpostext">+ New Value</string>
     <string name="dh_decision_menu_btn_addrmfactorstext">Add/edit Factors</string>
     <string name="dh_decision_menu_btn_ranktext">Rank Factors</string>
     <string name="dh_decision_menu_btn_addrmchoicestext">Add/edit Choices</string>
     <string name="dh_decision_menu_btn_resulttext">View Result</string>
     <string name="dh_decision_menu_btn_sharetext">Share</string>
+    <string name="dh_factors_dropdown_titlebar">Apply Values to Factor</string>
     <string name="dh_factors_dropdown_hint">For each factor, choose a value from the dropdown list to apply to your choice.</string>
     <string name="dh_factors_dropdown_label">apply factors drop down</string>
     <string name="dh_result_congrats">Congratualions! According to your preferences and our calculations, you should choose:</string>
@@ -45,7 +46,7 @@
     <string name="dh_homepage_btn_newdecisiontext">New Decision</string>
     <string name="dh_homepage_tv_mydecisionstext">My Decisions:</string>
     <string name="dh_homepage_tv_sharedwithme">Shared with me:</string>
-    <string name="dh_homepage_titlebar">Decision Helper</string>
+    <string name="dh_homepage_titlebar">Decision Helper Home</string>
     <string name="dh_invite">Invite Friends</string>
     <string name="dh_invite_from_contacts">Invite From Contacts</string>
     <string name="dh_rank_factors_tv_titlebartext">Rank Factors</string>
@@ -145,7 +146,8 @@
     <string name="pq_previous_text">Previous</string>
     <string name="pq_next_text">Next</string>
     <string name="pq_start_text">Start</string>
-
+    <string name="pq_results_result">Personality Quiz Result:</string>
+    <string name="pq_homepage_detail_text">Take a quick quiz to see what your risk preferences are when it comes to making big decisions!</string>
 
     <!--Strings related to settings-->
     <string name="s_homepage_tv_titlebartext">Settings</string>

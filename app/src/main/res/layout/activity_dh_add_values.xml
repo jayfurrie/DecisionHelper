@@ -8,16 +8,17 @@
         android:id="@+id/dh_add_values_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary">
 
-    <TextView
-        android:id="@+id/dh_add_values_tv_titlebar"
-        android:text="@string/dh_add_value_tv_titlebartext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:layout_weight="0.06" />
+        <TextView
+            android:id="@+id/dh_add_values_tv_titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dh_add_value_titlebar"
+            android:textColor="#ffffff"
+            android:textSize = "26sp"
+            android:gravity = "center" />
+    </android.support.v7.widget.Toolbar>
 
     <Button
     android:id="@+id/dh_add_values_btn_newval"
