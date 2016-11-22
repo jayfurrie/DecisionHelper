@@ -27,6 +27,8 @@
     <string name="dh_add_possibility_tv_titlebartext">add/edit possibilities</string>
     <string name="dh_add_possibility_btn_newpostext">+ New Possibility</string>
     <string name="dh_button">Dummy Factor</string>
+    <string name="dh_list_rankvalues_titlebar">Rank Choice Values</string>
+    <string name="dh_list_rankvalues_instructions">Click on each factor below to rank their values from worst to best.</string>
     <string name="dh_decision">Dummy Decision</string>
     <string name="dh_add_value_titlebar">add/edit values</string>
     <string name="dh_decision_menu_titlebar">Decision Menu</string>
@@ -36,9 +38,13 @@
     <string name="dh_decision_menu_btn_addrmchoicestext">Add/edit Choices</string>
     <string name="dh_decision_menu_btn_resulttext">View Result</string>
     <string name="dh_decision_menu_btn_sharetext">Share</string>
+    <string name="dh_decision_menu_btn_rankchoicestext">Rank Choice Values</string>
     <string name="dh_factors_dropdown_titlebar">Apply Values to Factor</string>
     <string name="dh_factors_dropdown_hint">For each factor, choose a value from the dropdown list to apply to your choice.</string>
     <string name="dh_factors_dropdown_label">apply factors drop down</string>
+    <string name="dh_addfactors_textinput_directions">For this choice, type the values corresponding to each factor.</string>
+    <string name="dh_addfactors_textinput_titlebar">Add Values to Choice</string>
+    <string name="dh_addfactors_textinput_btn_new">Add New</string>
     <string name="dh_result_congrats">Congratualions! According to your preferences and our calculations, you should choose:</string>
     <string name="dh_friend_1">Friend 1</string>
     <string name="dh_friend_2">Friend 2</string>
@@ -50,8 +56,9 @@
     <string name="dh_invite">Invite Friends</string>
     <string name="dh_invite_from_contacts">Invite From Contacts</string>
     <string name="dh_rank_factors_tv_titlebartext">Rank Factors</string>
-    <string name="dh_weigh_values_range_0">0</string>
-    <string name="dh_weigh_values_range_100">100</string>
+    <string name="dh_rank_values_tv_title">Rank Values</string>
+    <string name="dh_rank_values_range_0">0</string>
+    <string name="dh_rank_values_range_100">100</string>
     <string name="dh_new_choice">new choice</string>
     <string name="dh_next">Next</string>
     <string name="dh_select">Select what you like to share</string>
@@ -68,7 +75,7 @@
     <string name="dh_addchoice_dialog_tv_new">What are you deciding between? Add one choice.</string>
     <string name="dh_addchoice_dialog_et_hint">Job #1, Job #2&#8230;</string>
     <string name="dh_addvalue_dialog_tv_new">Add a new value for the selected factor.</string>
-    <string name="dh_addvalue_dialog_et_hint">100k, far from home, etc...</string>
+    <string name="dh_addvalue_dialog_et_hint">100k, far from home, etc</string>
     <string name="login_welcome_btn_logintext">Log In</string>
     <string name="login_signupconfirmation_tv_result_successtext1">Registered Account Successfully!</string>
     <string name="login_signupconfirmation_tv_result_successtext2">Your email has been added to our list.</string>

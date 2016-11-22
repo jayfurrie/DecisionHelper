@@ -69,23 +69,6 @@ public class dh_add_factors extends AppCompatActivity {
         });
     }
 
-    public void dh_add_values_btn_factor1OnClick(View view)
-    {
-        Intent intent = new Intent(this, dh_add_values.class);
-        startActivity(intent);
-    }
-
-    public void dh_add_values_btn_factor2OnClick(View view)
-    {
-        Intent intent = new Intent(this, dh_add_values.class);
-        startActivity(intent);
-    }
-
-    public void dh_add_values_btn_factor3OnClick(View view)
-    {
-        Intent intent = new Intent(this, dh_add_values.class);
-        startActivity(intent);
-    }
 
     public void dh_add_factors_btn_backOnClick(View view)
     {

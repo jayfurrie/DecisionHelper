@@ -32,6 +32,12 @@ public class dh_decision_menu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void dh_decision_menu_btn_rankchoicesOnClick(View view)
+    {
+        Intent intent = new Intent(this, dh_list_rankvalues.class);
+        startActivity(intent);
+    }
+
     public void dh_decision_menu_btn_resultOnClick(View view)
     {
         Intent intent = new Intent(this, dh_result.class);

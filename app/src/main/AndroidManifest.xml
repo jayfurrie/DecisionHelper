@@ -45,12 +45,10 @@
 
         <activity android:name=".dh_add_choices" />
         <activity android:name=".dh_add_factors" />
-        <activity android:name=".dh_add_values" />
         <activity android:name=".dh_decision_menu" />
-        <activity android:name=".dh_factors_dropdown" />
         <activity android:name=".dh_homepage" />
         <activity android:name=".dh_rank_factors" />
-        <activity android:name=".dh_weigh_values" />
+        <activity android:name=".dh_rank_values" />
         <activity android:name=".h_homepage" />
         <activity android:name=".login_login" />
         <activity android:name=".login_signup" />
@@ -63,7 +61,9 @@
         <activity android:name=".dh_share_choose_receiver" />
         <activity android:name=".dh_share_invite_friend" />
         <activity android:name=".dh_share_reviews" />
-        <activity android:name=".dh_result"></activity>
+        <activity android:name=".dh_result" />
+        <activity android:name=".dh_addfactors_textinput" />
+        <activity android:name=".dh_list_rankvalues"></activity>
     </application>
 
 </manifest>

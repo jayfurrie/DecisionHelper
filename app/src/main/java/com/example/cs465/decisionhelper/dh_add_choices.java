@@ -50,6 +50,8 @@ public class dh_add_choices extends AppCompatActivity {
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
+                                        Intent i = new Intent(dh_add_choices.this, dh_addfactors_textinput.class);
+                                        startActivity(i);
                                         // ToDo get user input here and save
                                     }
                                 })
@@ -71,7 +73,7 @@ public class dh_add_choices extends AppCompatActivity {
     }
 
 
-    public void dh_addchoices_btn_backOnClick(View view)
+    public void dh_add_choices_btn_backOnClick(View view)
     {
         Intent intent = new Intent(this, dh_decision_menu.class);
         startActivity(intent);
@@ -79,7 +81,7 @@ public class dh_add_choices extends AppCompatActivity {
 
     public void dh_addchoices_btn_choice1OnClick(View view)
     {
-        Intent intent = new Intent(this, dh_factors_dropdown.class);
+        Intent intent = new Intent(this, dh_addfactors_textinput.class);
         startActivity(intent);
     }
 }
