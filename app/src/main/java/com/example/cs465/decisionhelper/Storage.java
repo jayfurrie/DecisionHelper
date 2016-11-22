@@ -504,9 +504,31 @@ public class Storage extends SQLiteOpenHelper {
     }
 
     public Choice getTopChoiceForDecision(int decision_id) {
-        // TODO
-        Choice choice = new Choice();
-        return choice;
+        Decision decision = this.getDecisionByID(decision_id);
+        List<Choice> choices = this.getAllChoicesForDecision(decision_id);
+        List<Factor> factors = this.getAllFactorsForDecision(decision_id);
+        int factor_score_sum = 0;
+        for (Factor f : factors) {
+            f.score = this.getScoreForFactor(decision.owner, f.id);
+            factor_score_sum += f.score;
+        }
+
+        for(Choice c : choices) {
+            c.score = 0;
+            for (Factor f : factors) {
+                Value v = this.getValueForFactorAndChoice(c.id, f.id);
+                double v_score = this.getScoreForValue(decision.owner, v.id);
+                c.score += v_score * f.score / factor_score_sum;
+            }
+        }
+
+        Choice top_choice = null;
+        for (Choice c : choices) {
+            if (top_choice == null || c.score > top_choice.score) {
+                top_choice = c;
+            }
+        }
+        return top_choice;
     }
 
     /*
@@ -523,33 +545,32 @@ public class Storage extends SQLiteOpenHelper {
             this.name = row.getString(row.getColumnIndex(DECISIONS_COLUMN_NAME));
             this.owner = row.getString(row.getColumnIndex(DECISIONS_COLUMN_OWNER));
         }
-        private Decision() {}
     }
 
     public class Choice {
         public int id;
         public String name;
         public int decision_id;
+        public double score;
 
         public Choice(Cursor row) {
             this.id = row.getInt(row.getColumnIndex(CHOICES_COLUMN_ID));
             this.name = row.getString(row.getColumnIndex(CHOICES_COLUMN_NAME));
             this.decision_id = row.getInt(row.getColumnIndex(CHOICES_COLUMN_DECISION_ID));
         }
-        private Choice() {}
     }
 
     public class Factor {
         public int id;
         public String name;
         public int decision_id;
+        public double score;
 
         public Factor(Cursor row) {
             this.id = row.getInt(row.getColumnIndex(FACTORS_COLUMN_ID));
             this.name = row.getString(row.getColumnIndex(FACTORS_COLUMN_NAME));
             this.decision_id = row.getInt(row.getColumnIndex(FACTORS_COLUMN_DECISION_ID));
         }
-        private Factor() {}
     }
 
     public class Value {
@@ -560,8 +581,6 @@ public class Storage extends SQLiteOpenHelper {
             this.id = row.getInt(row.getColumnIndex(VALUES_COLUMN_ID));
             this.name = row.getString(row.getColumnIndex(VALUES_COLUMN_NAME));
         }
-
-        private Value() {}
     }
 
     public class Score {
@@ -578,8 +597,6 @@ public class Storage extends SQLiteOpenHelper {
             this.value_id = row.getInt(row.getColumnIndex(SCORES_COLUMN_VALUE_ID));
             this.factor_id = row.getInt(row.getColumnIndex(SCORES_COLUMN_FACTOR_ID));
         }
-
-        private Score() {}
     }
 
 }
