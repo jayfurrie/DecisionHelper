@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dh_list_rankvalues_ab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/dh_list_rankvalues_tv_titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dh_list_rankvalues_titlebar"
+            android:textColor="@color/colorWhite"
+            android:textSize = "26sp"
+            android:gravity = "center" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/dh_list_rankvalues_tv_instructions"
+        android:text="@string/dh_list_rankvalues_instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/dh_list_rankvalues_btn_test"
+        android:text="Salary"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="dh_list_rankvalues_dummyOnClick"/>
+
+
+    <Button
+        android:id="@+id/dh_list_rankvalues_btn_back"
+        android:text="@string/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="80dp"
+        android:onClick="dh_list_rankvalues_btn_backOnClick"/>
+
+
+
+
+</LinearLayout>

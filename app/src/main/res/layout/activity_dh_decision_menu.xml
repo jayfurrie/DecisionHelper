@@ -6,13 +6,13 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_homepage_ab"
+        android:id="@+id/dh_list_rankvalues_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorPrimary">
 
         <TextView
-            android:id="@+id/dh_decision_menu_tv_titlebar"
+            android:id="@+id/dh_list_rankvalues_tv_titlebar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/dh_decision_menu_titlebar"
@@ -46,6 +46,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.09"
         android:onClick="dh_decision_menu_btn_addchoicesOnClick"/>
+
+    <Button
+        android:id="@+id/dh_decision_menu_btn_rankchoices"
+        android:text="@string/dh_decision_menu_btn_rankchoicestext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.09"
+        android:onClick="dh_decision_menu_btn_rankchoicesOnClick"/>
 
     <Button
         android:id="@+id/dh_decision_menu_btn_result"

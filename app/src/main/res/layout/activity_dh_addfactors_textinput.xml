@@ -7,15 +7,15 @@
     <!-- Add a toolbar and a textview overlay to create the
     custom title -->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_factors_dropdown_ab"
+        android:id="@+id/dh_addfactors_textinput_ab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorPrimary" >
         <TextView
-            android:id="@+id/dh_factors_dropdown_tv_titlebar"
+            android:id="@+id/dh_addfactors_textinput_tv_titlebar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/dh_factors_dropdown_titlebar"
+            android:text="@string/dh_addfactors_textinput_titlebar"
             android:textColor="#ffffff"
             android:textSize = "26sp"
             android:gravity = "center" />
@@ -28,14 +28,16 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="@string/dh_factors_dropdown_hint"
+            android:id="@+id/dh_addfactors_textinput_tv_instructions"
+            android:text="@string/dh_addfactors_textinput_directions"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp" />
 
         <TextView
-            android:text="Entry level consultant at Accenture, D.C."
+            android:id="@+id/dh_addfactors_textinput_tv_currentchoice"
+            android:text="Fill this with user choice1"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,26 +45,6 @@
             android:textColor="@color/colorPrimaryDark"
             android:layout_marginTop="30dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
-
-    <TextView
-        android:text="Salary:"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_weight="1"
-        />
-    <Spinner
-        android:id="@+id/dh_factors_dropdown_spn_possibility1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,58 +52,43 @@
             android:layout_marginTop="20dp">
 
             <TextView
-                android:text="Location:"
+                android:text="Populate list of factors"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:layout_weight="1"/>
-            <Spinner
-                android:id="@+id/dh_factors_dropdown_spn_possibility2"
+                android:layout_weight="1.25"
+                />
+            <EditText
+                android:id="@+id/dh_addfactors_textinput_et_factor"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
 
-            <TextView
-                android:text="Benefits:"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
-            <Spinner
-                android:id="@+id/dh_factors_dropdown_spn_possibility3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="40dp"
+            android:layout_gravity="bottom">
             <Button
-                android:id="@+id/dh_factors_dropdown_btn_OK"
+                android:id="@+id/dh_addfactors_textinput_btn_OK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_OK"
                 android:layout_gravity="center_horizontal"
-                android:onClick="dh_factors_dropdown_btn_OKOnClick"/>
+                android:onClick="dh_addfactors_textinput_btn_OKOnClick"/>
 
             <Button
-                android:id="@+id/dh_factors_dropdown_btn_cancel"
+                android:id="@+id/dh_addfactors_textinput_btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_cancel"
                 android:layout_gravity="center_horizontal"
-                android:onClick="dh_factors_dropdown_btn_cancelOnClick"/>
+                android:onClick="dh_addfactors_textinput_btn_cancelOnClick"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
