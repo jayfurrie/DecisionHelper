@@ -8,13 +8,14 @@ import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.content.Context;
 
-public class dh_share_choose_receiver extends AppCompatActivity {
+public class dh_share_choose_receiver extends BaseActivity {
     Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_share_choose_receiver);
         addListenerOnButton();
+        setTitle("Share Your Result");
     }
     public void addListenerOnButton() {
 

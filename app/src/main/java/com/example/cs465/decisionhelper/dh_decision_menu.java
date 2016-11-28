@@ -6,11 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 
-public class dh_decision_menu extends AppCompatActivity {
+public class dh_decision_menu extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_decision_menu);
+        setTitle("Decision Helper");
 
     }
 

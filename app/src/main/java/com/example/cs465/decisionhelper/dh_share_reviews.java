@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-public class dh_share_reviews extends AppCompatActivity {
+public class dh_share_reviews extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_share_reviews);
+        setTitle("Share Reviews");
     }
     public void dh_share_reviews_btn_sendOnClick(View view) {
         Intent intent = new Intent(this, dh_decision_menu.class);

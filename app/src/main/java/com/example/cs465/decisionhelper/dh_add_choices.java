@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.view.LayoutInflater;
 
 
-public class dh_add_choices extends AppCompatActivity {
+public class dh_add_choices extends BaseActivity {
     final Context context = this;
     private Button button;
     private EditText result;
@@ -22,6 +22,7 @@ public class dh_add_choices extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_add_choices);
+        setTitle("Add Choices");
 
         // find the add new choice button
         button = (Button) findViewById(R.id.dh_add_choices_btn_newchoice);

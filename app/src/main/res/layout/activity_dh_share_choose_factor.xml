@@ -3,21 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_share_choose_factor_ab"
-        android:background="?attr/colorPrimary"
-        android:layout_height="40dp"
-        android:layout_width="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Share: "
-            android:textColor="#ffffff"
-            android:textSize = "26sp"
-            android:gravity = "center" />
-
-    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:text="@string/dh_select"

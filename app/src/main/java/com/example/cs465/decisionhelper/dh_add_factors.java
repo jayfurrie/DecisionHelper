@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class dh_add_factors extends AppCompatActivity {
+public class dh_add_factors extends BaseActivity {
 
     final Context context = this;
     private Button button;
@@ -21,6 +21,7 @@ public class dh_add_factors extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_add_factors);
+        setTitle("Add Factors");
 
         // find the add new factor button
         button = (Button) findViewById(R.id.dh_add_factors_btn_newfactor);

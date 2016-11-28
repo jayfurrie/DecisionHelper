@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class pq_homepage extends AppCompatActivity {
+public class pq_homepage extends BaseActivity {
     public final static String pq_Question_Activity = "com.example.cs465.decisionhelper.pq_questions";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pq_homepage);
+        setTitle("Personality Quiz");
     }
 
     /** called when the user clicks the Start Quiz button */

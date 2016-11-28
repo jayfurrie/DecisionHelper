@@ -11,9 +11,7 @@
     tools:context="com.example.cs465.decisionhelper.pq_results"
     android:orientation="vertical">
 
-    <TextView
-        style="@style/TitleBarText"
-        android:text="@string/pq_results_result" />
+
 
 
     <TextView

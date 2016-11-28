@@ -5,11 +5,7 @@
     android:layout_marginRight="16dp"
     android:layout_marginLeft="16dp">
 
-    <TextView
-        android:id="@+id/h_homepage_tv_titlebar"
-        android:text="@string/h_homepage_titlebartext"
-        style="@style/TitleBarText"
-         />
+
 
     <Button
         android:id="@+id/h_homepage_btn_DHfaq"

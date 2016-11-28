@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class pq_questions extends AppCompatActivity {
+public class pq_questions extends BaseActivity {
 
 
     Resources res = null;
@@ -23,6 +23,7 @@ public class pq_questions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pq_questions);
+        setTitle("Personality Quiz");
 
         res = getResources();
         question_array = res.getStringArray(R.array.pq_questions_array);

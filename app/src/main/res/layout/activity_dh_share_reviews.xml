@@ -2,21 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_share_review_ab"
-        android:background="?attr/colorPrimary"
-        android:layout_height="40dp"
-        android:layout_width="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Share: Decide which job to take"
-            android:textColor="@color/colorWhite"
-            android:textSize="22sp"
-            android:gravity="center"/>
-
-    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:text="@string/dh_share_review"

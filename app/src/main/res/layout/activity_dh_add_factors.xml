@@ -4,20 +4,6 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_add_factors_ab"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary">
-        <TextView
-            android:id="@+id/dh_add_factors_tv_titlebar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dh_add_factors_tv_titlebartext"
-            android:textColor="@color/colorWhite"
-            android:textSize = "26sp"
-            android:gravity = "center" />
-    </android.support.v7.widget.Toolbar>
 
 
     <Button

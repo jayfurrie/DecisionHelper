@@ -5,21 +5,7 @@
     android:weightSum="1"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_list_rankvalues_ab"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary">
 
-        <TextView
-            android:id="@+id/dh_list_rankvalues_tv_titlebar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dh_list_rankvalues_titlebar"
-            android:textColor="@color/colorWhite"
-            android:textSize = "26sp"
-            android:gravity = "center" />
-    </android.support.v7.widget.Toolbar>
 
 
     <TextView

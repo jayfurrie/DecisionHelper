@@ -7,12 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.content.Context;
-public class dh_share_invite_friend extends AppCompatActivity {
+public class dh_share_invite_friend extends BaseActivity {
     Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_share_invite_friend);
+        setTitle("Invite a Friend");
     }
 
     public void dh_share_invite_friend_btn_nextOnClick(View view) {

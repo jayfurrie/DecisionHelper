@@ -3,21 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_share_invite_friends_ab"
-        android:background="?attr/colorPrimary"
-        android:layout_height="40dp"
-        android:layout_width="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Share: Decide which job to take"
-            android:textColor="#ffffff"
-            android:textSize = "22sp"
-            android:gravity = "center" />
-
-    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:text="@string/dh_invite_from_contacts"

@@ -5,12 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class dh_addfactors_textinput extends AppCompatActivity {
+public class dh_addfactors_textinput extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_addfactors_textinput);
+        setTitle("Add Factors");
     }
 
     public void dh_addfactors_textinput_btn_OKOnClick(View view)

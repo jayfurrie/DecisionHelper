@@ -12,9 +12,7 @@
     tools:context="com.example.cs465.personality_quiz">
     -->
 
-    <TextView
-        style="@style/TitleBarText"
-        android:text="@string/pq_titlebar" />
+
 
     <TextView
         android:layout_width="match_parent"

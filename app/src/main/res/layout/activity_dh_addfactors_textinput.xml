@@ -4,22 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Add a toolbar and a textview overlay to create the
-    custom title -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/dh_addfactors_textinput_ab"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary" >
-        <TextView
-            android:id="@+id/dh_addfactors_textinput_tv_titlebar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dh_addfactors_textinput_titlebar"
-            android:textColor="#ffffff"
-            android:textSize = "26sp"
-            android:gravity = "center" />
-    </android.support.v7.widget.Toolbar>
+
 
 
     <LinearLayout
