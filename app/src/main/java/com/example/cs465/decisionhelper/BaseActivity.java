@@ -30,6 +30,7 @@ public class BaseActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout fullView;
     ArrayList<NavItem> mNavItems = new ArrayList<NavItem>();
+    Storage db;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,8 @@ public class BaseActivity extends AppCompatActivity {
                 selectItemFromDrawer(position);
             }
         });
+
+        db = new Storage(this);
     }
 
     @Override
