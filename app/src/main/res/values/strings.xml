@@ -53,6 +53,8 @@
     <string name="dh_homepage_tv_mydecisionstext">My Decisions:</string>
     <string name="dh_homepage_tv_sharedwithme">Shared with me:</string>
     <string name="dh_homepage_titlebar">Decision Helper Home</string>
+    <string name="dh_homepage_dialog_tv_new">What would you like to make a decision on?</string>
+    <string name="dh_homepage_dialog_et_hint">Should I buy a used or new car?</string>
     <string name="dh_invite">Invite Friends</string>
     <string name="dh_invite_from_contacts">Invite From Contacts</string>
     <string name="dh_rank_factors_tv_titlebartext">Rank Factors</string>
