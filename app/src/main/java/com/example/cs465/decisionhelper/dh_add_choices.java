@@ -20,7 +20,6 @@ public class dh_add_choices extends BaseActivity {
     private Button button;
     private EditText result;
     int decisionID;
-    String decisionName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,6 @@ public class dh_add_choices extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_add_choices);
         decisionID = getIntent().getIntExtra("decision_id", 0);
-        decisionName = getIntent().getStringExtra("decision_name");
         setTitle("Add Choices");
 
         // find the add new choice button
@@ -58,7 +56,7 @@ public class dh_add_choices extends BaseActivity {
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
-                                        String name = userInput.getText().toString().replace(" ", "");
+                                        String name = userInput.getText().toString();
                                         // public long createChoice(String name, int decision_id)
                                         int choiceID = (int) db.createChoice(name, decisionID);
                                         addChoicesToView();
@@ -112,7 +110,8 @@ public class dh_add_choices extends BaseActivity {
     private void openChoice(String name, int id) {
         Intent intent = new Intent(context, dh_addfactors_textinput.class);
         intent.putExtra("choice_name", name);
-        intent.putExtra("decision_id", id);
+        intent.putExtra("choice_id", id);
+        intent.putExtra("decision_id", decisionID);
         startActivity(intent);
     }
 
