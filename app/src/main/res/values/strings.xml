@@ -59,6 +59,9 @@
     <string name="dh_invite_from_contacts">Invite From Contacts</string>
     <string name="dh_rank_factors_tv_titlebartext">Rank Factors</string>
     <string name="dh_rank_values_tv_title">Rank Values</string>
+    <string name="dh_rank_values_instructions">For the value worth the least to you,
+        score it a 0. For the value worth the most, rank it the full scale. For intermediate values,
+        score them compared to the worst and best. </string>
     <string name="dh_rank_values_range_0">0</string>
     <string name="dh_rank_values_range_100">100</string>
     <string name="dh_new_choice">new choice</string>
