@@ -6,7 +6,7 @@
 
     <EditText
         android:id="@+id/login_login_et_username"
-        android:text="@string/login_login_et_usernametext"
+        android:hint="@string/login_login_et_usernametext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"

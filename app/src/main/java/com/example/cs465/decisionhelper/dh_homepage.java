@@ -16,11 +16,13 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class dh_homepage extends BaseActivity {
     final Context context = this;
@@ -32,7 +34,6 @@ public class dh_homepage extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_homepage);
         setTitle("Decision Helper");
-
 
 
         // find the add new decision button
@@ -61,15 +62,17 @@ public class dh_homepage extends BaseActivity {
                         .setCancelable(false)
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog,int id) {
-                                        //  ToDo update the list of decisions to include the newly created one
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        String name = userInput.getText().toString().replace(" ", "");
                                         // public long createDecision(String name, String owner)
-                                        db.createDecision(userInput.getText().toString().replace(" ", ""), login_login.username);
+                                        int decisionID = (int) db.createDecision(name, login_login.username);
+                                        addDecisionsToView();
+                                        openDecision(name, decisionID);
                                     }
                                 })
                         .setNegativeButton("Cancel",
                                 new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog,int id) {
+                                    public void onClick(DialogInterface dialog, int id) {
                                         dialog.cancel();
                                     }
                                 });
@@ -82,12 +85,39 @@ public class dh_homepage extends BaseActivity {
 
             }
         });
+
+        addDecisionsToView();
     }
 
+    private void addDecisionsToView() {
+        LinearLayout myDecisions = (LinearLayout) findViewById(R.id.dh_my_decisions_list);
+        myDecisions.removeAllViews();
+        List<Storage.Decision> decisions = db.getAllDecisionsForOwner(login_login.username);
+        for (int i = 0; i < decisions.size(); i++) {
+            Storage.Decision d = decisions.get(i);
+            Button b = new Button(this);
+            b.setText(d.name);
+            b.setTag(d.id);
+            this.setDecisionOnClickListener(b, this);
+            myDecisions.addView(b);
+        }
 
-    public void dh_homepage_btn_jobdecisionOnClick(View view)
-    {
-        Intent intent = new Intent(this, dh_decision_menu.class);
+    }
+
+    private void setDecisionOnClickListener(Button b, final Context context) {
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button b = (Button) v;
+                openDecision(b.getText().toString(), (int)b.getTag());
+            }
+        });
+    }
+
+    private void openDecision(String name, int id) {
+        Intent intent = new Intent(context, dh_decision_menu.class);
+        intent.putExtra("decision_name", name);
+        intent.putExtra("decision_id", id);
         startActivity(intent);
     }
 }
