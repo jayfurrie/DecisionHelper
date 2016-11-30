@@ -18,15 +18,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp" />
+<LinearLayout
+    android:id="@+id/dh_my_choices_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/dh_addchoices_btn_dummychoice1"
-        android:text="Choice 1 here..."
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="dh_addchoices_btn_choice1OnClick"/>
-
-
+</LinearLayout>
 
     <Button
         android:id="@+id/dh_add_choices_btn_back"
