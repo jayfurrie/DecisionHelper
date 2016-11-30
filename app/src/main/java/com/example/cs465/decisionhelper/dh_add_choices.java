@@ -10,18 +10,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.LayoutInflater;
+import android.widget.LinearLayout;
+
+import java.util.List;
 
 
 public class dh_add_choices extends BaseActivity {
     final Context context = this;
     private Button button;
     private EditText result;
+    int decisionID;
+    String decisionName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_add_choices);
+        decisionID = getIntent().getIntExtra("decision_id", 0);
+        decisionName = getIntent().getStringExtra("decision_name");
         setTitle("Add Choices");
 
         // find the add new choice button
@@ -50,10 +57,13 @@ public class dh_add_choices extends BaseActivity {
                         .setCancelable(false)
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog,int id) {
-                                        Intent i = new Intent(dh_add_choices.this, dh_addfactors_textinput.class);
-                                        startActivity(i);
-                                        // ToDo get user input here and save
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        String name = userInput.getText().toString().replace(" ", "");
+                                        // public long createChoice(String name, int decision_id)
+                                        int choiceID = (int) db.createChoice(name, decisionID);
+                                        addChoicesToView();
+                                        openChoice(name, choiceID);
+
                                     }
                                 })
                         .setNegativeButton("Cancel",
@@ -71,8 +81,40 @@ public class dh_add_choices extends BaseActivity {
 
             }
         });
+        addChoicesToView();
     }
 
+    private void addChoicesToView() {
+        LinearLayout myChoices = (LinearLayout) findViewById(R.id.dh_my_choices_list);
+        myChoices.removeAllViews();
+        List<Storage.Choice> choices = db.getAllChoicesForDecision(decisionID);
+        for (int i = 0; i < choices.size(); i++) {
+            Storage.Choice d = choices.get(i);
+            Button b = new Button(this);
+            b.setText(d.name);
+            b.setTag(d.id);
+            this.setChoiceOnClickListener(b, this);
+            myChoices.addView(b);
+        }
+
+    }
+
+    private void setChoiceOnClickListener(Button b, final Context context) {
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button b = (Button) v;
+                openChoice(b.getText().toString(), (int)b.getTag());
+            }
+        });
+    }
+
+    private void openChoice(String name, int id) {
+        Intent intent = new Intent(context, dh_addfactors_textinput.class);
+        intent.putExtra("choice_name", name);
+        intent.putExtra("decision_id", id);
+        startActivity(intent);
+    }
 
     public void dh_add_choices_btn_backOnClick(View view)
     {
@@ -80,9 +122,4 @@ public class dh_add_choices extends BaseActivity {
         startActivity(intent);
     }
 
-    public void dh_addchoices_btn_choice1OnClick(View view)
-    {
-        Intent intent = new Intent(this, dh_addfactors_textinput.class);
-        startActivity(intent);
-    }
 }
