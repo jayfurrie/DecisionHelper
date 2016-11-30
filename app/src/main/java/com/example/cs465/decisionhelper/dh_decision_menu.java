@@ -17,6 +17,9 @@ public class dh_decision_menu extends BaseActivity {
         // use this for future db calls
         decisionID = getIntent().getIntExtra("decision_id", 0);
         decisionName = getIntent().getStringExtra("decision_name");
+        if (decisionName == null) {
+            decisionName = "Decision Helper";
+        }
         setTitle(decisionName);
     }
 
@@ -53,6 +56,12 @@ public class dh_decision_menu extends BaseActivity {
     private void startNewActivity(Class<?> calledActivity) {
         Intent intent = new Intent(this, calledActivity);
         intent.putExtra("decision_id", decisionID);
+        startActivity(intent);
+    }
+
+    public void dh_decision_menu_btn_backOnClick(View view)
+    {
+        Intent intent = new Intent(this, dh_homepage.class);
         startActivity(intent);
     }
 }

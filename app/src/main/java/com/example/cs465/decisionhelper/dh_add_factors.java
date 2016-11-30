@@ -10,18 +10,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.List;
 
 public class dh_add_factors extends BaseActivity {
 
     final Context context = this;
     private Button button;
     private EditText result;
+    int decisionID;
 
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_add_factors);
         setTitle("Add Factors");
+        decisionID = getIntent().getIntExtra("decision_id", 0);
 
         // find the add new factor button
         button = (Button) findViewById(R.id.dh_add_factors_btn_newfactor);
@@ -50,7 +56,9 @@ public class dh_add_factors extends BaseActivity {
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
-                                        //  ToDo get user input here and save
+                                        String name = userInput.getText().toString();
+                                        int factorID = (int) db.createFactor(name, decisionID);
+                                        addFactorsToView();
                                     }
                                 })
                         .setNegativeButton("Cancel",
@@ -68,12 +76,22 @@ public class dh_add_factors extends BaseActivity {
 
             }
         });
+        addFactorsToView();
+    }
+    private void addFactorsToView() {
+        LinearLayout myFactors = (LinearLayout) findViewById(R.id.dh_factors_list);
+        myFactors.removeAllViews();
+        List<Storage.Factor> factors = db.getAllFactorsForDecision(decisionID);
+
+        for (int i = 0; i < factors.size(); i++) {
+            Storage.Factor f = factors.get(i);
+            TextView textView = new TextView(this);
+            textView.setText(f.name);
+            textView.setTextSize(26);
+            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            myFactors.addView(textView);
+        }
+
     }
 
-
-    public void dh_add_factors_btn_backOnClick(View view)
-    {
-        Intent intent = new Intent(this, dh_decision_menu.class);
-        startActivity(intent);
-    }
 }

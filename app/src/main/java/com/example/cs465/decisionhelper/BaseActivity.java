@@ -92,6 +92,9 @@ public class BaseActivity extends AppCompatActivity {
 
     public void setTitle(String title) {
         TextView textView = (TextView) findViewById(R.id.toolbar_title);
+        if (title.length() > 17) {
+            title = title.substring(0, 16);
+        }
         textView.setText(title);
     }
 

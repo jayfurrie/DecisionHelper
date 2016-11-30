@@ -63,7 +63,7 @@ public class dh_homepage extends BaseActivity {
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
-                                        String name = userInput.getText().toString().replace(" ", "");
+                                        String name = userInput.getText().toString();
                                         // public long createDecision(String name, String owner)
                                         int decisionID = (int) db.createDecision(name, login_login.username);
                                         addDecisionsToView();
@@ -120,4 +120,5 @@ public class dh_homepage extends BaseActivity {
         intent.putExtra("decision_id", id);
         startActivity(intent);
     }
+
 }

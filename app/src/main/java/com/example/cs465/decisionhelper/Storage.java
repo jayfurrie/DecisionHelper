@@ -145,6 +145,10 @@ public class Storage extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        clear();
+    }
+
+    public void clear() {
         String[] queries = ("DROP TABLE IF EXISTS decisions;" +
                 "DROP TABLE IF EXISTS choices;" +
                 "DROP TABLE IF EXISTS factors;" +
@@ -153,6 +157,8 @@ public class Storage extends SQLiteOpenHelper {
                 "DROP TABLE IF EXISTS choice_to_factor_to_value;" +
                 "DROP TABLE IF EXISTS scores;" +
                 "DROP TABLE IF EXISTS shared_with;").split(";");
+
+        SQLiteDatabase db = this.getWritableDatabase();
         for(String query : queries){
             db.execSQL(query);
         }

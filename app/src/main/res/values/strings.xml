@@ -22,7 +22,7 @@
     <string name="dh_addchoices_btn_newchoicetext">+ new choice</string>
     <string name="dh_add_choices_titlebar">My Choices</string>
     <string name="dh_add_choices_hint">For each item that you are deciding between, click it to apply values for each factor.</string>
-    <string name="dh_add_factors_tv_titlebartext">Add/edit Factors</string>
+    <string name="dh_add_factors_tv_titlebartext">Add Factors</string>
     <string name="dh_add_factors__btn_newfactortext">+ add new</string>
     <string name="dh_add_possibility_tv_titlebartext">add/edit possibilities</string>
     <string name="dh_add_possibility_btn_newpostext">+ New Possibility</string>
