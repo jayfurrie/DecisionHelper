@@ -7,12 +7,12 @@
 
 
     <LinearLayout
+    android:id="@+id/dh_rank_values_ll_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/dh_weigh_values_tv_salary1"
-        android:text="Salary 1: 100k"
+        android:id="@+id/dh_weigh_values_tv"
         android:layout_width="match_parent"
         android:textSize="20sp"
         android:layout_height="wrap_content" />

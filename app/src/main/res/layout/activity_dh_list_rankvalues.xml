@@ -16,13 +16,12 @@
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"/>
 
-    <Button
-        android:id="@+id/dh_list_rankvalues_btn_test"
-        android:text="Salary"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="dh_list_rankvalues_dummyOnClick"/>
+<LinearLayout
+    android:id="@+id/dh_factors_list_for_ranking"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+</LinearLayout>
 
 
     <Button
