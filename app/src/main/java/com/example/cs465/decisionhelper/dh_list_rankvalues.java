@@ -56,7 +56,7 @@ public class dh_list_rankvalues extends BaseActivity {
     private void openFactor(String name, int id) {
         Intent intent = new Intent(context, dh_rank_values.class);
         intent.putExtra("factor_name", name);
-        intent.putExtra("decision_id", id);
+        intent.putExtra("factor_id", id);
         startActivity(intent);
     }
 

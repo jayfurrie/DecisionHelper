@@ -3,14 +3,21 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+<TextView
+    android:id="@+id/dh_rank_values_tv_instructions"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/dh_rank_values_instructions"
+    android:gravity="center"
+    android:textSize="18sp"/>
 
 
     <LinearLayout
     android:id="@+id/dh_rank_values_ll_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+        android:paddingLeft="20dp">
     <TextView
         android:id="@+id/dh_weigh_values_tv"
         android:layout_width="match_parent"
@@ -23,6 +30,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="30dp" />
         <LinearLayout
+            android:id="@+id/dh_rank_values_tv_sb_scale"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
             <TextView
