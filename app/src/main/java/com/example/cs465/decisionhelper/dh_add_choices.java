@@ -20,15 +20,13 @@ public class dh_add_choices extends BaseActivity {
     private Button button;
     private EditText result;
     int decisionID;
-    String decisionName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_add_choices);
-        decisionID = getIntent().getIntExtra("decision_id", 0);
-        decisionName = getIntent().getStringExtra("decision_name");
+        decisionID = getIntent().getIntExtra("decision_id", currDecisionID);
         setTitle("Add Choices");
 
         // find the add new choice button
@@ -58,7 +56,7 @@ public class dh_add_choices extends BaseActivity {
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
-                                        String name = userInput.getText().toString().replace(" ", "");
+                                        String name = userInput.getText().toString();
                                         // public long createChoice(String name, int decision_id)
                                         int choiceID = (int) db.createChoice(name, decisionID);
                                         addChoicesToView();
@@ -111,14 +109,19 @@ public class dh_add_choices extends BaseActivity {
 
     private void openChoice(String name, int id) {
         Intent intent = new Intent(context, dh_addfactors_textinput.class);
+        currChoiceName = name;
+        currChoiceID = id;
+        currDecisionID = decisionID;
         intent.putExtra("choice_name", name);
-        intent.putExtra("decision_id", id);
+        intent.putExtra("choice_id", id);
+        intent.putExtra("decision_id", decisionID);
         startActivity(intent);
     }
 
     public void dh_add_choices_btn_backOnClick(View view)
     {
         Intent intent = new Intent(this, dh_decision_menu.class);
+        intent.putExtra("decision_id", decisionID);
         startActivity(intent);
     }
 

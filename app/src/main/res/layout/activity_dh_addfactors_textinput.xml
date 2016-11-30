@@ -4,9 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,36 +17,28 @@
             android:layout_height="wrap_content"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/dh_addfactors_textinput_tv_currentchoice"
-            android:text="Fill this with user choice1"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_marginTop="30dp"/>
-
         <LinearLayout
+            android:id="@+id/dh_factors_to_values_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:padding="16dp">
 
-            <TextView
-                android:text="Populate list of factors"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/dh_factors_list"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_weight="1.25"
-                />
-            <EditText
-                android:id="@+id/dh_addfactors_textinput_et_factor"
-                android:layout_width="0dp"
+                android:orientation="vertical">
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/dh_values_list"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:orientation="vertical"
+                android:layout_weight="1">
+            </LinearLayout>
         </LinearLayout>
-
 
 
         <LinearLayout

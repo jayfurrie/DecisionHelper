@@ -462,6 +462,9 @@ public class Storage extends SQLiteOpenHelper {
     public Value getValueForFactorAndChoice(int choice_id, int factor_id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor factor_to_value_cursor = getFactorToValueCursorForChoiceAndFactor(choice_id, factor_id);
+        if (!factor_to_value_cursor.moveToFirst()) {
+            return null;
+        }
         int value_id = factor_to_value_cursor.getInt(
                 factor_to_value_cursor.getColumnIndex(
                         FACTOR_TO_VALUE_COLUMN_VALUE_ID
@@ -469,9 +472,11 @@ public class Storage extends SQLiteOpenHelper {
         );
         Cursor results = db.rawQuery("select * from " + VALUES_TABLE_NAME +
                 " where " + VALUES_COLUMN_ID + "=" + value_id, null);
-        results.moveToFirst();
-        Value value = new Value(results);
-        return value;
+        if (results.moveToLast()) {
+            Value value = new Value(results);
+            return value;
+        }
+        return null;
     }
 
     public long shareDecisionWithUser(int decision_id, String user) {

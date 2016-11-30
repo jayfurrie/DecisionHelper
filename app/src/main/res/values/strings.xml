@@ -24,18 +24,18 @@
     <string name="dh_add_choices_hint">For each item that you are deciding between, click it to apply values for each factor.</string>
     <string name="dh_add_factors_tv_titlebartext">Add Factors</string>
     <string name="dh_add_factors__btn_newfactortext">+ add new</string>
-    <string name="dh_add_possibility_tv_titlebartext">add/edit possibilities</string>
+    <string name="dh_add_possibility_tv_titlebartext">Add possibilities</string>
     <string name="dh_add_possibility_btn_newpostext">+ New Possibility</string>
     <string name="dh_button">Dummy Factor</string>
     <string name="dh_list_rankvalues_titlebar">Rank Choice Values</string>
     <string name="dh_list_rankvalues_instructions">Click on each factor below to rank their values from worst to best.</string>
     <string name="dh_decision">Dummy Decision</string>
-    <string name="dh_add_value_titlebar">add/edit values</string>
+    <string name="dh_add_value_titlebar">Add values</string>
     <string name="dh_decision_menu_titlebar">Decision Menu</string>
     <string name="dh_add_values_btn_newpostext">+ New Value</string>
-    <string name="dh_decision_menu_btn_addrmfactorstext">Add/edit Factors</string>
+    <string name="dh_decision_menu_btn_addrmfactorstext">Add Factors</string>
     <string name="dh_decision_menu_btn_ranktext">Rank Factors</string>
-    <string name="dh_decision_menu_btn_addrmchoicestext">Add/edit Choices</string>
+    <string name="dh_decision_menu_btn_addrmchoicestext">Add Choices</string>
     <string name="dh_decision_menu_btn_resulttext">View Result</string>
     <string name="dh_decision_menu_btn_sharetext">Share</string>
     <string name="dh_decision_menu_btn_rankchoicestext">Rank Choice Values</string>
@@ -59,6 +59,9 @@
     <string name="dh_invite_from_contacts">Invite From Contacts</string>
     <string name="dh_rank_factors_tv_titlebartext">Rank Factors</string>
     <string name="dh_rank_values_tv_title">Rank Values</string>
+    <string name="dh_rank_values_instructions">For the value worth the least to you,
+        score it a 0. For the value worth the most, rank it the full scale. For intermediate values,
+        score them compared to the worst and best. </string>
     <string name="dh_rank_values_range_0">0</string>
     <string name="dh_rank_values_range_100">100</string>
     <string name="dh_new_choice">new choice</string>

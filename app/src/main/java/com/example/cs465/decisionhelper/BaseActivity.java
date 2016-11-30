@@ -31,6 +31,10 @@ public class BaseActivity extends AppCompatActivity {
     private DrawerLayout fullView;
     ArrayList<NavItem> mNavItems = new ArrayList<NavItem>();
     Storage db;
+    public static int currDecisionID = 0;
+    public static String currDecisionName = "Decision Helper";
+    public static int currChoiceID = 0;
+    public static String currChoiceName = "Choice";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
