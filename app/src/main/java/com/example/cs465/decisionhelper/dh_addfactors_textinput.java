@@ -69,7 +69,9 @@ public class dh_addfactors_textinput extends BaseActivity {
     public void dh_addfactors_textinput_btn_OKOnClick(View view)
     {
         Intent intent = new Intent(this, dh_add_choices.class);
+        intent.putExtra("decision_id", decisionID);
         startActivity(intent);
+
         LinearLayout valuesLayout = (LinearLayout) findViewById(R.id.dh_values_list);
         for (int i = 0; i < valuesLayout.getChildCount(); i++) {
             EditText editText = (EditText) valuesLayout.getChildAt(i);

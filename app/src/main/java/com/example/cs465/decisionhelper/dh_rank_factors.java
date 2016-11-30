@@ -11,32 +11,41 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import static java.lang.Integer.parseInt;
+
 public class dh_rank_factors extends BaseActivity {
     int decisionID;
     int max=100;
-    int factorId;
-    final Context context = this;
-   // SeekBar sb[]=new SeekBar[100];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_rank_factors);
         setTitle("Rank Factors");
-        decisionID = getIntent().getIntExtra("decision_id", 0);
-        LinearLayout myFactors = (LinearLayout) findViewById(R.id.rank_factor);
-      // myFactors.removeAllViews();
+        decisionID = getIntent().getIntExtra("decision_id", currDecisionID);
+
+        displayFactors();
+    }
+
+    private void displayFactors() {
+        LinearLayout myFactors = (LinearLayout) findViewById(R.id.dh_factors_list);
+        myFactors.removeAllViews();
         List<Storage.Factor> factors = db.getAllFactorsForDecision(decisionID);
         for (int i = 0; i < factors.size(); i++) {
             Storage.Factor f = factors.get(i);
-            SeekBar sb=new SeekBar(context);
-            //sb=new SeekBar(context);
-            //sb.setId(i);
-           // sb[i].setMax( max );
+            int score = Math.max(db.getScoreForFactor(login_login.username, f.id), 0);
+
+            SeekBar sb = new SeekBar(this);
+            sb.setTag(f.id);
+            sb.setMax( max );
+
+            sb.setProgress(score);
+
             TextView textView = new TextView(this);
-            textView.setText("How do you care about "+f.name+"?");
+            textView.setText("How much do you care about "+f.name+"?");
             textView.setTextSize(20);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-           // if(!myFactors.equals(null))
+
             myFactors.addView(textView);
             myFactors.addView(sb);
         }
@@ -45,6 +54,7 @@ public class dh_rank_factors extends BaseActivity {
     public void dh_rank_factors_btn_cancelOnClick(View view)
     {
         Intent intent = new Intent(this, dh_decision_menu.class);
+        intent.putExtra("decision_id", decisionID);
         startActivity(intent);
     }
 
@@ -52,7 +62,20 @@ public class dh_rank_factors extends BaseActivity {
     {
         Intent intent = new Intent(this, dh_decision_menu.class);
         startActivity(intent);
-        // TODO save the factor rankings from user input on the slider bars
+        intent.putExtra("decision_id", decisionID);
+
+        LinearLayout myFactors = (LinearLayout) findViewById(R.id.dh_factors_list);
+        int count = myFactors.getChildCount();
+        for (int i = 0; i < count; i++) {
+            if (i % 2 == 0) {
+                continue;
+            }
+            SeekBar sb = (SeekBar) myFactors.getChildAt(i);
+            int factorID = parseInt(sb.getTag().toString());
+            int score = sb.getProgress();
+
+            db.assignScoreToFactor(login_login.username, score, factorID);
+        }
     }
 
 }
