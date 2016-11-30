@@ -23,12 +23,11 @@ public class dh_addfactors_textinput extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_addfactors_textinput);
-        decisionID = getIntent().getIntExtra("decision_id", 0);
-        choiceID = getIntent().getIntExtra("choice_id", 0);
-        choiceName = getIntent().getStringExtra("decision_name");
+        decisionID = getIntent().getIntExtra("decision_id", currDecisionID);
+        choiceID = getIntent().getIntExtra("choice_id", currChoiceID);
+        choiceName = getIntent().getStringExtra("choice_name");
         if (choiceName == null) {
-            Storage.Choice c = db.getChoiceByID(choiceID);
-            choiceName = c.name;
+            choiceName = currChoiceName;
         }
         setTitle(choiceName);
 
@@ -91,6 +90,7 @@ public class dh_addfactors_textinput extends BaseActivity {
     public void dh_addfactors_textinput_btn_cancelOnClick(View view)
     {
         Intent intent = new Intent(this, dh_decision_menu.class);
+        intent.putExtra("decision_id", decisionID);
         startActivity(intent);
     }
 

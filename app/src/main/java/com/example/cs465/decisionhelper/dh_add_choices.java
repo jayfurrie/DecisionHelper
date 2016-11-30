@@ -26,7 +26,7 @@ public class dh_add_choices extends BaseActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_add_choices);
-        decisionID = getIntent().getIntExtra("decision_id", 0);
+        decisionID = getIntent().getIntExtra("decision_id", currDecisionID);
         setTitle("Add Choices");
 
         // find the add new choice button
@@ -109,6 +109,9 @@ public class dh_add_choices extends BaseActivity {
 
     private void openChoice(String name, int id) {
         Intent intent = new Intent(context, dh_addfactors_textinput.class);
+        currChoiceName = name;
+        currChoiceID = id;
+        currDecisionID = decisionID;
         intent.putExtra("choice_name", name);
         intent.putExtra("choice_id", id);
         intent.putExtra("decision_id", decisionID);
@@ -118,6 +121,7 @@ public class dh_add_choices extends BaseActivity {
     public void dh_add_choices_btn_backOnClick(View view)
     {
         Intent intent = new Intent(this, dh_decision_menu.class);
+        intent.putExtra("decision_id", decisionID);
         startActivity(intent);
     }
 

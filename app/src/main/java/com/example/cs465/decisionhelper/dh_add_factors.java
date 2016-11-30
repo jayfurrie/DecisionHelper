@@ -27,7 +27,7 @@ public class dh_add_factors extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_add_factors);
         setTitle("Add Factors");
-        decisionID = getIntent().getIntExtra("decision_id", 0);
+        decisionID = getIntent().getIntExtra("decision_id", currDecisionID);
 
         // find the add new factor button
         button = (Button) findViewById(R.id.dh_add_factors_btn_newfactor);

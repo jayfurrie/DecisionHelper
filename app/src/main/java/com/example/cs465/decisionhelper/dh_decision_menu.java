@@ -15,10 +15,10 @@ public class dh_decision_menu extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_decision_menu);
         // use this for future db calls
-        decisionID = getIntent().getIntExtra("decision_id", 0);
+        decisionID = getIntent().getIntExtra("decision_id", currDecisionID);
         decisionName = getIntent().getStringExtra("decision_name");
         if (decisionName == null) {
-            decisionName = "Decision Helper";
+            decisionName = currDecisionName;
         }
         setTitle(decisionName);
     }

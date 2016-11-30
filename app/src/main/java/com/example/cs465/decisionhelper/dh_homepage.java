@@ -116,6 +116,8 @@ public class dh_homepage extends BaseActivity {
 
     private void openDecision(String name, int id) {
         Intent intent = new Intent(context, dh_decision_menu.class);
+        currDecisionName = name;
+        currDecisionID = id;
         intent.putExtra("decision_name", name);
         intent.putExtra("decision_id", id);
         startActivity(intent);
