@@ -355,12 +355,27 @@ public class Storage extends SQLiteOpenHelper {
     }
 
     public long assignScoreToValue(String owner, int score, int value_id) {
+        int s = this.getScoreForValue(owner, value_id);
+        if (s != -1) {
+            return this.updateScoreForValue(owner, score, value_id);
+        } else {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SCORES_COLUMN_OWNER, owner);
+            contentValues.put(SCORES_COLUMN_SCORE, score);
+            contentValues.put(SCORES_COLUMN_VALUE_ID, value_id);
+            return db.insert(SCORES_TABLE_NAME, null, contentValues);
+        }
+    }
+
+    public long updateScoreForValue(String owner, int score, int value_id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(SCORES_COLUMN_OWNER, owner);
-        contentValues.put(SCORES_COLUMN_SCORE, score);
-        contentValues.put(SCORES_COLUMN_VALUE_ID, value_id);
-        return db.insert(SCORES_TABLE_NAME, null, contentValues);
+        db.execSQL("update " + SCORES_TABLE_NAME +
+                " set " + SCORES_COLUMN_SCORE + "=\"" + score + "\"" +
+                " where " + SCORES_COLUMN_VALUE_ID + "=\"" + value_id + "\"" +
+                " and " + SCORES_COLUMN_OWNER + "=\"" + owner + "\"");
+        //this should be the score_id
+        return -1;
     }
 
     public void removeAllScoresForOwner(String owner) {
@@ -374,17 +389,35 @@ public class Storage extends SQLiteOpenHelper {
         Cursor results =  db.rawQuery( "select * from " + SCORES_TABLE_NAME +
                 " where " + SCORES_COLUMN_OWNER + "=\"" + owner + "\"" +
                 " and " + SCORES_COLUMN_VALUE_ID + "=" + value_id, null );
-        results.moveToFirst();
-        return results.getInt(results.getColumnIndex(SCORES_COLUMN_SCORE));
+        if (results.moveToFirst()) {
+            return results.getInt(results.getColumnIndex(SCORES_COLUMN_SCORE));
+        } else {
+            return -1;
+        }
     }
 
     public long assignScoreToFactor(String owner, int score, int factor_id) {
+        int s = this.getScoreForFactor(owner, factor_id);
+        if (s != -1) {
+            return this.updateScoreForFactor(owner, score, factor_id);
+        } else {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(SCORES_COLUMN_OWNER, owner);
+            contentValues.put(SCORES_COLUMN_SCORE, score);
+            contentValues.put(SCORES_COLUMN_FACTOR_ID, factor_id);
+            return db.insert(SCORES_TABLE_NAME, null, contentValues);
+        }
+    }
+
+    public long updateScoreForFactor(String owner, int score, int factor_id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(SCORES_COLUMN_OWNER, owner);
-        contentValues.put(SCORES_COLUMN_SCORE, score);
-        contentValues.put(SCORES_COLUMN_FACTOR_ID, factor_id);
-        return db.insert(SCORES_TABLE_NAME, null, contentValues);
+        db.execSQL("update " + SCORES_TABLE_NAME +
+                " set " + SCORES_COLUMN_SCORE + "=\"" + score + "\"" +
+                " where " + SCORES_COLUMN_FACTOR_ID + "=\"" + factor_id + "\"" +
+                " and " + SCORES_COLUMN_OWNER + "=\"" + owner + "\"");
+        // this should be the score_id
+        return -1;
     }
 
     public int getScoreForFactor(String owner, int factor_id) {
@@ -392,8 +425,12 @@ public class Storage extends SQLiteOpenHelper {
         Cursor results =  db.rawQuery( "select * from " + SCORES_TABLE_NAME +
                 " where " + SCORES_COLUMN_OWNER + "=\"" + owner + "\"" +
                 " and " + SCORES_COLUMN_FACTOR_ID + "=" + factor_id, null );
-        results.moveToFirst();
-        return results.getInt(results.getColumnIndex(SCORES_COLUMN_SCORE));
+        if (results.moveToFirst()) {
+            return results.getInt(results.getColumnIndex(SCORES_COLUMN_SCORE));
+        } else {
+            return -1;
+        }
+
     }
 
     public long assignValueToFactorForChoice(int choice_id, int factor_id, int value_id) {
