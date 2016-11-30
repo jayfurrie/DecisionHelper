@@ -2,90 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rank_factor"
     android:weightSum="1">
 
 
-
-
-    <TextView
-        android:id="@+id/dh_rank_factors_tv_factorname"
-        android:text="How much do you care about salary?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="?attr/colorPrimaryDark"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp" />
-
-    <SeekBar
-        android:id="@+id/dh_rank_values_sb"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="30dp" />
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
-        <TextView
-            android:id="@+id/dh_rank_values_tv_min"
-            android:text="@string/dh_rank_values_range_0"
-            android:layout_gravity="start"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="23dp"
-             />
 
-        <TextView
-            android:id="@+id/dh_rank_values_tv_max"
-            android:text="@string/dh_rank_values_range_100"
-            android:layout_gravity="end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-             />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/dh_rank_factors_tv_Q2"
-        android:text="How much do you care about location?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="?attr/colorPrimaryDark"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:textSize="20sp" />
-
-    <SeekBar
-        android:id="@+id/dh_rank_factors_sb_Q2"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="30dp"
-        />
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-        <TextView
-            android:id="@+id/dh_rank_factors_tv_minQ2"
-            android:text="@string/dh_rank_values_range_0"
-            android:layout_gravity="start"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="23dp"
-             />
-
-        <TextView
-            android:id="@+id/dh_rank_factors_tv_maxQ2"
-            android:text="@string/dh_rank_values_range_100"
-            android:layout_gravity="start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            />
     </LinearLayout>
 
 
