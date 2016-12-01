@@ -313,11 +313,26 @@ public class Storage extends SQLiteOpenHelper {
         results.moveToFirst();
 
         while(results.isAfterLast() == false){
-            values.add(new Value(results));
+            Value v = new Value(results);
+            long id = this.getFactorToValueForFactorAndValue(factor_id, v.id);
+            if (id > -1) {
+                values.add(v);
+            }
             results.moveToNext();
         }
 
         return values;
+    }
+
+    private long getFactorToValueForFactorAndValue(int factor_id, int value_id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + FACTOR_TO_VALUE_TABLE_NAME +
+                " where " + FACTOR_TO_VALUE_COLUMN_FACTOR_ID + "=" + factor_id +
+                " and " + FACTOR_TO_VALUE_COLUMN_VALUE_ID + "=" + value_id, null );
+        if (results.moveToFirst()) {
+            return results.getInt(results.getColumnIndex(FACTOR_TO_VALUE_COLUMN_ID));
+        }
+        return -1;
     }
 
     public void removeAllValuesForFactor(int factor_id) {
@@ -340,11 +355,28 @@ public class Storage extends SQLiteOpenHelper {
         return value;
     }
 
+    public Value getValueByName(String name) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + VALUES_TABLE_NAME +
+                " where " + VALUES_COLUMN_NAME + "=\"" + name + "\"", null );
+        if (!results.moveToFirst()) {
+            return null;
+        }
+        Value value = new Value(results);
+        return value;
+    }
+
     public long createValueForFactor(String name, int factor_id) {
         SQLiteDatabase db = this.getWritableDatabase();
+        long value_id;
         ContentValues contentValues = new ContentValues();
-        contentValues.put(VALUES_COLUMN_NAME, name);
-        Long value_id = db.insert(VALUES_TABLE_NAME, null, contentValues);
+        Value v = this.getValueByName(name);
+        if (v != null) {
+            value_id = v.id;
+        } else {
+            contentValues.put(VALUES_COLUMN_NAME, name);
+            value_id = db.insert(VALUES_TABLE_NAME, null, contentValues);
+        }
         if (value_id != -1) {
             contentValues = new ContentValues();
             contentValues.put(FACTOR_TO_VALUE_COLUMN_FACTOR_ID, factor_id);
@@ -440,6 +472,7 @@ public class Storage extends SQLiteOpenHelper {
                 " and " + FACTOR_TO_VALUE_COLUMN_VALUE_ID + "=" + value_id, null );
         results.moveToFirst();
         int factor_to_value_id = results.getInt(results.getColumnIndex(FACTOR_TO_VALUE_COLUMN_ID));
+
         db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(CHOICE_TO_FACTOR_TO_VALUE_COLUMN_FACTOR_TO_VALUE_ID, factor_to_value_id);
@@ -481,6 +514,8 @@ public class Storage extends SQLiteOpenHelper {
         db.execSQL("delete from " + CHOICE_TO_FACTOR_TO_VALUE_TABLE_NAME +
                 " where " + CHOICE_TO_FACTOR_TO_VALUE_COLUMN_CHOICE_ID + "=" + choice_id +
                 " and " + CHOICE_TO_FACTOR_TO_VALUE_COLUMN_FACTOR_TO_VALUE_ID + "=" + factor_to_value_id);
+        db.execSQL("delete from " + FACTOR_TO_VALUE_TABLE_NAME +
+                " where " + FACTOR_TO_VALUE_COLUMN_ID + "=" + factor_to_value_id);
     }
 
     private Cursor getFactorToValueCursorForChoiceAndFactor(int choice_id, int factor_id) {

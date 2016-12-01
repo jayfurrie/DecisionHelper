@@ -59,8 +59,8 @@ public class dh_add_choices extends BaseActivity {
                                         String name = userInput.getText().toString();
                                         // public long createChoice(String name, int decision_id)
                                         int choiceID = (int) db.createChoice(name, decisionID);
-                                        addChoicesToView();
                                         openChoice(name, choiceID);
+                                        addChoicesToView();
 
                                     }
                                 })

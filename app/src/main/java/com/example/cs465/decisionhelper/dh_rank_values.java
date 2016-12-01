@@ -18,7 +18,6 @@ import java.util.List;
 import static java.lang.Integer.parseInt;
 
 public class dh_rank_values extends BaseActivity {
-    //int decisionID;
     int factorID;
     String factorName;
     int sbMax = 100;

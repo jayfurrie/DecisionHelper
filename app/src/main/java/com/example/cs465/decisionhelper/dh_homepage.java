@@ -66,8 +66,8 @@ public class dh_homepage extends BaseActivity {
                                         String name = userInput.getText().toString();
                                         // public long createDecision(String name, String owner)
                                         int decisionID = (int) db.createDecision(name, login_login.username);
-                                        addDecisionsToView();
                                         openDecision(name, decisionID);
+                                        addDecisionsToView();
                                     }
                                 })
                         .setNegativeButton("Cancel",
