@@ -15,10 +15,10 @@
 
 
     <TextView
-        android:id="@+id/pq_results_tv_result"
+        android:id="@+id/pq_results_tv_result_choice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pq_risk_averse_response"
+        android:text="Your top choice is..."
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="20sp"
@@ -26,6 +26,20 @@
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:id="@+id/pq_results_tv_result_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="It had a score of..."
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="50dp"/>
+
 
 
     <Button
