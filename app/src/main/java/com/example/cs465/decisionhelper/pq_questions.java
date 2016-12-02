@@ -1,19 +1,16 @@
 package com.example.cs465.decisionhelper;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class pq_questions extends BaseActivity {
-
-
-    Resources res = null;
-    String[] question_array = null;
+    List<Storage.Question> questions = null;
     TextView questionText = null;
     TextView questionNumText = null;
     RadioGroup radioGroup = null;
@@ -25,8 +22,7 @@ public class pq_questions extends BaseActivity {
         setContentView(R.layout.activity_pq_questions);
         setTitle("Personality Quiz");
 
-        res = getResources();
-        question_array = res.getStringArray(R.array.pq_questions_array);
+        questions = db.getAllQuizQuestions();
         questionText = (TextView)findViewById(R.id.pq_questions_tv_question);
         questionNumText = (TextView)findViewById(R.id.pq_questions_tv_numberdisplay);
         radioGroup = (RadioGroup) findViewById(R.id.pq_radio_group);
@@ -45,7 +41,7 @@ public class pq_questions extends BaseActivity {
     
     public void pq_questions_ibtn_nextOnClick(View view)
     {
-        if (currentQuestionNum == question_array.length - 1)
+        if (currentQuestionNum == questions.size() - 1)
         {
             Intent intent = new Intent(this, pq_results.class);
             startActivity(intent);
@@ -58,7 +54,7 @@ public class pq_questions extends BaseActivity {
     private String getQuestionNumberDisplay()
     {
         String currentQuestion = Integer.toString(currentQuestionNum + 1);
-        String totalQuestion = Integer.toString(question_array.length);
+        String totalQuestion = Integer.toString(questions.size());
         return currentQuestion + "/" + totalQuestion;
     }
 
@@ -68,7 +64,7 @@ public class pq_questions extends BaseActivity {
         new android.os.Handler().postDelayed(
             new Runnable() {
                 public void run() {
-                    questionText.setText(question_array[currentQuestionNum]);
+                    questionText.setText(questions.get(currentQuestionNum).prompt);
                     questionNumText.setText(getQuestionNumberDisplay());
                 }
             },

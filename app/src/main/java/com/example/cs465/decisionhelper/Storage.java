@@ -2,6 +2,7 @@ package com.example.cs465.decisionhelper;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -12,6 +13,8 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class Storage extends SQLiteOpenHelper {
+    private Context context;
+
     public static final String DATABASE_NAME = "DecisionHelper.db";
 
     // ex: "Choosing a Job"
@@ -78,13 +81,23 @@ public class Storage extends SQLiteOpenHelper {
     public static final String SHARED_WITH_COLUMN_RESPONSE_MESSAGE = "response_message";
     public static final String SHARED_WITH_COLUMN_COMPLETED = "completed";
 
+    public static final String QUESTIONS_TABLE_NAME = "questions";
+    public static final String QUESTIONS_COLUMN_ID = "id";
+    public static final String QUESTIONS_COLUMN_PROMPT = "prompt";
+
+    public static final String ANSWERS_TABLE_NAME = "answers";
+    public static final String ANSWERS_COLUMN_ID = "id";
+    public static final String ANSWERS_COLUMN_RESPONSE = "response";
+    public static final String ANSWERS_COLUMN_USER = "user";
+    public static final String ANSWERS_COLUMN_QUESTION_ID = "question_id";
+
     public Storage(Context context) {
         super(context, DATABASE_NAME , null, 1);
+        this.context = context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // TODO create all the tables using db.execSQL()
         String queries[] = ("" +
             "create table decisions" +
                 "(" +
@@ -136,10 +149,29 @@ public class Storage extends SQLiteOpenHelper {
                 "decision_id integer," +
                 "response_message varchar(1000)," +
                 "completed boolean" +
-            ");").split(";");
+            ");" +
 
-        for(String query : queries){
+            "create table questions (" +
+                "id integer primary key," +
+                "prompt varchar(1000)" +
+                ");" +
+
+            "create table answers (" +
+                "id integer primary key," +
+                "user varchar(255)," +
+                "question_id integer," +
+                "response integer" +
+            ");" +
+        "").split(";");
+
+        for (String query : queries){
             db.execSQL(query);
+        }
+
+        Resources res = this.context.getResources();
+        String[] question_array = res.getStringArray(R.array.pq_questions_array);
+        for (String question : question_array) {
+            db.execSQL("insert into questions (prompt) values (\"" + question + "\")");
         }
     }
 
@@ -156,7 +188,10 @@ public class Storage extends SQLiteOpenHelper {
                 "DROP TABLE IF EXISTS factor_to_value;" +
                 "DROP TABLE IF EXISTS choice_to_factor_to_value;" +
                 "DROP TABLE IF EXISTS scores;" +
-                "DROP TABLE IF EXISTS shared_with;").split(";");
+                "DROP TABLE IF EXISTS shared_with;" +
+                "DROP TABLE IF EXISTS questions;" +
+                "DROP TABLE IF EXISTS answers;" +
+        "").split(";");
 
         SQLiteDatabase db = this.getWritableDatabase();
         for(String query : queries){
@@ -207,7 +242,9 @@ public class Storage extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor results =  db.rawQuery( "select * from " + DECISIONS_TABLE_NAME +
                 " where " + DECISIONS_COLUMN_ID + "=" + id, null );
-        results.moveToFirst();
+        if(!results.moveToFirst()) {
+            return null;
+        }
         Decision decision = new Decision(results);
         return decision;
     }
@@ -614,16 +651,95 @@ public class Storage extends SQLiteOpenHelper {
         return top_choice;
     }
 
+    public List<Question> getAllQuizQuestions() {
+        ArrayList<Question> questions = new ArrayList<Question>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + QUESTIONS_TABLE_NAME, null );
+
+        results.moveToFirst();
+
+        while(results.isAfterLast() == false){
+            questions.add(new Question(results));
+            results.moveToNext();
+        }
+        return questions;
+    }
+
+    public long answerQuestionForUser(String user, int question_id, int response) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ANSWERS_COLUMN_USER, user);
+        contentValues.put(ANSWERS_COLUMN_QUESTION_ID, question_id);
+        contentValues.put(ANSWERS_COLUMN_RESPONSE, response);
+        return db.insert(ANSWERS_TABLE_NAME, null, contentValues);
+    }
+
+    public int getResponseForQuestionAndUser(String user, int question_id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery( "select * from " + ANSWERS_TABLE_NAME +
+                " where " + ANSWERS_COLUMN_USER + "=\"" + user + "\"" +
+                " and " + ANSWERS_COLUMN_QUESTION_ID + "=" + question_id, null );
+        if (results.moveToFirst()) {
+            return results.getInt(results.getColumnIndex(ANSWERS_COLUMN_RESPONSE));
+        } else {
+            return -1;
+        }
+    }
+
+    public void deleteResponseForQuestionAndUser(String user, int question_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + ANSWERS_TABLE_NAME +
+                " where " + ANSWERS_COLUMN_USER + "=\"" + user + "\"" +
+                " and " + ANSWERS_COLUMN_QUESTION_ID + "=" + question_id);
+    }
+
+    public void deleteAllAnswersForUser(String user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + ANSWERS_TABLE_NAME +
+                " where " + ANSWERS_COLUMN_USER + "=\"" + user + "\"");
+    }
+
+    public void updateResponseForQuestionAndUser(String user, int question_id, int response) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("update " + ANSWERS_TABLE_NAME +
+                " set " + ANSWERS_COLUMN_RESPONSE + "=\"" + response + "\"" +
+                " where " + ANSWERS_COLUMN_USER + "=\"" + user + "\"" +
+                " and " + ANSWERS_COLUMN_QUESTION_ID + "=\"" + question_id + "\"");
+    }
+
+    public double getAverageQuestionAnswerForUser(String user) {
+        List<Storage.Question> questions = this.getAllQuizQuestions();
+        double count = 0;
+        double sum = 0;
+        for (Question q : questions) {
+            int response = this.getResponseForQuestionAndUser(user, q.id);
+            if (response > -1) {
+                count++;
+                sum += response;
+            }
+        }
+        return sum / count;
+    }
+
     /*
      *  CLASSES TO MAKE WORKING WITH DATA RECEIVED FROM SQL EASIER
      */
+
+    public class Question {
+        public int id;
+        public String prompt;
+        public Question (Cursor row) {
+            this.id = row.getInt(row.getColumnIndex(QUESTIONS_COLUMN_ID));
+            this.prompt = row.getString(row.getColumnIndex(QUESTIONS_COLUMN_PROMPT));
+        }
+    }
 
     public class Decision {
         public int id;
         public String name;
         public String owner;
 
-        public Decision(Cursor row) {
+        public Decision (Cursor row) {
             this.id = row.getInt(row.getColumnIndex(DECISIONS_COLUMN_ID));
             this.name = row.getString(row.getColumnIndex(DECISIONS_COLUMN_NAME));
             this.owner = row.getString(row.getColumnIndex(DECISIONS_COLUMN_OWNER));
