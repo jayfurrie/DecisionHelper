@@ -3,8 +3,10 @@ package com.example.cs465.decisionhelper;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -40,6 +42,9 @@ public class dh_addfactors_textinput extends BaseActivity {
         factorsLayout.removeAllViews();
         valuesLayout.removeAllViews();
         List<Storage.Factor> factors = db.getAllFactorsForDecision(decisionID);
+        DisplayMetrics dm = new DisplayMetrics();
+        this.getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;
 
         for (int i = 0; i < factors.size(); i++) {
             int height = 200;
@@ -48,12 +53,15 @@ public class dh_addfactors_textinput extends BaseActivity {
             textView.setTextSize(26);
             textView.setText(f.name + ": ");
             textView.setHeight(height);
+            textView.setMaxWidth(width/2);
             textView.setGravity(Gravity.BOTTOM);
             factorsLayout.addView(textView);
+
 
             Storage.Value v = db.getValueForFactorAndChoice(choiceID, f.id);
             EditText textEdit = new EditText(this);
             textEdit.setHeight(height);
+            textEdit.setHint("50k,worst,etc...");
             textEdit.setGravity(Gravity.BOTTOM);
             textEdit.setTextSize(26);
             textEdit.setTag(R.id.dh_factors_list, Integer.toString(f.id));
