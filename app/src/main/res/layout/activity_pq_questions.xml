@@ -12,80 +12,90 @@
     tools:context="com.example.cs465.decisionhelper.pq_questions">
 
 
-
-    <TextView
-        android:id="@+id/pq_questions_tv_numberdisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/pq_questions_tv_numberdisplaytext"/>
-
-    <TextView
-        android:id="@+id/pq_questions_tv_question"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:text="@string/pq_questions_tv_questiontext"
-        android:textSize="20sp"
-        android:textStyle="italic"/>
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="40dp"
-        android:gravity="center_horizontal"
-        android:id="@+id/pq_radio_group">
-        <RadioButton
-            android:text=" "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <RadioButton
-            android:text=" "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <RadioButton
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <RadioButton
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <RadioButton
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RadioGroup>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:id="@+id/pq_question_view"
+        android:orientation="vertical"
+        >
         <TextView
-            android:text="strongly disagree                strongly agree"
-            android:layout_width="match_parent"
+            android:id="@+id/pq_questions_tv_numberdisplay"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="100dp"
-            android:gravity="center"/>
+            android:layout_gravity="center"
+            android:text="@string/pq_questions_tv_numberdisplaytext"/>
 
         <TextView
-            android:text="1                   3                   5"
+            android:id="@+id/pq_questions_tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="@string/pq_questions_tv_questiontext"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:width="100dp"
-            android:gravity="center"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:id="@+id/pq_radio_group">
+            <RadioButton
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
+            <RadioButton
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:text="strongly disagree                strongly agree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="1                   3                   5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:gravity="center"/>
+
+        </LinearLayout>
     </LinearLayout>
-    <!--need to push buttons to bottom-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="bottom"
-        android:layout_marginTop="200dp">
+        android:paddingBottom="16dp" >
 
         <ImageButton
             android:id="@+id/pq_questions_ibtn_previous"
