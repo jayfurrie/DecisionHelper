@@ -257,6 +257,57 @@ public class DatabaseTest {
         assertEquals(shared_message, message);
     }
 
+    @Test
+    public void testGetAllQuizQuestions() throws Exception {
+        Storage db = createdb();
+        List<Storage.Question> questions = db.getAllQuizQuestions();
+        assertEquals(10, questions.size());
+    }
+
+    @Test
+    public void testQuestionAnsweringStuff() throws Exception {
+        Storage db = createdb();
+        List<Storage.Question> questions = db.getAllQuizQuestions();
+        Storage.Question q = questions.get(0);
+        int five = 5;
+        int one = 1;
+
+        int no_response = db.getResponseForQuestionAndUser(test_user, q.id);
+        assertEquals(-1, no_response);
+
+        long response_id = db.answerQuestionForUser(test_user, q.id, five);
+        assert(response_id > -1);
+
+        int test_response = db.getResponseForQuestionAndUser(test_user, q.id);
+        assertEquals(five, test_response);
+
+        db.updateResponseForQuestionAndUser(test_user, q.id, one);
+        test_response = db.getResponseForQuestionAndUser(test_user, q.id);
+        assertEquals(one, test_response);
+
+        db.deleteResponseForQuestionAndUser(test_user, q.id);
+        no_response = db.getResponseForQuestionAndUser(test_user, q.id);
+        assertEquals(-1, no_response);
+    }
+
+    @Test
+    public void testGetAverageQuestionAnswerForUser() throws Exception {
+        Storage db = createdb();
+        List<Storage.Question> questions = db.getAllQuizQuestions();
+        double count = 0;
+        double sum = 0;
+        for (int i = 0; i < (questions.size() - 3); i++) {
+            Storage.Question q = questions.get(i);
+            db.answerQuestionForUser(test_user, q.id, i);
+            count++;
+            sum += i;
+        }
+
+        double average = db.getAverageQuestionAnswerForUser(test_user);
+        assertEquals(sum / count, average, .01);
+
+        db.deleteAllAnswersForUser(test_user);
+    }
 
 
     private Storage createdb() {
