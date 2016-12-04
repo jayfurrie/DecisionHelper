@@ -42,10 +42,13 @@
     <string name="dh_factors_dropdown_titlebar">Apply Values to Factor</string>
     <string name="dh_factors_dropdown_hint">For each factor, choose a value from the dropdown list to apply to your choice.</string>
     <string name="dh_factors_dropdown_label">apply factors drop down</string>
-    <string name="dh_addfactors_textinput_directions">For this choice, type the values corresponding to each factor.</string>
+    <string name="dh_addfactors_textinput_directions">For this choice, type the values corresponding to each factor. They can be
+    numeric or descriptive.</string>
     <string name="dh_addfactors_textinput_titlebar">Add Values to Choice</string>
+    <string name="dh_addfactors_textinput_et_hint">50k, worst, favorite...</string>
     <string name="dh_addfactors_textinput_btn_new">Add New</string>
     <string name="dh_result_congrats">Congratualions! According to your preferences and our calculations, you should choose:</string>
+    <string name="dh_result_score">with a score of:</string>
     <string name="dh_friend_1">Friend 1</string>
     <string name="dh_friend_2">Friend 2</string>
     <string name="dh_friend_3">Friend 3</string>
