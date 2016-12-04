@@ -43,8 +43,11 @@ public class dh_addfactors_textinput extends BaseActivity {
         valuesLayout.removeAllViews();
         List<Storage.Factor> factors = db.getAllFactorsForDecision(decisionID);
         DisplayMetrics dm = new DisplayMetrics();
+        ViewGroup.LayoutParams params = factorsLayout.getLayoutParams();
         this.getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
+        params.width = width/2;
+        factorsLayout.setLayoutParams(params);
 
         for (int i = 0; i < factors.size(); i++) {
             int height = 200;
@@ -53,7 +56,6 @@ public class dh_addfactors_textinput extends BaseActivity {
             textView.setTextSize(26);
             textView.setText(f.name + ": ");
             textView.setHeight(height);
-            textView.setMaxWidth(width/2);
             textView.setGravity(Gravity.BOTTOM);
             factorsLayout.addView(textView);
 
