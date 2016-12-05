@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_pq_start"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -31,17 +32,12 @@
         android:text="@string/pq_homepage_btn_startquiztext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorWhite"
         android:onClick="pq_homepage_btn_startquizOnClick"/>
 
-    <ImageButton
-        android:id="@+id/pq_homepage_ibtn_help"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/presence_busy"
-        android:layout_above="@+id/pq_hompage_btn_startquiz"
-        android:layout_alignEnd="@id/pq_hompage_btn_startquiz"
-        android:contentDescription="help"/>
 
 
-</RelativeLayout>
+
+</LinearLayout>

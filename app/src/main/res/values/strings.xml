@@ -163,7 +163,9 @@
     <string name="pq_start_text">Start</string>
     <string name="pq_results_result">Personality Quiz Result:</string>
     <string name="pq_homepage_detail_text">Take a quick quiz to see what your risk preferences are when it comes to making big decisions!</string>
-
+    <string name="pq_why_take_quiz">Why should you take the Personality Quiz?</string>
+    <string name="pq_why_reasons">Here are 3 important reasons: \n 1. It can help inform your decision .\n 2. It will identify
+        your risk preferences. \n 3. It feels good to know yourself. \n \n Happy Quizzing!</string>
     <!--Strings related to settings-->
     <string name="s_homepage_tv_titlebartext">Settings</string>
     <string name="s_homepage_btn_editprofiletext">Edit Profile</string>
