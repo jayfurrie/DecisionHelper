@@ -99,12 +99,11 @@ public class Storage extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String queries[] = ("" +
-            "create table decisions" +
-                "(" +
-                    "id integer primary key," +
-                    "name varchar(255)," +
-                    "owner varchar(255)" +
-                ");" +
+            "create table decisions (" +
+                "id integer primary key," +
+                "name varchar(255)," +
+                "owner varchar(255)" +
+            ");" +
 
             "create table choices (" +
                 "id integer primary key," +
@@ -258,7 +257,33 @@ public class Storage extends SQLiteOpenHelper {
     }
 
     public int getCurrentStepForDecision(int decision_id) {
-        // TODO
+        List<Factor> factors = this.getAllFactorsForDecision(decision_id);
+        int numFactors = factors.size();
+        if (numFactors == 0) {
+            return 0;
+        }
+
+        Decision d = this.getDecisionByID(decision_id);
+
+        if (this.getScoreForFactor(d.owner, factors.get(numFactors - 1).id) == -1) {
+            return 1;
+        }
+
+        List<Choice> choices = this.getAllChoicesForDecision(decision_id);
+        int numChoices = choices.size();
+        if (numChoices == 0) {
+            return 2;
+        }
+        boolean assignedValues = this.getAllFactorToValuesForChoice(choices.get(0).id).size() > 0;
+        if (!assignedValues) {
+            return 2;
+        }
+
+        List<Value> values = this.getAllValuesForFactor(factors.get(0).id);
+        if (this.getScoreForValue(d.owner, values.get(0).id) < 0) {
+            return 3;
+        }
+
         return 4;
     }
 
