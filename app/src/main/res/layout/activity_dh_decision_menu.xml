@@ -3,10 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:orientation="vertical">
-
-
-
+    android:orientation="vertical"
+    android:id="@+id/dh_decision_menu_buttons">
 
     <Button
         android:id="@+id/dh_decision_menu_btn_addfactors"
@@ -14,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.10"
-        android:onClick="dh_decision_menu_btn_addfactorsOnClick"/>
+        android:onClick="dh_decision_menu_btn_addfactorsOnClick" />
 
     <Button
         android:id="@+id/dh_decision_menu_btn_rank"
@@ -22,7 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09"
-        android:onClick="dh_decision_menu_btn_rankOnClick"/>
+        android:onClick="dh_decision_menu_btn_rankOnClick"
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/dh_decision_menu_btn_addchoices"
@@ -30,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09"
-        android:onClick="dh_decision_menu_btn_addchoicesOnClick"/>
+        android:onClick="dh_decision_menu_btn_addchoicesOnClick"
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/dh_decision_menu_btn_rankchoices"
@@ -38,7 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09"
-        android:onClick="dh_decision_menu_btn_rankchoicesOnClick"/>
+        android:onClick="dh_decision_menu_btn_rankchoicesOnClick"
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/dh_decision_menu_btn_result"
@@ -46,7 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09"
-        android:onClick="dh_decision_menu_btn_resultOnClick"/>
+        android:onClick="dh_decision_menu_btn_resultOnClick"
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/dh_decision_menu_btn_share"
@@ -54,7 +56,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.09"
-        android:onClick="dh_decision_menu_btn_shareOnClick"/>
+        android:onClick="dh_decision_menu_btn_shareOnClick"
+        android:enabled="false" />
 
     <Button
         android:id="@+id/dh_decision_menu_btn_back"
@@ -64,6 +67,5 @@
         android:layout_marginTop="60dp"
         android:layout_gravity="center_horizontal"
         android:onClick="dh_decision_menu_btn_backOnClick"/>
-
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.LinearLayout;
 
 
 public class dh_decision_menu extends BaseActivity {
@@ -21,6 +22,24 @@ public class dh_decision_menu extends BaseActivity {
             decisionName = currDecisionName;
         }
         setTitle(decisionName);
+        setButtonEnabledness();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setButtonEnabledness();
+    }
+
+    private void setButtonEnabledness() {
+        int currStep = db.getCurrentStepForDecision(decisionID);
+        if (currStep == 4) {
+            currStep = 6;
+        }
+        LinearLayout buttonsList = (LinearLayout) findViewById(R.id.dh_decision_menu_buttons);
+        for (int i = 0; i < buttonsList.getChildCount() - 1; i++) {
+            buttonsList.getChildAt(i).setEnabled(i <= currStep);
+        }
     }
 
     public void dh_decision_menu_btn_addfactorsOnClick(View view)
