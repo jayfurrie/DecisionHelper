@@ -37,8 +37,8 @@ public class dh_decision_menu extends BaseActivity {
             currStep = 6;
         }
         LinearLayout buttonsList = (LinearLayout) findViewById(R.id.dh_decision_menu_buttons);
-        for (int i = 0; i < buttonsList.getChildCount() && i <= currStep; i++) {
-            buttonsList.getChildAt(i).setEnabled(true);
+        for (int i = 0; i < buttonsList.getChildCount() - 1; i++) {
+            buttonsList.getChildAt(i).setEnabled(i <= currStep);
         }
     }
 

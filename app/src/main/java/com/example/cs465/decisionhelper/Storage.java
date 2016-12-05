@@ -274,9 +274,12 @@ public class Storage extends SQLiteOpenHelper {
         if (numChoices == 0) {
             return 2;
         }
-        boolean assignedValues = this.getAllFactorToValuesForChoice(choices.get(0).id).size() > 0;
-        if (!assignedValues) {
-            return 2;
+        // check that they assigned values for each factor for each decision
+        for (int i = 0; i < choices.size(); i++) {
+            if (this.getAllFactorToValuesForChoice(choices.get(i).id).size() == 0) {
+                return 2;
+            }
+
         }
 
         List<Value> values = this.getAllValuesForFactor(factors.get(0).id);
