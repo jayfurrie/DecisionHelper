@@ -170,6 +170,7 @@
     <string name="s_homepage_btn_managesharingtext">Manage Sharing</string>
     <string name="s_homepage_btn_changeemailtext">Change Email</string>
     <string name="s_homepage_changepasswordtext">Change Password</string>
+    <string name="s_homepage_resetdatatext">Reset DB</string>
 
     <!--Strings related to hamburgers-->
     <string-array name="hamburgers_array">

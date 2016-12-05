@@ -35,6 +35,14 @@
         android:text="@string/s_homepage_changepasswordtext"
         android:layout_marginTop="16dp"
         android:textSize="20sp"/>
+    <Button
+        android:id="@+id/s_homepage_btn_resetdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_homepage_resetdatatext"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:onClick="resetDB"/>
 
 
 
