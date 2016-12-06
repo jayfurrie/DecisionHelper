@@ -1,7 +1,9 @@
 package com.example.cs465.decisionhelper;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
@@ -43,7 +46,7 @@ public class dh_rank_values extends BaseActivity {
         LinearLayout valuesLayout = (LinearLayout) findViewById(R.id.dh_rank_values_ll_list);
         valuesLayout.removeAllViews();
         List<Storage.Value> values = db.getAllValuesForFactor(factorID);
-
+        Log.d("debug", "num values: " + Integer.toString(values.size()));
         for (int i = 0; i < values.size(); i++) {
             // add new text view
             int height = 200;
@@ -82,18 +85,48 @@ public class dh_rank_values extends BaseActivity {
 
     public void dh_rank_values_btn_OKOnClick(View view)
     {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         //this stores the score
         int sbScore;
         //this stores the valueID
         int sbID;
-        Intent intent = new Intent(this, dh_list_rankvalues.class);
-        startActivity(intent);
         LinearLayout valuesLayout = (LinearLayout) findViewById(R.id.dh_rank_values_ll_list);
         //grabs all the values related to this factor
         List<Storage.Value> values = db.getAllValuesForFactor(factorID);
 
+        ArrayList<Integer> minMaxCheckList = new ArrayList<Integer>();
+
+        if (valuesLayout.getChildCount() != 1)
+        {
+            for (int i = 0; i < valuesLayout.getChildCount(); i++) {
+                View child = (View) valuesLayout.getChildAt(i);
+                if (child.getClass().getName().equalsIgnoreCase("android.widget.SeekBar")) {
+                    // if its a seek bar, get the value and save it to the db for the previous value ID
+                    SeekBar sb = (SeekBar) valuesLayout.getChildAt(i);
+                    // get the seek bar value
+                    sbScore = sb.getProgress();
+                    minMaxCheckList.add(sbScore);
+                }
+            }
+            if (!minMaxCheck(minMaxCheckList))
+            {
+                builder.setTitle("Error");
+                builder.setMessage("Please use values of 0 and 100 to rank your minimum and maximum factors, respectively.");
+                builder.setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which){
+                        //do nothing
+                    }
+                });
+                builder.setIcon(android.R.drawable.ic_dialog_alert);
+                builder.show();
+                return;
+            }
+        }
+
         for (int i = 0; i < valuesLayout.getChildCount(); i++) {
             // need to get the child at (i)
+
             View child = (View) valuesLayout.getChildAt(i);
             //valueID = (int) db.createValueForFactor(textView.getText().toString(), factorID);
             // check if view is a seek bar
@@ -111,5 +144,16 @@ public class dh_rank_values extends BaseActivity {
             //if not a seekbar, ignore
 
         }
+        Intent intent = new Intent(this, dh_list_rankvalues.class);
+        startActivity(intent);
+    }
+
+    private boolean minMaxCheck(ArrayList<Integer> minMaxCheckList)
+    {
+        if (minMaxCheckList.contains(0) && minMaxCheckList.contains(100))
+        {
+            return true;
+        }
+        return false;
     }
 }

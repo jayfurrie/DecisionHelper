@@ -21,7 +21,7 @@ public class dh_list_rankvalues extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dh_list_rankvalues);
-        setTitle("Rank Factors");
+        setTitle("Rank Values");
         decisionID = getIntent().getIntExtra("decision_id", currDecisionID);
         addFactorsToView();
     }
